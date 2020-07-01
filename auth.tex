@@ -17,13 +17,68 @@
   \item Basic Access Authentication
   \item OAuth2
   \item JWT
-  \item SSO/SAML
+  \item SAML
 \end{enumerate}
 
 \section{Basic Auth}
 
-From \href{ihttps://en.wikipedia.org/wiki/Basic_access_authentication}{%
+From \href{https://en.wikipedia.org/wiki/Basic_access_authentication}{%
   Basic Access Authentication on Wikipedia}, is a method for an HTTP
 user agent to provide a user and password when making a request.
+
+The request contains a header field in the form \texttt{Authorization: Basic
+ <credentials>}. Credentials are in the form \texttt{username:password} encoded in
+Base64, that is, the \texttt{username} and \texttt{password} are separated by a colon
+and Base64 encoded.
+
+Some notes:
+\begin{itemize}
+  \item \href{https://tools.ietf.org/html/rfc7617}{%
+      RFC 7617 The 'Basic' HTTP Authentication Scheme} is the
+    canonical reference.
+  \item MacOs has the \texttt{base64} available for the command line. Utilities
+    exist in Ruby, Python, etc. for managing base64 encoding.
+\end{itemize}
+
+Some exercises:
+
+\begin{itemize}
+  \item Find some source code using Basic Auth and understand how
+    it's implemented in that code.
+  \item Examine the HTTP request headers for a service using Basic Auth
+    to see how the header looks.
+\end{itemize}
+
+\section{OAuth2}
+
+
+\section{JWT}
+
+JSON Web Token (JWT) is a URL-safe means for representing
+claims in JSON format to be transferred between two parties.
+
+Some notes:
+
+\begin{itemize}
+  \item \href{https://en.wikipedia.org/wiki/JSON_Web_Token}{%
+     JSON Web Token on Wikipedia}
+  \item \href{https://tools.ietf.org/html/rfc7519}{%
+     RFC 7519 JSON Web Token (JWT)}
+ \item JWT may used to implement SSO.
+\end{itemize}
+
+
+\section{SAML}
+
+
+\appendix
+
+\section{Glossary}
+
+\paragraph{base64url} \href{https://en.wikipedia.org/wiki/Base64#URL_applications}{%
+  Base64Url} as described in \href{https://tools.ietf.org/html/rfc4648}{%
+    RFC 4648 The Base16, Base32, and Base64 Data Encoding}
+
+\section{Source code}
 
 \end{document}
