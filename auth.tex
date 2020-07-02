@@ -38,15 +38,28 @@ Some notes:
     canonical reference.
   \item MacOs has the \texttt{base64} available for the command line. Utilities
     exist in Ruby, Python, etc. for managing base64 encoding.
+  \item \href{https://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html}{%
+      Basic Auth is part of Rails}, hence available to every Rails application.
 \end{itemize}
 
-Some exercises:
+\subsection{Basic Auth in Rails}
+
+The key is the \texttt{authenticate} metaprogramming
+\href{https://github.com/rails/rails/blob/fbe2433be6e052a1acac63c7faf287c52ed3c5ba/activemodel/lib/active_model/secure_password.rb#L119}{%
+  defined in ActiveModel::SecurePassword}.
+
+
+\subsection{Exercises}
 
 \begin{itemize}
-  \item Find some source code using Basic Auth and understand how
-    it's implemented in that code.
+  \item Run the following from the command line: \texttt{%
+      echo "username:password" | base64}. What is returned?
+    I get \texttt{dXNlcm5hbWU6cGFzc3dvcmQK}.
   \item Examine the HTTP request headers for a service using Basic Auth
     to see how the header looks.
+  \item Find some source code using Basic Auth and understand how
+    it's implemented in that code. If you can't find anything, write
+    a simple open source example for yourself.
 \end{itemize}
 
 \section{OAuth2}
@@ -80,5 +93,12 @@ Some notes:
     RFC 4648 The Base16, Base32, and Base64 Data Encoding}
 
 \section{Source code}
+
+\section{TODO}
+
+\begin{itemize}
+  \item Write a simple, 1 file Rails application which demos Basic Auth
+    using Rails built-in capability.
+\end{itemize}
 
 \end{document}
