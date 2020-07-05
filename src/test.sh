@@ -1,10 +1,5 @@
-#!/bin/sh
+#!/bin/bash
 
-echo "test"
-
-encoded=`echo "username:password" | base64`
-
-echo $encoded
-echo "Authorization: Basic $encoded"
-
+# Must use bash to get `echo -n` to work correctly.
+encoded=$(echo -n "username:password" | base64)
 curl -X GET -H "Authorization: Basic $encoded" http://localhost:9292/

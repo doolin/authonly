@@ -16,9 +16,12 @@
 \begin{enumerate}
   \item Basic Access authentication is commonly used in APIs.
   \item Form-based authentication
+  \item OAuth
   \item OAuth2
   \item JWT
   \item SAML
+  \item OpenID
+  \item BrowserID
 \end{enumerate}
 
 \section{Basic Auth}
@@ -83,6 +86,8 @@ Some notes:
   \item \href{https://tools.ietf.org/html/rfc7519}{%
      RFC 7519 JSON Web Token (JWT)}
  \item JWT may used to implement SSO.
+ \item JWTs can be signed using a secret (with HMAC algorithm) or a
+   public/private key pair using RSA.
 \end{itemize}
 
 

@@ -22,6 +22,12 @@
 # https://medium.com/hash32/rack-and-rails-applications-b42922d61146
 require 'rails'
 require "action_controller/railtie"
+require 'pry'
+
+# TODO: Read through Rails source code to understand how the various
+# controller actions for authentication are implemented.
+# TODO: Implement simple logging.
+#
 
 # Run this file with
 # $ rackup config.ru
@@ -34,10 +40,23 @@ end
 
 class PagesController < ActionController::Base
   # https://medium.com/weareevermore/how-to-add-http-basic-authentication-to-your-rails-application-e4e4d5b958d9
+  # TODO: Explain how the controller returns a 401 when this macro fails.
   http_basic_authenticate_with name: 'username', password: 'password'
+
+  # This is what to do when logging is necessary.
+  # before_action :authenticate
 
   def index
     render inline: "<h1>Hello World!</h1> <p>I'm just a single file Rails application</p>"
+  end
+
+  private
+
+  def authenticate
+    # TODO: explain how the controller returns 401 when this method fails.
+    authenticate_or_request_with_http_basic do |username, password|
+      username == 'username' && password == 'password'
+    end
   end
 end
 
