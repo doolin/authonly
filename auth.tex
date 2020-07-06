@@ -15,7 +15,9 @@
 
 \begin{enumerate}
   \item HTTP Basic Access authentication is commonly used in APIs.
-  \item HTTP Digest
+  \item HTTP Digest can be used when the client is a web browser.
+    From Wikipedia, digest authentication is an application of MD5 cryptographic
+    hashing with usage of nonce values to prevent replay attacks.
   \item HTTP Token
   \item Form-based authentication
   \item HMAC
@@ -83,6 +85,11 @@ a great video on macros in Ruby}; ruby macros are used extensively in Rails.
 
 From \href{https://en.wikipedia.org/wiki/Digest_access_authentication}{HTTP Digest on Wikipedia}.
 
+\begin{itemize}
+  \item \href{https://tools.ietf.org/html/rfc7616}{%
+      RFC 7616 HTTP Digest Access Authentication}
+\end{itemize}
+
 \section{OAuth2}
 
 
@@ -103,6 +110,8 @@ Some notes:
  \item JWT may used to implement SSO.
  \item JWTs can be signed using a secret (with HMAC algorithm) or a
    public/private key pair using RSA.
+ \item \href{https://auth0.com/learn/json-web-tokens/}{%
+Get Started with JSON Web Tokens} from Auth0.
 \end{itemize}
 
 
