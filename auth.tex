@@ -14,8 +14,11 @@
 
 
 \begin{enumerate}
-  \item Basic Access authentication is commonly used in APIs.
+  \item HTTP Basic Access authentication is commonly used in APIs.
+  \item HTTP Digest
+  \item HTTP Token
   \item Form-based authentication
+  \item HMAC
   \item OAuth
   \item OAuth2
   \item JWT
@@ -52,10 +55,15 @@ Some notes:
 
 \subsection{Basic Auth in Rails}
 
+The key is using \href{https://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/http_authentication.rb}{%
+Rails' built in Basic Auth system}.
+
 The key is the \texttt{authenticate} metaprogramming
-\href{https://github.com/rails/rails/blob/fbe2433be6e052a1acac63c7faf287c52ed3c5ba/activemodel/lib/active_model/secure_password.rb#L119}{%
+\href{https://github.com/rails/rails/blob/master/activemodel/lib/active_model/secure_password.rb#L119}{%
   defined in ActiveModel::SecurePassword}.
 
+Here is \href{https://www.youtube.com/watch?v=O1sgFzn_Pgk}{%
+a great video on macros in Ruby}; ruby macros are used extensively in Rails.
 
 \subsection{Exercises}
 
@@ -69,6 +77,11 @@ The key is the \texttt{authenticate} metaprogramming
     it's implemented in that code. If you can't find anything, write
     a simple open source example for yourself.
 \end{itemize}
+
+\section{HTTP Digest}
+
+
+From \href{https://en.wikipedia.org/wiki/Digest_access_authentication}{HTTP Digest on Wikipedia}.
 
 \section{OAuth2}
 
@@ -118,9 +131,12 @@ Some notes:
 \begin{itemize}
   \item Write a simple, 1 file Rails application which demos Basic Auth
     using Rails built-in capability.
-  \item Explain the difference in JTW between using a private secret and a
+  \item Explain the difference in JWT between using a private secret and a
     public/private key pair.
-  \item Get source code links to various Rails methods for handling authentication.
+  \item Read through source of \texttt{http\_authentication} to understand how
+    the methods are implemented.
+  \item Add HTTP Basic Auth to Anki deck, including all relevant material from
+    RFC 7617.
 \end{itemize}
 
 \end{document}
