@@ -2,7 +2,7 @@ auth:
 	xelatex auth
 
 test:
-	./src/test.sh
+	./src/rails_basic_auth_test.sh
 
 clean:
 	rm -rf *.log *.aux *.dvi *.out
