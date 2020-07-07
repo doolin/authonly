@@ -16,106 +16,20 @@
 
 \input{introduction}
 \input{basic-auth}
+\input{jwt}
+\input{http-digest}
+\input{http-token}
 
-\section{Basic Auth}
-
-From \href{https://en.wikipedia.org/wiki/Basic_access_authentication}{%
-  HTTP Basic Access Authentication on Wikipedia}, is a method for an HTTP
-user agent to provide a user and password when making a request.
-
-The request contains a header field in the form \texttt{Authorization: Basic
- <credentials>}. Credentials are in the form \texttt{username:password} encoded in
-Base64, that is, the \texttt{username} and \texttt{password} are separated by a colon
-and Base64 encoded.
-
-Basic Auth (BA) is the simplest technique for enforcing access control to
-web resources as it does not require cookies, session identifiers, or
-login pages. API call authentication over HTTPS is a common use case.
-
-Some notes:
-\begin{itemize}
-  \item \href{https://tools.ietf.org/html/rfc7617}{%
-      RFC 7617 The 'Basic' HTTP Authentication Scheme} is the
-    canonical reference.
-  \item MacOs has the \texttt{base64} available for the command line. Utilities
-    exist in Ruby, Python, etc. for managing base64 encoding.
-  \item \href{https://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html}{%
-      Basic Auth is part of Rails}, hence available to every Rails application.
-\end{itemize}
-
-\subsection{Basic Auth in Rails}
-
-The key is using \href{https://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/http_authentication.rb}{%
-Rails' built in Basic Auth system}.
-
-The key is the \texttt{authenticate} metaprogramming
-\href{https://github.com/rails/rails/blob/master/activemodel/lib/active_model/secure_password.rb#L119}{%
-  defined in ActiveModel::SecurePassword}.
-
-Here is \href{https://www.youtube.com/watch?v=O1sgFzn_Pgk}{%
-a great video on macros in Ruby}; ruby macros are used extensively in Rails.
-
-\subsection{Exercises}
-
-\begin{itemize}
-  \item Run the following from the command line: \texttt{%
-      echo "username:password" | base64}. What is returned?
-    I get \texttt{dXNlcm5hbWU6cGFzc3dvcmQK}.
-  \item Examine the HTTP request headers for a service using Basic Auth
-    to see how the header looks.
-  \item Find some source code using Basic Auth and understand how
-    it's implemented in that code. If you can't find anything, write
-    a simple open source example for yourself.
-\end{itemize}
-
-\section{HTTP Digest}
-
-HTTP Digest can be used when the client is a web browser. From Wikipedia,
-digest authentication is an application of MD5 cryptographic hashing with usage
-of nonce values to prevent replay attacks.
-
-From \href{https://en.wikipedia.org/wiki/Digest_access_authentication}{HTTP Digest on Wikipedia}.
-
-\begin{itemize}
-  \item \href{https://tools.ietf.org/html/rfc7616}{%
-      RFC 7616 HTTP Digest Access Authentication}
-\end{itemize}
-
-\section{HTTP Token}
 
 \section{Form-based authentication}
-
 \section{HMAC}
-
 \section{OAuth}
-
-
 \section{OAuth2}
-
-
-\section{JWT}
-
-JSON Web Token (JWT) is a URL-safe means for representing
-claims in JSON format to be transferred between two parties.
-Tokens are signed with either a private secret, or a public/private
-key pair.
-
-Some notes:
-
-\begin{itemize}
-  \item \href{https://en.wikipedia.org/wiki/JSON_Web_Token}{%
-     JSON Web Token on Wikipedia}
-  \item \href{https://tools.ietf.org/html/rfc7519}{%
-     RFC 7519 JSON Web Token (JWT)}
- \item JWT may used to implement SSO.
- \item JWTs can be signed using a secret (with HMAC algorithm) or a
-   public/private key pair using RSA.
- \item \href{https://auth0.com/learn/json-web-tokens/}{%
-Get Started with JSON Web Tokens} from Auth0.
-\end{itemize}
-
-
 \section{SAML}
+\section{OpenID}
+\section{BrowserID}
+
+\appendix
 
 \section{Useful links}
 
@@ -123,14 +37,6 @@ Get Started with JSON Web Tokens} from Auth0.
   \item \href{https://blog.restcase.com/restful-api-authentication-basics/}{%
       RESTful API Authentication Basics}
 \end{itemize}
-
-
-\section{OpenID}
-
-
-\section{BrowserID}
-
-\appendix
 
 \section{Glossary}
 
@@ -143,8 +49,6 @@ Get Started with JSON Web Tokens} from Auth0.
 \section{TODO}
 
 \begin{itemize}
-  \item Write a simple, 1 file Rails application which demos Basic Auth
-    using Rails built-in capability.
   \item Explain the difference in JWT between using a private secret and a
     public/private key pair.
   \item Read through source of \texttt{http\_authentication} to understand how
