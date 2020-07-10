@@ -5,6 +5,9 @@ claims in JSON format to be transferred between two parties.
 Tokens are signed with either a private secret, or a public/private
 key pair.
 
+% TODO: add a quad diagram of encryption and signing options
+% TODO: create a quad diagram macro for general use
+
 Some notes:
 
 \begin{itemize}
@@ -22,3 +25,18 @@ Get Started with JSON Web Tokens} from Auth0.
 TODO: Search for how Rails can work with JWT, either as a ID server,
 or as a client (or both?).
 
+\begin{tikzpicture}[font=\sffamily]
+  \SetEntries{feed marmot}{hibernate}{meet other marmots}{}{}{}{}{}
+  \EisenBlock{mgreen}{tl}{Urgent and important}{Do first}
+  \SetEntries{chat}{brush your teeth}{}{}{}{}{}{}
+  \EisenBlock[right=1.2cm of multi-tl]{mblue}{tr}{Less urgent, but
+  important}{Schedule}
+  \SetEntries{clean up}{buy a calendar}{hold your breat}{}{}{}{}{}
+  \EisenBlock[below=1.2cm of multi-tl]{orange}{bl}{Urgent, but
+  less important}{Delegate}
+  \SetEntries{eat onions}{}{}{}{}{}{}{}
+  \EisenBlock[right=1.2cm of multi-bl]{red!80}{br}{Neither urgent nor
+  important}{Don't do}
+  \draw[ultra thick,-latex] (multi-tl.one east) to[out=0,in=180]
+  (multi-tr.two west);
+\end{tikzpicture}
