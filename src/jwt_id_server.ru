@@ -30,24 +30,18 @@ class JwtAuth
     Base64.urlsafe_encode64(payload)
   end
 
-  # TODO: make this a valid JWT payload
   def payload
     {
       "loggedInAs" => "admin",
       "iat" => 1422779638
-  }.to_json
+    }.to_json
   end
 
   def prefix
     "#{encoded_header}.#{encoded_payload}"
   end
 
-  # TODO: make this a valid JWT secret, whatever that means
   def signature
-    # OpenSSL::HMAC.hexdigest("SHA256", JwtAuth::SECRET, prefix)
-    # OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), JwtAuth::SECRET, prefix)
-    # https://github.com/jwt/ruby-jwt/blob/master/lib/jwt/algos/hmac.rb#L15
-    # OpenSSL::HMAC.digest(OpenSSL::Digest.new(algorithm.sub('HS', 'sha')), key, msg)
     OpenSSL::HMAC.digest(OpenSSL::Digest.new('SHA256'), JwtAuth::SECRET, prefix)
   end
 
@@ -77,6 +71,7 @@ end
 # end
 # Rack::Handler::Thin.run app
 
+# TODO: move this to its own file.
 RSpec.describe JwtAuth do
   describe '#header' do
     it 'return header in json format' do
@@ -99,8 +94,8 @@ RSpec.describe JwtAuth do
     end
   end
 
-  xdescribe '#signature' do
-    it 'returns raw signature' do
+  describe '#signature' do
+    xit 'returns raw signature' do
       expected = 'foo'
       expect(described_class.new.signature).to eq expected
     end
@@ -110,6 +105,13 @@ RSpec.describe JwtAuth do
     it 'returns encoded signature' do
       expected = "gzSraSYS8EXBxLN_oWnFSRgCzcmJmMjLiuyu5CSpyHI"
       expect(described_class.new.encoded_signature).to eq expected
+    end
+  end
+
+  describe '#token' do
+    it 'returns the jwt' do
+      expected = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWRJbkFzIjoiYWRtaW4iLCJpYXQiOjE0MjI3Nzk2Mzh9.gzSraSYS8EXBxLN_oWnFSRgCzcmJmMjLiuyu5CSpyHI"
+      expect(described_class.new.token).to eq expected
     end
   end
 
