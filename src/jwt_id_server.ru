@@ -2,6 +2,7 @@ require 'rack'
 require 'pry-nav'
 require 'thin'
 require 'jwt'
+require 'base64'
 require 'json'
 require 'rspec'
 
@@ -10,7 +11,7 @@ require 'rspec'
 # Authorization: Bearer: <token>
 
 # Example taken from https://en.wikipedia.org/wiki/JSON_Web_Token
-class Foo
+class JwtAuth
   SECRET = ENV['JWT_TEST_SECRET'] || 'secretkey'
 
   # TODO: make this a valid JWT header
@@ -19,6 +20,14 @@ class Foo
       "alg" => "HS256",
       "typ" => "JWT"
   }.to_json
+  end
+
+  def encoded_header
+    Base64.urlsafe_encode64(header)
+  end
+
+  def encoded_payload
+    Base64.urlsafe_encode64(payload)
   end
 
   # TODO: make this a valid JWT payload
@@ -30,16 +39,24 @@ class Foo
   end
 
   def prefix
-    "#{header}.#{payload}"
+    "#{encoded_header}.#{encoded_payload}"
   end
 
   # TODO: make this a valid JWT secret, whatever that means
-  def secret
-    "secret"
+  def signature
+    # OpenSSL::HMAC.hexdigest("SHA256", JwtAuth::SECRET, prefix)
+    # OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), JwtAuth::SECRET, prefix)
+    # https://github.com/jwt/ruby-jwt/blob/master/lib/jwt/algos/hmac.rb#L15
+    # OpenSSL::HMAC.digest(OpenSSL::Digest.new(algorithm.sub('HS', 'sha')), key, msg)
+    OpenSSL::HMAC.digest(OpenSSL::Digest.new('SHA256'), JwtAuth::SECRET, prefix)
+  end
+
+  def encoded_signature
+    Base64.urlsafe_encode64(signature, padding: false)
   end
 
   def token
-    "#{prefix}.#{secret}"
+    "#{prefix}.#{encoded_signature}"
   end
 
   def call(env)
@@ -60,7 +77,7 @@ end
 # end
 # Rack::Handler::Thin.run app
 
-RSpec.describe Foo do
+RSpec.describe JwtAuth do
   describe '#header' do
     it 'return header in json format' do
       expected = "{\"alg\":\"HS256\",\"typ\":\"JWT\"}"
@@ -72,6 +89,41 @@ RSpec.describe Foo do
     it 'returns payload in json format' do
       expected = "{\"loggedInAs\":\"admin\",\"iat\":1422779638}"
       expect(described_class.new.payload).to eq expected
+    end
+  end
+
+  describe '#prefix' do
+    it 'returns prefix' do
+      expected = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWRJbkFzIjoiYWRtaW4iLCJpYXQiOjE0MjI3Nzk2Mzh9"
+      expect(described_class.new.prefix).to eq expected
+    end
+  end
+
+  xdescribe '#signature' do
+    it 'returns raw signature' do
+      expected = 'foo'
+      expect(described_class.new.signature).to eq expected
+    end
+  end
+
+  describe '#encoded_signature' do
+    it 'returns encoded signature' do
+      expected = "gzSraSYS8EXBxLN_oWnFSRgCzcmJmMjLiuyu5CSpyHI"
+      expect(described_class.new.encoded_signature).to eq expected
+    end
+  end
+
+  context 'encoded header' do
+    it 'encodes the header' do
+      expected = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+      expect(described_class.new.encoded_header).to eq expected
+    end
+  end
+
+  context 'encoded payload' do
+    it 'encodes the payload' do
+      expected = "eyJsb2dnZWRJbkFzIjoiYWRtaW4iLCJpYXQiOjE0MjI3Nzk2Mzh9"
+      expect(described_class.new.encoded_payload).to eq expected
     end
   end
 end
