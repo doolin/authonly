@@ -8,7 +8,7 @@ require 'rspec'
 
 # TODO: at the very least, get this thing returning a valid JWT.
 # I want to see something in the header which looks like
-# Authorization: Bearer: <token>
+# Authorization: Bearer <token>
 
 # Example taken from https://en.wikipedia.org/wiki/JSON_Web_Token
 class JwtAuth
