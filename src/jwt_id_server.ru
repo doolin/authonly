@@ -19,7 +19,14 @@ class JwtAuth
     {
       "alg" => "HS256",
       "typ" => "JWT"
-  }.to_json
+    }.to_json
+  end
+
+  def jwt_header
+    {
+      "typ" => "JWT",
+      "alg" => "HS256"
+    }.to_json
   end
 
   def encoded_header
@@ -126,6 +133,37 @@ RSpec.describe JwtAuth do
     it 'encodes the payload' do
       expected = "eyJsb2dnZWRJbkFzIjoiYWRtaW4iLCJpYXQiOjE0MjI3Nzk2Mzh9"
       expect(described_class.new.encoded_payload).to eq expected
+    end
+  end
+
+  # Some lessons here:
+  # * The gem takes native Ruby objects, there is no need to render json or string.
+  # * The order of elements in the hash matters, because the encoding and signing
+  #   depends on the order of elements in the resulting string.
+  #
+  # TODO: split this file into 3 parts:
+  # 1. handrolled jwt construction using Wikipedia page
+  # 2. JWT gem construction using jwt-ruby README on github
+  # 3. rackup file implementing the gem-based scheme
+  context 'jwt gem' do
+    subject(:auth) { described_class.new }
+
+    it 'matches handrolled values' do
+      payload = {
+        "loggedInAs": "admin",
+        "iat": 1422779638
+      }
+
+      # This doesn't work:
+      # jwt_token = JWT.encode("#{payload}", JwtAuth::SECRET, 'HS256', { typ: 'JWT' })
+
+      # This works:
+      jwt_token = JWT.encode(payload, JwtAuth::SECRET, 'HS256', { typ: 'JWT' })
+      puts "jwt_token: #{jwt_token}"
+      decoded = JWT.decode(jwt_token, JwtAuth::SECRET, true, { algorithm: 'HS256' })
+      # binding.pry
+      puts decoded
+      expect(jwt_token).to eq described_class.new.token
     end
   end
 end

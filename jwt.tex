@@ -20,10 +20,27 @@ Some notes:
    public/private key pair using RSA.
  \item \href{https://auth0.com/learn/json-web-tokens/}{%
 Get Started with JSON Web Tokens} from Auth0.
+  \item In Ruby, the order of elements in a hash matters when signing, because the
+        gets turned into a string.
 \end{itemize}
 
 TODO: Search for how Rails can work with JWT, either as a ID server,
 or as a client (or both?).
+
+TODO: Investigate ordering in simple Javascript objects corresponding to Ruby hashes.
+
+TODO: Split the jwt example scripts into 3 parts.
+
+\subsection{An example authentication server}
+
+Three parts:
+
+\begin{enumerate}
+  \item Client 1: logs into Auth server, retrieves token, queries Service 1.
+        Client 1 probably only needs to store whole token, without any processing of token.
+  \item Service 1: accepts token from Client 1, returns data.
+  \item Auth server: accepts login credentials from Client 1, returns token.
+\end{enumerate}
 
 \begin{tikzpicture}[font=\sffamily]
   \SetEntries{feed marmot}{hibernate}{meet other marmots}{}{}{}{}{}
