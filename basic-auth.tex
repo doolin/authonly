@@ -2,9 +2,8 @@
 
 From \href{https://en.wikipedia.org/wiki/Basic_access_authentication}{%
   HTTP Basic Access Authentication on Wikipedia}, is a method for an HTTP
-user agent to provide a user and password when making a request.
-
-The request contains a header field in the form \texttt{Authorization: Basic
+user agent to provide a user and password when making a request. The request
+contains a header field in the form \texttt{Authorization: Basic
  <credentials>}. Credentials are in the form \texttt{username:password} encoded in
 Base64, that is, the \texttt{username} and \texttt{password} are separated by a colon
 and Base64 encoded.
@@ -29,6 +28,7 @@ Some notes:
 The key is using \href{https://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/http_authentication.rb}{%
 Rails' built in Basic Auth system}.
 
+% TODO: Explain how the SecurePassword is used in a service.
 The key is the \texttt{authenticate} metaprogramming
 \href{https://github.com/rails/rails/blob/master/activemodel/lib/active_model/secure_password.rb#L119}{%
   defined in ActiveModel::SecurePassword}.

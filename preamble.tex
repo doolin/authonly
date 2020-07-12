@@ -1,0 +1,41 @@
+\usepackage{url}
+\usepackage{enumitem}
+
+\RequirePackage[colorlinks]{hyperref}
+
+%%% From https://tex.stackexchange.com/questions/447399/how-to-create-eisenhower-matrix-notepad-in-latex
+\usepackage{tikz,amssymb}
+\usetikzlibrary{shapes.multipart,positioning,fit,backgrounds}
+\definecolor{mgreen}{RGB}{22,171,53}
+\definecolor{mblue}{RGB}{22,101,171}
+
+\newcommand{\EisenBlock}[5][]{
+  \node [rectangle split,rectangle split parts=8,fill=white,
+  text width=5cm,align=left,text=#2,draw,rounded corners,draw=#2,
+  #1] 
+  (multi-#3)
+ {\strut$\Box$ \EntryOne\nodepart{two}\strut$\Box$ \EntryTwo
+ \nodepart{three}\strut$\Box$ \EntryThree\nodepart{four}\strut$\Box$ \EntryFour
+ \nodepart{five}\strut$\Box$ \EntryFive\nodepart{six}\strut$\Box$ \EntrySix
+ \nodepart{seven}\strut$\Box$ \EntrySeven\nodepart{eight}\strut$\Box$ \EntryEight};
+ \node[left=1pt of multi-#3.south west,anchor=south west,rotate=90,text=white] 
+ (label-#3) {#4};
+ \begin{scope}[on background layer]
+ \node[fit=(multi-#3) (label-#3),fill=#2,rounded corners,
+ label={[text=#2,anchor=south west,font=\bfseries]above left:#5}] (fit-#3){};
+ \end{scope}
+ \ClearEntries
+}
+
+\newcommand{\SetEntries}[8]{
+\def\EntryOne{#1}
+\def\EntryTwo{#2}
+\def\EntryThree{#3}
+\def\EntryFour{#4}
+\def\EntryFive{#5}
+\def\EntrySix{#6}
+\def\EntrySeven{#7}
+\def\EntryEight{#8}}
+\newcommand{\ClearEntries}
+{\SetEntries{\empty}{\empty}{\empty}{\empty}{\empty}{\empty}{\empty}{\empty}}
+\ClearEntries
