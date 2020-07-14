@@ -5,4 +5,4 @@
 # echo $encoded
 # echo $encoded | base64 -d
 # curl -X GET -H "Authorization: Basic $encoded" http://localhost:9292/
-curl -X GET http://localhost:9292/
+curl -I -X GET http://localhost:9292/
