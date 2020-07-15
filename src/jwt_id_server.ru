@@ -1,9 +1,7 @@
 require 'rack'
 require 'pry-nav'
 require 'thin'
-# require 'jwt'
-# require 'base64'
-# require 'json'
+require 'dbm'
 
 # TODO: Implement DBM for simple password storage
 # https://ruby-doc.org/stdlib-2.7.1/libdoc/dbm/rdoc/DBM.html
@@ -14,9 +12,28 @@ require 'thin'
 # https://ruby-doc.org/stdlib-2.7.1/libdoc/pstore/rdoc/PStore.html
 # https://ruby-doc.org/core-2.7.1/Marshal.html
 
+# TODO: implement simple sign up with a user/pass coming in as a POST
+#
+# This will require:
+# * Understanding how Rack deals with GET versus POST requests
+# * Processing the user/pass parameters. Should these come in as json,
+#   or some other format in the post body?
+# * Check the pw store, creating the user/pass entry if not already there.
+# * Send back a JWT with appropriate header and claims
+
 # Example taken from https://en.wikipedia.org/wiki/JSON_Web_Token
 class JwtServer
   SECRET = ENV['JWT_TEST_SECRET'] || 'secretkey'
+
+  def initialize
+    db = DBM.open('rfcs', 0666, DBM::WRCREAT)
+    db['822'] = 'Standard for the Format of ARPA Internet Text Messages'
+    db['1123'] = 'Requirements for Internet Hosts - Application and Support'
+    db['3068'] = 'An Anycast Prefix for 6to4 Relay Routers'
+    puts db['822']
+    puts DBM::VERSION
+    db.close
+  end
 
   def call(env)
     payload = {
