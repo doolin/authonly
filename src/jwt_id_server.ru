@@ -1,6 +1,7 @@
 require 'rack'
 require 'pry-nav'
 require 'thin'
+require 'jwt'
 require 'dbm'
 
 # TODO: Implement DBM for simple password storage
@@ -21,6 +22,41 @@ require 'dbm'
 # * Check the pw store, creating the user/pass entry if not already there.
 # * Send back a JWT with appropriate header and claims
 
+# TODO: Look up form data, from Rack rubydoc
+# https://www.rubydoc.info/gems/rack/Rack/Request/Helpers#body-instance_method
+# #form_data? ⇒ Boolean
+#
+# Determine whether the request body contains form-data by checking
+# the request Content-Type for one of the media-types: “application/x-www-form-urlencoded”
+# or “multipart/form-data”. The list of form-data media types can be
+# modified through the FORM_DATA_MEDIA_TYPES array.
+#
+# A request body is also assumed to contain form-data when no
+# Content-Type header is provided and the request_method is POST.
+
+# When reading Rack body object, it's a stream, hence reading it twice
+# requires a rewind call:
+# [11] pry(#<JwtServer>)> foo = req.body.read
+# => ""
+# [12] pry(#<JwtServer>)> foo
+# => ""
+# [13] pry(#<JwtServer>)> foo = req.body.rewind
+# => nil
+# [14] pry(#<JwtServer>)> foo = req.body.read
+# => "{\"username\":\"abc\",\"password\":\"abc\"}"
+# [15] pry(#<JwtServer>)> foo
+# => "{\"username\":\"abc\",\"password\":\"abc\"}"
+# [16] pry(#<JwtServer>)> foo = req.body.rewind
+# => nil
+# [17] pry(#<JwtServer>)> body = JSON.parse(req.body.read)
+# => {"username"=>"abc", "password"=>"abc"}
+# [18] pry(#<JwtServer>)> body
+# => {"username"=>"abc", "password"=>"abc"}
+# [19] pry(#<JwtServer>)>
+
+# TODO: next step is to acquire the POST body and save user/pass in
+# local db
+
 # Example taken from https://en.wikipedia.org/wiki/JSON_Web_Token
 class JwtServer
   SECRET = ENV['JWT_TEST_SECRET'] || 'secretkey'
@@ -36,6 +72,10 @@ class JwtServer
   end
 
   def call(env)
+    req = Rack::Request.new(env)
+    puts req
+    binding.pry
+
     payload = {
       "loggedInAs": "admin",
       "iat": 1422779638
@@ -48,7 +88,7 @@ class JwtServer
     }
 
     # [200, {"Content-Type" => "text/html; charset=utf-8"}, ["Hello World"]]
-    [200, headers, ["Hello World"]]
+    [200, headers, ["Hello World\n"]]
   end
 end
 
