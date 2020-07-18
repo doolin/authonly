@@ -61,20 +61,33 @@ require 'dbm'
 class JwtServer
   SECRET = ENV['JWT_TEST_SECRET'] || 'secretkey'
 
-  def initialize
+  def store(params)
     db = DBM.open('rfcs', 0666, DBM::WRCREAT)
+    username = params["username"]
+    password = params["password"]
+
     db['822'] = 'Standard for the Format of ARPA Internet Text Messages'
     db['1123'] = 'Requirements for Internet Hosts - Application and Support'
     db['3068'] = 'An Anycast Prefix for 6to4 Relay Routers'
-    puts db['822']
-    puts DBM::VERSION
+
+    # TODO: does db[username] exist? Return if yes.
+    db[username] = password
+
+    puts db[username]
+    # puts DBM::VERSION
     db.close
+  end
+
+  def process_body(req)
+    JSON.parse(req.body.read)
   end
 
   def call(env)
     req = Rack::Request.new(env)
-    puts req
-    binding.pry
+    params = process_body(req)
+    store(params)
+
+    # binding.pry
 
     payload = {
       "loggedInAs": "admin",
