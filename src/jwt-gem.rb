@@ -1,8 +1,10 @@
+#!/usr/bin/env ruby
+
 require 'pry-nav'
 require 'jwt'
 require 'base64'
 require 'json'
-require 'rspec'
+require 'rspec/autorun'
 
 # Example taken from jwt-ruby gem documentation
 class JwtAuth

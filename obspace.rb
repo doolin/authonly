@@ -1,3 +1,8 @@
+#!/usr/bin/env ruby
+
+# This file is notes from Aaron Patterson's talk
+# Don't @ me about Ruby instance variables:
+# https://www.youtube.com/watch?v=HEFBDqly4ms
 require 'objspace'
 
 class Foo
