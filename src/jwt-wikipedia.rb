@@ -3,10 +3,6 @@ require 'base64'
 require 'json'
 require 'rspec'
 
-# TODO: at the very least, get this thing returning a valid JWT.
-# I want to see something in the header which looks like
-# Authorization: Bearer <token>
-
 # Example taken from https://en.wikipedia.org/wiki/JSON_Web_Token
 class JwtAuth
   SECRET = ENV['JWT_TEST_SECRET'] || 'secretkey'
@@ -47,11 +43,6 @@ class JwtAuth
 
   def token
     "#{prefix}.#{encoded_signature}"
-  end
-
-  def call(env)
-    # binding.pry
-    [200, {"Content-Type" => "text/html; charset=utf-8"}, ["Hello World"]]
   end
 end
 
