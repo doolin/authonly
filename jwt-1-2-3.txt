@@ -1,0 +1,81 @@
+JWT 1.2.3
+What it is, what it isn’t
+
+What is JWT?
+From Wikipedia:
+JSON Web Token (JWT) is an Internet standard for creating data with optional signature and/or optional encryption whose payload holds JSON that asserts some number of claims.
+
+Why use JWT?
+JWT is very good for API to API authentication:
+Stateless
+Self-contained, no database call after token generated
+Amenable to in-house, centralized authentication service
+
+How is JWT transmitted?
+JWT is transmitted via the HTTP Authorization header. For example:
+
+Authorization: Bearer <Header>.<Payload>.<Signature>
+
+What does JWT look like?
+It’s a very simple format, here’s an example:
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTU5MTA0OTM1MSwiZXhwIjoxNTkxMDQ5NjUxLCJpc3MiOiJIaW5nZUhlYWx0aCJ9.DDoGapnnDxtBnZiCO_lpACwMIi8qnAQ3PZCjWFdVLQKoZgFEiT5lPCfSwk8UMohlslx1dKXxrE8BMYoWY8s3p_OuX8-Fku7-8KLHJSaiiORJz0YPSWGyAm0Y4f19TCGHOVGTbo9VnYEN9GeECELDn4-2nbD-b7jH4tUbuJMU1NbNhg7wWVIGcBlHfh2XxzJ7JSjW74whsOq6hq1L1XujEQ10TGe1wss0qcTVaNExHMLAKFuvV7vw4iRKCVARxMqLNnXHD1PvmqpWEsa1KzlAVDsTMNAUwF3XF98KxGgwNf88WJ92BBIH18rROhK10hdT4w_6Eb4OqaUS3cC_hjMZH5au9KxZUd99eW34U4wcoobs9Nl2yu7y4IZ1ro3SYNJZlUnlGs_Muk4kjw0YtMbCt4HprSwzwQLdNjT79K3bmRVhhlTKsgX0DXHIYmzJyURLqTJdM2pkEhlidj3JH4ksVLs2bq_WdKCnf_QbJRINu2_yA5Q2P6OO8sBDn4mZVAxijWTpTqxb6MOQmhOlQddVzkhgded4QCROYMnb81OGkg5UJFgvw6TC6_unvn5lFICiqQe9ZAscFoNhrQfrGLwZ_0Hspp0QQBs9uzVCydIiRrRK21pEBC0UIlVktOJVbx3AkF79deGV3J-BQ7rIeYTRB8xCUm05px4iY0AKUqsYakg
+
+What does JWT look like?
+It’s a very simple format, here’s an example:
+Header
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTU5MTA0OTM1MSwiZXhwIjoxNTkxMDQ5NjUxLCJpc3MiOiJIaW5nZUhlYWx0aCJ9.DDoGapnnDxtBnZiCO_lpACwMIi8qnAQ3PZCjWFdVLQKoZgFEiT5lPCfSwk8UMohlslx1dKXxrE8BMYoWY8s3p_OuX8-Fku7-8KLHJSaiiORJz0YPSWGyAm0Y4f19TCGHOVGTbo9VnYEN9GeECELDn4-2nbD-b7jH4tUbuJMU1NbNhg7wWVIGcBlHfh2XxzJ7JSjW74whsOq6hq1L1XujEQ10TGe1wss0qcTVaNExHMLAKFuvV7vw4iRKCVARxMqLNnXHD1PvmqpWEsa1KzlAVDsTMNAUwF3XF98KxGgwNf88WJ92BBIH18rROhK10hdT4w_6Eb4OqaUS3cC_hjMZH5au9KxZUd99eW34U4wcoobs9Nl2yu7y4IZ1ro3SYNJZlUnlGs_Muk4kjw0YtMbCt4HprSwzwQLdNjT79K3bmRVhhlTKsgX0DXHIYmzJyURLqTJdM2pkEhlidj3JH4ksVLs2bq_WdKCnf_QbJRINu2_yA5Q2P6OO8sBDn4mZVAxijWTpTqxb6MOQmhOlQddVzkhgded4QCROYMnb81OGkg5UJFgvw6TC6_unvn5lFICiqQe9ZAscFoNhrQfrGLwZ_0Hspp0QQBs9uzVCydIiRrRK21pEBC0UIlVktOJVbx3AkF79deGV3J-BQ7rIeYTRB8xCUm05px4iY0AKUqsYakg
+
+What does JWT look like?
+It’s a very simple format, here’s an example:
+Header
+Payload
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTU5MTA0OTM1MSwiZXhwIjoxNTkxMDQ5NjUxLCJpc3MiOiJIaW5nZUhlYWx0aCJ9.DDoGapnnDxtBnZiCO_lpACwMIi8qnAQ3PZCjWFdVLQKoZgFEiT5lPCfSwk8UMohlslx1dKXxrE8BMYoWY8s3p_OuX8-Fku7-8KLHJSaiiORJz0YPSWGyAm0Y4f19TCGHOVGTbo9VnYEN9GeECELDn4-2nbD-b7jH4tUbuJMU1NbNhg7wWVIGcBlHfh2XxzJ7JSjW74whsOq6hq1L1XujEQ10TGe1wss0qcTVaNExHMLAKFuvV7vw4iRKCVARxMqLNnXHD1PvmqpWEsa1KzlAVDsTMNAUwF3XF98KxGgwNf88WJ92BBIH18rROhK10hdT4w_6Eb4OqaUS3cC_hjMZH5au9KxZUd99eW34U4wcoobs9Nl2yu7y4IZ1ro3SYNJZlUnlGs_Muk4kjw0YtMbCt4HprSwzwQLdNjT79K3bmRVhhlTKsgX0DXHIYmzJyURLqTJdM2pkEhlidj3JH4ksVLs2bq_WdKCnf_QbJRINu2_yA5Q2P6OO8sBDn4mZVAxijWTpTqxb6MOQmhOlQddVzkhgded4QCROYMnb81OGkg5UJFgvw6TC6_unvn5lFICiqQe9ZAscFoNhrQfrGLwZ_0Hspp0QQBs9uzVCydIiRrRK21pEBC0UIlVktOJVbx3AkF79deGV3J-BQ7rIeYTRB8xCUm05px4iY0AKUqsYakg
+
+What does JWT look like?
+It’s a very simple format, here’s an example:
+Header
+Payload
+Signature
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOjEsImlhdCI6MTU5MTA0OTM1MSwiZXhwIjoxNTkxMDQ5NjUxLCJpc3MiOiJIaW5nZUhlYWx0aCJ9.DDoGapnnDxtBnZiCO_lpACwMIi8qnAQ3PZCjWFdVLQKoZgFEiT5lPCfSwk8UMohlslx1dKXxrE8BMYoWY8s3p_OuX8-Fku7-8KLHJSaiiORJz0YPSWGyAm0Y4f19TCGHOVGTbo9VnYEN9GeECELDn4-2nbD-b7jH4tUbuJMU1NbNhg7wWVIGcBlHfh2XxzJ7JSjW74whsOq6hq1L1XujEQ10TGe1wss0qcTVaNExHMLAKFuvV7vw4iRKCVARxMqLNnXHD1PvmqpWEsa1KzlAVDsTMNAUwF3XF98KxGgwNf88WJ92BBIH18rROhK10hdT4w_6Eb4OqaUS3cC_hjMZH5au9KxZUd99eW34U4wcoobs9Nl2yu7y4IZ1ro3SYNJZlUnlGs_Muk4kjw0YtMbCt4HprSwzwQLdNjT79K3bmRVhhlTKsgX0DXHIYmzJyURLqTJdM2pkEhlidj3JH4ksVLs2bq_WdKCnf_QbJRINu2_yA5Q2P6OO8sBDn4mZVAxijWTpTqxb6MOQmhOlQddVzkhgded4QCROYMnb81OGkg5UJFgvw6TC6_unvn5lFICiqQe9ZAscFoNhrQfrGLwZ_0Hspp0QQBs9uzVCydIiRrRK21pEBC0UIlVktOJVbx3AkF79deGV3J-BQ7rIeYTRB8xCUm05px4iY0AKUqsYakg
+
+What does JWT look like?
+It’s a very simple format, here’s an example:
+Header
+Payload
+Signature
+<Header>.<Payload>.<Signature>
+
+Sure, Dave, but where’s the JSON?
+Encoded! Using Base64url!
+Here’s our friend the JWT header:
+
+Base64url({"alg": "RS256","typ": "JWT"}) => eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9
+
+
+From jwt.io
+
+
+JWT comes in 2 flavors: JWS & JWE
+
+Succinctly:
+JWS signs tokens to verify integrity of claims listed in Payload.
+JWE encrypts tokens to hide the content of claims listed in Payload.
+
+JWT pitfalls
+JWT is not a silver bullet; it doesn’t fit all use cases:
+More data to store if used for sessions (⟸ don’t use for sessions!)
+JWS allows anyone in possession of a token to examine header and claims
+Requires sharing a key among all authenticating parties, consequences of key disclosure 
+
+JWT technology IETF definitions (RFCs)
+All technology associated with JWTs is defined in IETF Request For Comments (RFC). The following are interesting:
+  - JWT https://tools.ietf.org/html/rfc7519
+  - JWS https://tools.ietf.org/html/rfc7515
+  - JWE https://tools.ietf.org/html/rfc7516
+
+
+ JWT at Hinge Health
+We’re using JWT as the enabling technology for our in-house authentication service.
+Auth service source on Github
+gist for some demo code written using the Wikipedia JWT example
+
