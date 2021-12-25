@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # gem 'rails'
-# gem 'rack'
+gem 'rack'
 # gem 'thin'
 gem 'jwt'
 gem 'rspec'
