@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
 
 # gem 'rails'
+gem 'dbm'
 gem 'rack'
-# gem 'thin'
+gem 'thin'
 gem 'jwt'
+# TODO: switch to ruby debug once everything is running
+gem 'pry-nav'
 gem 'rspec'
 gem 'runbook'
 gem 'rubocop'
