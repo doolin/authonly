@@ -4,7 +4,9 @@ require 'thin'
 require 'jwt'
 require 'dbm'
 
-# TODO: Implement DBM for simple password storage
+# DBM is a simple key value story, probably built on
+# Berkeley db. It's useful here for creating simple
+# simulations of authentication management and flow.
 # https://ruby-doc.org/stdlib-2.7.1/libdoc/dbm/rdoc/DBM.html
 # require 'dbm'
 # db = DBM.open('rfcs', 0666, DBM::WRCREAT)
@@ -66,6 +68,8 @@ class JwtServer
     username = params["username"]
     password = params["password"]
 
+    puts "Received username: #{username}, password: #{password}"
+
     db['822'] = 'Standard for the Format of ARPA Internet Text Messages'
     db['1123'] = 'Requirements for Internet Hosts - Application and Support'
     db['3068'] = 'An Anycast Prefix for 6to4 Relay Routers'
@@ -73,7 +77,7 @@ class JwtServer
     # TODO: does db[username] exist? Return if yes.
     db[username] = password
 
-    puts db[username]
+    # puts db[username]
     # puts DBM::VERSION
     db.close
   end
@@ -101,7 +105,8 @@ class JwtServer
     }
 
     # [200, {"Content-Type" => "text/html; charset=utf-8"}, ["Hello World"]]
-    [200, headers, ["Hello World\n"]]
+    # [200, headers, ["Hello World\n"]]
+    [200, headers, ["#{jwt_token}\n"]]
   end
 end
 

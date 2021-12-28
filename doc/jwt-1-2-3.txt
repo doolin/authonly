@@ -74,7 +74,7 @@ All technology associated with JWTs is defined in IETF Request For Comments (RFC
   - JWE https://tools.ietf.org/html/rfc7516
 
 
- JWT at Hinge Health
+JWT at Healthie
 We’re using JWT as the enabling technology for our in-house authentication service.
 Auth service source on Github
 gist for some demo code written using the Wikipedia JWT example
