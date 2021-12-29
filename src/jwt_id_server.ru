@@ -11,6 +11,15 @@ require 'dbm'
 # require 'dbm'
 # db = DBM.open('rfcs', 0666, DBM::WRCREAT)
 #
+# From irb:
+# irb(main):001:0> require 'dbm'
+# => true
+# irb(main):002:0> db = DBM.open('rfcs')
+# => #<DBM:0x0000000109b15918>
+# irb(main):003:0> db['822']
+# => "Standard for the Format of ARPA Internet Text Messages"
+# irb(main):004:0>
+#
 # Possibly try PStore instead:
 # https://ruby-doc.org/stdlib-2.7.1/libdoc/pstore/rdoc/PStore.html
 # https://ruby-doc.org/core-2.7.1/Marshal.html

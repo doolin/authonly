@@ -1,12 +1,10 @@
 require 'rack'
 require 'base64'
 require 'pry-nav'
+require 'rspec/autorun' if ENV['RACK_TEST']
 
 class BasicAuth
-  def userpass(basic_auth_value)
-    # TODO: delete doesn't work here, which is an interesting topic for another day.
-    # userpass_encoded = auth_header.delete('Basic ')
-
+  def userpass(auth_header)
     # Rails does it like this for Basic Auth:
     # https://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/http_authentication.rb#L119
     # def auth_param(request)
@@ -16,7 +14,7 @@ class BasicAuth
     # For Rails Token Auth:
     # gsub(/^Digest\s+/, "")
     #
-    # Doing my way here.
+    # Doing it my way here.
     userpass_encoded = auth_header.sub(/^Basic\s+/, '')
     userpass = Base64.decode64 userpass_encoded
     username, password = userpass.split(':')
@@ -25,8 +23,11 @@ class BasicAuth
   def call(env)
     # TODO: Refactor into function
     auth_header = env["HTTP_AUTHORIZATION"]
-    # TODO: delete doesn't work here, which is an interesting topic for another day.
-    # userpass_encoded = auth_header.delete('Basic ')
+
+    u, p = userpass(auth_header)
+    puts "From userpass method, username: #{u}, password: #{p}"
+
+    # TODO: Since the userpass method is working this needs rewritten.
     userpass_encoded = auth_header.sub(/^Basic\ /, '')
     userpass = Base64.decode64 userpass_encoded
     username, password = userpass.split(':')
@@ -44,5 +45,11 @@ end
 
 # TODO: write some specs for this file.
 # TODO: create an actual testing framework for these examples.
+# Google search on "testing rackup file" returned
+# http://testing-for-beginners.rubymonstas.org/rack_test/rack.html
+#
+# The challenge here is having both the convenience of specs written
+# into the class file, and being able to run the class from elsehwere
+# without the specs being invoked.
 
 run BasicAuth.new

@@ -1,0 +1,8 @@
+require_relative './jwt_id_server.'
+
+namespace :auth do
+  desc 'run the jwt server'
+  task :jwt do
+    run JwtServer.new
+  end
+end

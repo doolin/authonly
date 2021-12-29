@@ -48,7 +48,7 @@ end
 
 RSpec.describe JwtAuth do
   describe '#header' do
-    it 'return header in json format' do
+    it 'returns header in json format' do
       expected = "{\"alg\":\"HS256\",\"typ\":\"JWT\"}"
       expect(described_class.new.header).to eq expected
     end
