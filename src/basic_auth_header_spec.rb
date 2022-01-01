@@ -4,8 +4,6 @@
 require 'rspec/autorun'
 
 # https://www.honeybadger.io/blog/ruby-exception-vs-standarderror-whats-the-difference/
-#
-# TODO: add a message here.
 class BasicAuthError < StandardError
   DEFAULT_MESSAGE = 'value given for auth header is malformed'
   def message
@@ -24,7 +22,7 @@ end
 # request.headers["Authorization"]&.index('Basic') "fails" when
 # value is empty with index zero, need to handle that case.
 def extract_encoded(value)
-  regex = /Basic\s+/
+  regex = /\ABasic\s+/
   raise BasicAuthError unless value&.match?(regex)
 
   value&.sub(regex, '')
@@ -32,16 +30,16 @@ end
 
 RSpec.describe self do
   describe '.extract_encoded' do
+    let(:encoded) { 'dXNlcm5hbWUxOnBhc3N3b3Jk' }
+
     context 'succeeds when header and value is present' do
       example 'with single whitespace formatting' do
-        encoded = 'dXNlcm5hbWUxOnBhc3N3b3Jk'
         header = "Basic #{encoded}"
 
         expect(extract_encoded(header)).to eq encoded
       end
 
       example 'with multiple whitespace formatting' do
-        encoded = 'dXNlcm5hbWUxOnBhc3N3b3Jk'
         header = "Basic                     #{encoded}"
 
         expect(extract_encoded(header)).to eq encoded
@@ -62,6 +60,14 @@ RSpec.describe self do
       example 'is an empty string' do
         expect { extract_encoded('') }
           .to raise_error(BasicAuthError, BasicAuthError::DEFAULT_MESSAGE)
+      end
+
+      # TODO: show how this can be more liberal by adjusting the regex.
+      example 'has leading spaces' do
+        header = " Basic #{encoded}"
+
+        expect { extract_encoded(header) }
+        .to raise_error(BasicAuthError, BasicAuthError::DEFAULT_MESSAGE)
       end
     end
   end
