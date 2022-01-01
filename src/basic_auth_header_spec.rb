@@ -7,6 +7,10 @@ require 'rspec/autorun'
 #
 # TODO: add a message here.
 class BasicAuthError < StandardError
+  DEFAULT_MESSAGE = 'value given for auth header is malformed'
+  def message
+    DEFAULT_MESSAGE
+  end
 end
 
 # Very simple method demonstrating the economy of Ruby.
@@ -46,15 +50,18 @@ RSpec.describe self do
 
     context 'fails when auth header value' do
       example 'is nil' do
-        expect { extract_encoded(nil) }.to raise_error(BasicAuthError)
+        expect { extract_encoded(nil) }
+          .to raise_error(BasicAuthError, BasicAuthError::DEFAULT_MESSAGE)
       end
 
       example 'is not basic auth' do
-        expect { extract_encoded('random garbage') }.to raise_error(BasicAuthError)
+        expect { extract_encoded('random garbage') }
+          .to raise_error(BasicAuthError, BasicAuthError::DEFAULT_MESSAGE)
       end
 
       example 'is an empty string' do
-        expect { extract_encoded('') }.to raise_error(BasicAuthError)
+        expect { extract_encoded('') }
+          .to raise_error(BasicAuthError, BasicAuthError::DEFAULT_MESSAGE)
       end
     end
   end
