@@ -20,6 +20,8 @@ class BasicAuth
     username, password = userpass.split(':')
   end
 
+  # TODO: clean this whole thing up, take out the `puts`
+  # add in logging.
   def call(env)
     # TODO: Refactor into function
     auth_header = env["HTTP_AUTHORIZATION"]

@@ -6,6 +6,7 @@ require 'rspec/autorun'
 # https://www.honeybadger.io/blog/ruby-exception-vs-standarderror-whats-the-difference/
 class BasicAuthError < StandardError
   DEFAULT_MESSAGE = 'value given for auth header is malformed'
+
   def message
     DEFAULT_MESSAGE
   end
