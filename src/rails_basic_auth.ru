@@ -30,7 +30,7 @@ require 'pry'
 #
 
 # Run this file with
-# $ rackup config.ru
+# $ rackup rails_basic_auth.ru
 
 class SingleFile < Rails::Application
   config.session_store :cookie_store, :key => '_session'
