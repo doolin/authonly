@@ -26,22 +26,25 @@ class BasicAuth
     # TODO: Refactor into function
     auth_header = env["HTTP_AUTHORIZATION"]
 
-    u, p = userpass(auth_header)
-    puts "From userpass method, username: #{u}, password: #{p}"
+    username, password = userpass(auth_header)
+    # puts "From userpass method, username: #{u}, password: #{p}"
 
     # TODO: Since the userpass method is working this needs rewritten.
-    userpass_encoded = auth_header.sub(/^Basic\ /, '')
-    userpass = Base64.decode64 userpass_encoded
-    username, password = userpass.split(':')
+    # userpass_encoded = auth_header.sub(/^Basic\ /, '')
+    # userpass = Base64.decode64 userpass_encoded
+    # username, password = userpass.split(':')
 
-    puts "Value of the Authorization field: #{auth_header}"
-    puts "Decoded Authorization: #{userpass}"
-    puts "username: #{username}, password: #{password}"
+    # puts "Value of the Authorization field: #{auth_header}"
+    # puts "Decoded Authorization: #{userpass}"
+    # puts "username: #{username}, password: #{password}"
 
     # TODO: Implement the Basic Auth system, returning 200 for success,
     # 401 for unauthorized.
     # binding.pry
-    [200, {"Content-Type" => "text/html; charset=utf-8"}, ["Hello World\n"]]
+    # [200, {"Content-Type" => "text/plain; charset=utf-8"}, ["Hello #{username}"]]
+    #
+    # TODO: for some reason the body is not being returned.
+    [200, {"Content-Type" => "text/plain"}, ["Hello #{username}"] ]
   end
 end
 

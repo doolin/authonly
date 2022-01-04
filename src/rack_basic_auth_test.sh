@@ -7,4 +7,4 @@ echo $encoded
 # echo $encoded | base64 -d
 #
 # -I displays headers
-curl -I -X GET -H "Authorization: Basic $encoded" http://localhost:9292/
+curl -v -i -I -X GET -w "%{stderr}{\"status\": \"%{http_code}\", \"body\":\"%{stdout}\"}" -H "Authorization: Basic $encoded" http://localhost:9292/
