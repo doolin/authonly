@@ -38,6 +38,12 @@ class SingleFile < Rails::Application
   Rails.logger = Logger.new($stdout)
 end
 
+class IndexPage
+  def self.hello_world
+    "<h1>Hello World!</h1> <p>I'm just a single file Rails application</p>"
+  end
+end
+
 class PagesController < ActionController::Base
   # https://medium.com/weareevermore/how-to-add-http-basic-authentication-to-your-rails-application-e4e4d5b958d9
   # TODO: Explain how the controller returns a 401 when this macro fails.
@@ -47,7 +53,7 @@ class PagesController < ActionController::Base
   # before_action :authenticate
 
   def index
-    render inline: "<h1>Hello World!</h1> <p>I'm just a single file Rails application</p>"
+    render inline: IndexPage.hello_world
   end
 
   private
