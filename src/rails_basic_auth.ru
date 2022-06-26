@@ -27,7 +27,7 @@ require 'pry'
 # TODO: Read through Rails source code to understand how the various
 # controller actions for authentication are implemented.
 # TODO: Implement simple logging.
-#
+# TODO: try invalid login
 
 # Run this file with
 # $ rackup rails_basic_auth.ru
