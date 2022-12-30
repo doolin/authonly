@@ -1,4 +1,6 @@
 
+# Run this file with
+# $ rackup rails_basic_auth.ru
 
 # This is all for later, needs to be updated from the article at
 # https://christoph.luppri.ch/articles/rails/single-file-rails-applications-for-fun-and-bug-reporting/
@@ -17,20 +19,16 @@
 #  gem "factory_girl_rails"
 #end
 
-
 # This comes from
 # https://medium.com/hash32/rack-and-rails-applications-b42922d61146
 require 'rails'
 require "action_controller/railtie"
-require 'pry'
 
 # TODO: Read through Rails source code to understand how the various
 # controller actions for authentication are implemented.
 # TODO: Implement simple logging.
 # TODO: try invalid login
 
-# Run this file with
-# $ rackup rails_basic_auth.ru
 
 class SingleFile < Rails::Application
   config.session_store :cookie_store, :key => '_session'

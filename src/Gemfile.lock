@@ -70,10 +70,12 @@ GEM
     builder (3.2.4)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    daemons (1.4.1)
     date (3.3.3)
     dbm (1.1.0)
     diff-lcs (1.5.0)
     erubi (1.12.0)
+    eventmachine (1.2.7)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -174,6 +176,10 @@ GEM
     rubocop-rspec (2.16.0)
       rubocop (~> 1.33)
     ruby-progressbar (1.11.0)
+    thin (1.8.1)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (>= 1, < 3)
     thor (1.2.1)
     timeout (0.3.1)
     tzinfo (2.0.5)
@@ -196,6 +202,7 @@ DEPENDENCIES
   rubocop
   rubocop-performance
   rubocop-rspec
+  thin
 
 BUNDLED WITH
    2.4.1

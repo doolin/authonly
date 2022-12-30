@@ -8,3 +8,4 @@
 __latexindent_temp.tex
 *.gz
 *.db
+.bundle/
