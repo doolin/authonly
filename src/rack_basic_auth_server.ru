@@ -1,6 +1,5 @@
 require 'rack'
 require 'base64'
-require 'pry-nav'
 require 'rspec/autorun' if ENV['RACK_TEST']
 
 class BasicAuth
