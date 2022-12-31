@@ -29,7 +29,7 @@ def extract_encoded(value)
   value&.sub(regex, '')
 end
 
-RSpec.describe self do
+RSpec.describe self do # rubocop:disable RSpec/DescribeClass
   describe '.extract_encoded' do
     let(:encoded) { 'dXNlcm5hbWUxOnBhc3N3b3Jk' }
 
@@ -68,7 +68,7 @@ RSpec.describe self do
         header = " Basic #{encoded}"
 
         expect { extract_encoded(header) }
-        .to raise_error(BasicAuthError, BasicAuthError::DEFAULT_MESSAGE)
+          .to raise_error(BasicAuthError, BasicAuthError::DEFAULT_MESSAGE)
       end
     end
   end

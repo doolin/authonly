@@ -9,3 +9,14 @@ AllCops:
 
 Metrics/MethodLength:
   Max: 15
+
+RSpec/ContextWording:
+  Prefixes:
+    - when
+    - with
+    - without
+    - if
+    - unless
+    - for
+    - succeeds
+    - fails
