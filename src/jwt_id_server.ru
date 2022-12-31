@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rack'
 require 'pry-nav'
 require 'thin'
@@ -73,9 +75,9 @@ class JwtServer
   SECRET = ENV['JWT_TEST_SECRET'] || 'secretkey'
 
   def store(params)
-    db = DBM.open('rfcs', 0666, DBM::WRCREAT)
-    username = params["username"]
-    password = params["password"]
+    db = DBM.open('rfcs', 0o666, DBM::WRCREAT)
+    username = params['username']
+    password = params['password']
 
     puts "Received username: #{username}, password: #{password}"
 
@@ -103,14 +105,14 @@ class JwtServer
     # binding.pry
 
     payload = {
-      "loggedInAs": "admin",
-      "iat": 1422779638
+      loggedInAs: 'admin',
+      iat: 1_422_779_638
     }
     jwt_token = JWT.encode(payload, JwtServer::SECRET, 'HS256', { typ: 'JWT' })
 
     headers = {
-      "Content-Type" => "text/html; charset=utf-8",
-      "Authorization" => "Bearer #{jwt_token}"
+      'Content-Type' => 'text/html; charset=utf-8',
+      'Authorization' => "Bearer #{jwt_token}"
     }
 
     # [200, {"Content-Type" => "text/html; charset=utf-8"}, ["Hello World"]]
@@ -118,7 +120,6 @@ class JwtServer
     [200, headers, ["#{jwt_token}\n"]]
   end
 end
-
 
 run JwtServer.new
 

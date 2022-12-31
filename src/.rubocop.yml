@@ -6,3 +6,6 @@ require:
 AllCops:
   NewCops: enable
   SuggestExtensions: true
+
+Metrics/MethodLength:
+  Max: 15
