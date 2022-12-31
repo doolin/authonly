@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'dbm'
+gem 'debug'
 gem 'jwt'
 gem 'nokogiri'
 gem 'rails'
