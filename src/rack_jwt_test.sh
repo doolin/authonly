@@ -24,6 +24,12 @@ explicit_json()
 
 username=abc
 password=123
+# TODO: make a check for jo here.
+if ! [ -x "$(command -v jo)" ]; then
+  echo 'Error: json handling command "jo" is not installed, install with brew.' >&2
+  exit 1
+fi
+
 # jo is a json handling utility for bash. Here is some discussion
 # about jo and similar utilities:
 # https://medium.com/swlh/different-ways-to-handle-json-in-a-linux-shell-81183bc2c9bc
