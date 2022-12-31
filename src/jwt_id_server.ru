@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'rack'
-require 'pry-nav'
 require 'thin'
 require 'jwt'
 require 'dbm'
