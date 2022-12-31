@@ -1,19 +1,19 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-require 'pry-nav'
 require 'jwt'
 require 'base64'
 require 'json'
 require 'rspec/autorun'
 
-# Example taken from jwt-ruby gem documentation
+# Example taken from jwt Ruby gem documentation
 class JwtAuth
   SECRET = ENV['JWT_TEST_SECRET'] || 'secretkey'
 
   def payload
     {
-      "loggedInAs" => "admin",
-      "iat" => 1422779638
+      'loggedInAs' => 'admin',
+      'iat' => 1_422_779_638
     }.to_json
   end
 end
@@ -21,7 +21,7 @@ end
 RSpec.describe JwtAuth do
   describe '#payload' do
     it 'returns payload in json format' do
-      expected = "{\"loggedInAs\":\"admin\",\"iat\":1422779638}"
+      expected = '{"loggedInAs":"admin","iat":1422779638}'
       expect(described_class.new.payload).to eq expected
     end
   end
@@ -40,8 +40,8 @@ RSpec.describe JwtAuth do
 
     it 'matches handrolled values' do
       payload = {
-        "loggedInAs": "admin",
-        "iat": 1422779638
+        loggedInAs: 'admin',
+        iat: 1_422_779_638
       }
 
       # This doesn't work:

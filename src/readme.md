@@ -27,3 +27,5 @@ It can be committed to repo, no worries.
 - Bash client: `./rails_basic_auth_client.sh`
 
 
+## Testing
+
