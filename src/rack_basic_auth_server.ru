@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 require 'rack'
 require 'base64'
 require 'rspec/autorun' if ENV['RACK_TEST']
 
+# Show a dumb way to implement basic auth in a rack application
 class BasicAuth
   def userpass(auth_header)
     # Rails does it like this for Basic Auth:
@@ -16,16 +19,17 @@ class BasicAuth
     # Doing it my way here.
     userpass_encoded = auth_header.sub(/^Basic\s+/, '')
     userpass = Base64.decode64 userpass_encoded
-    username, password = userpass.split(':')
+    userpass.split(':')
   end
 
   # TODO: clean this whole thing up, take out the `puts`
   # add in logging.
   def call(env)
     # TODO: Refactor into function
-    auth_header = env["HTTP_AUTHORIZATION"]
+    auth_header = env['HTTP_AUTHORIZATION']
 
-    username, password = userpass(auth_header)
+    # Implement actual checking per TODO below
+    username, _password = userpass(auth_header)
     # puts "From userpass method, username: #{u}, password: #{p}"
 
     # TODO: Since the userpass method is working this needs rewritten.
@@ -43,7 +47,7 @@ class BasicAuth
     # [200, {"Content-Type" => "text/plain; charset=utf-8"}, ["Hello #{username}"]]
     #
     # TODO: for some reason the body is not being returned.
-    [200, {"Content-Type" => "text/plain"}, ["Hello #{username} "] ]
+    [200, { 'Content-Type' => 'text/plain' }, ["Hello #{username} "]]
   end
 end
 
