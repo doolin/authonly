@@ -11,9 +11,16 @@ Steps:
 1. `[bundle exec] rackup jwt_id_server.ru` to start the jwt id server. The bundle exec is for people using `rbenv` instead of `rvm`.
 1. `./rack_jwt_test.sh` will post to the server.
 
-## Basic auth rails demo
+## Basic auth
 
-- Rails server: `rackup rack_basic_auth_server.ru`
+### Rack demo
+
+- Rack server: `rackup rack_basic_auth_server.ru`
 - Bash client: `./rack_basic_auth_client.sh`
+
+### Rails demo
+
+- Rack server: `rackup rails_basic_auth_server.ru`
+- Bash client: `./rails_basic_auth_client.sh`
 
 

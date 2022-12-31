@@ -43,7 +43,7 @@ class BasicAuth
     # [200, {"Content-Type" => "text/plain; charset=utf-8"}, ["Hello #{username}"]]
     #
     # TODO: for some reason the body is not being returned.
-    [200, {"Content-Type" => "text/plain"}, ["Hello #{username}"] ]
+    [200, {"Content-Type" => "text/plain"}, ["Hello #{username} "] ]
   end
 end
 
