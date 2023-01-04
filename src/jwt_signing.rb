@@ -6,15 +6,15 @@
 # Goal: emit a private key-signed JWT
 
 # TODO: what needs to happen
-# - Create a public/private key pair
-# - Save the key pair to a local file
-# - Read the key files in as necessary for signing.
-# - Write some sort of spec which can verify the signing works,
-
+# - Try signing the something with the public key such that
+#   the private key decodes it.
 require 'jwt'
 require 'rspec/autorun'
 
 # Helper class for creating RSA keys
+# - Create a public/private key pair
+# - Save the key pair to a local file
+# - Read the key files in as necessary for signing.
 class RsaKey
   class << self
     def create_and_write_rsa_pem_keys
@@ -53,8 +53,6 @@ end
 class JwtDemoToken
   ALGORITHM = 'RS256'
 
-  # def initialize; end
-
   def create
     JWT.encode(payload, secret_key, ALGORITHM)
   end
@@ -69,17 +67,7 @@ class JwtDemoToken
 
   def self.public_key
     OpenSSL::PKey::RSA.new(ENV.fetch('JWT_DEMO_PUBLIC_KEY', nil))
-
-    # TODO: create a test case for this.
-    # OpenSSL::PKey::RSA.new('foobar', nil)
   end
-
-  # def header
-  #   {
-  #     'alg' => 'RS256',
-  #     'typ' => 'JWT'
-  #   }.to_json
-  # end
 
   def payload
     {
