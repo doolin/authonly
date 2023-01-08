@@ -88,6 +88,18 @@ class Payload
     #       I did a binary dump (for example, using od), what would I expect
     #       to see?
     bytes = []
+
+    # For the following, https://ruby-doc.org/core-3.0.0/Array.html#method-i-pack:
+    # Some examples: https://idiosyncratic-ruby.com/4-what-the-pack.html
+    # 3.2.0 :036 > [16].pack("C").ord
+    #  => 16
+    #  3.2.0 :037 > [16].pack("C")
+    #   => "\x10"
+    #  3.2.0 :038 > [32].pack("C")
+    #   => " "
+    #  3.2.0 :039 > [32].pack("C").ord
+    #   => 32
+    #  3.2.0 :040 >
     bytes << key.size.to_s
     bytes << iv.size.to_s
     # Using += is probably not performant.
@@ -132,6 +144,7 @@ end
 # So we set a constant with the value of the first DATA.read.
 CSV_DATA = DATA.read
 
+# rubocop:disable Metrics/BlockLength
 RSpec.describe Payload do
   let(:filename) { './foo.csv' }
 
@@ -173,6 +186,7 @@ RSpec.describe Payload do
     end
 
     example 'compare compressed files' do
+      # https://docs.ruby-lang.org/en/master/Zlib.html
       data = CSV_DATA
       data_compressed = Zlib::Deflate.deflate(data)
 
@@ -187,7 +201,6 @@ RSpec.describe Payload do
       key = cipher.random_key
       iv = cipher.random_iv
       encrypted_csv = cipher.update(compressed) + cipher.final
-
 
       decipher = OpenSSL::Cipher.new('aes-256-cbc')
       decipher.decrypt
@@ -234,6 +247,7 @@ RSpec.describe Payload do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
 
 __END__
 foo,bar
