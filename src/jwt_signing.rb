@@ -32,6 +32,8 @@ class JwtDemoToken
     OpenSSL::PKey::RSA.new(ENV.fetch('JWT_DEMO_PUBLIC_KEY', nil))
   end
 
+  # TODO: add a real payload here with several
+  # predefined claims and maybe a couple of custom claims.
   def payload
     {
       'loggedInAs' => 'admin',
