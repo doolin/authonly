@@ -15,6 +15,7 @@ require './rsa_key'
 # Demo token
 class JwtDemoToken
   ALGORITHM = 'RS256'
+  TTL = 300
 
   def create
     JWT.encode(payload, secret_key, ALGORITHM)
@@ -32,13 +33,18 @@ class JwtDemoToken
     OpenSSL::PKey::RSA.new(ENV.fetch('JWT_DEMO_PUBLIC_KEY', nil))
   end
 
+  def time
+    @time ||= Time.now.to_i
+  end
+
   # TODO: add a real payload here with several
   # predefined claims and maybe a couple of custom claims.
   def payload
     {
-      'loggedInAs' => 'admin',
-      'iat' => 1_422_779_638
-    }.to_json
+      nbf: time,
+      iat: time + TTL,
+      loggedInAs: 'admin',
+    }
   end
 end
 
@@ -60,13 +66,8 @@ RSpec.describe self do # rubocop:disable Metrics/BlockLength
     example 'parses payload and header' do
       token = JwtDemoToken.new.create
       payload, header = *JwtDemoToken.decode(token)
-      payload = JSON.parse(payload)
 
-      expected_payload = {
-        'loggedInAs' => 'admin',
-        'iat' => 1_422_779_638
-      }
-      expect(payload).to eq expected_payload
+      expect(payload['loggedInAs']).to eq 'admin'
 
       expected_header = { 'alg' => 'RS256' }
       expect(header).to eq expected_header
