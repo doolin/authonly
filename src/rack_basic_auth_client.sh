@@ -10,5 +10,5 @@ echo $encoded
 # curl -v -i -I -X GET -w "%{stderr}{\"status\": \"%{http_code}\", \"body\":\"%{stdout}\"}"\
 #      -H "Authorization: Basic $encoded" http://localhost:9292/
 
-curl -v -i -X GET -w "%{stderr}{\"status\": \"%{http_code}\", \"body\":\"%{stdout}\"}"\
-     -H "Authorization: Basic $encoded" http://localhost:9292/
+curl -v -i GET -w "%{stderr}{\"status\": \"%{http_code}\", \"body\":\"%{stdout}\"}" \
+     -H "Authorization: Basic $encoded" http://localhost:9000/

@@ -30,7 +30,8 @@ class BasicAuth
 
     # Implement actual checking per TODO below
     username, _password = userpass(auth_header)
-    # puts "From userpass method, username: #{u}, password: #{p}"
+    binding.irb
+    puts "From userpass method, username: #{u}, password: #{p}"
 
     # TODO: Since the userpass method is working this needs rewritten.
     # userpass_encoded = auth_header.sub(/^Basic\ /, '')
