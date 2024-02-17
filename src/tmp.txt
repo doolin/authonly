@@ -1,0 +1,4469 @@
+Authorized
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="NONE,NOARCHIVE" />
+  <title>NoMethodError at &#x2F;</title>
+  <style type="text/css">
+    html * { padding:0; margin:0; }
+    body * { padding:10px 20px; }
+    body * * { padding:0; }
+    body { font:small sans-serif; }
+    body>div { border-bottom:1px solid #ddd; }
+    h1 { font-weight:normal; }
+    h2 { margin-bottom:.8em; }
+    h2 span { font-size:80%; color:#666; font-weight:normal; }
+    h3 { margin:1em 0 .5em 0; }
+    h4 { margin:0 0 .5em 0; font-weight: normal; }
+    table {
+        border:1px solid #ccc; border-collapse: collapse; background:white; }
+    tbody td, tbody th { vertical-align:top; padding:2px 3px; }
+    thead th {
+        padding:1px 6px 1px 3px; background:#fefefe; text-align:left;
+        font-weight:normal; font-size:11px; border:1px solid #ddd; }
+    tbody th { text-align:right; color:#666; padding-right:.5em; }
+    table.vars { margin:5px 0 2px 40px; }
+    table.vars td, table.req td { font-family:monospace; }
+    table td.code { width:100%;}
+    table td.code div { overflow:hidden; }
+    table.source th { color:#666; }
+    table.source td {
+        font-family:monospace; white-space:pre; border-bottom:1px solid #eee; }
+    ul.traceback { list-style-type:none; }
+    ul.traceback li.frame { margin-bottom:1em; }
+    div.context { margin: 10px 0; }
+    div.context ol {
+        padding-left:30px; margin:0 10px; list-style-position: inside; }
+    div.context ol li {
+        font-family:monospace; white-space:pre; color:#666; cursor:pointer; }
+    div.context ol.context-line li { color:black; background-color:#ccc; }
+    div.context ol.context-line li span { float: right; }
+    div.commands { margin-left: 40px; }
+    div.commands a { color:black; text-decoration:none; }
+    #summary { background: #ffc; }
+    #summary h2 { font-family: monospace; font-weight: normal; color: #666; white-space: pre-wrap; }
+    #summary ul#quicklinks { list-style-type: none; margin-bottom: 2em; }
+    #summary ul#quicklinks li { float: left; padding: 0 1em; }
+    #summary ul#quicklinks>li+li { border-left: 1px #666 solid; }
+    #explanation { background:#eee; }
+    #template, #template-not-exist { background:#f6f6f6; }
+    #template-not-exist ul { margin: 0 0 0 20px; }
+    #traceback { background:#eee; }
+    #requestinfo { background:#f6f6f6; padding-left:120px; }
+    #summary table { border:none; background:transparent; }
+    #requestinfo h2, #requestinfo h3 { position:relative; margin-left:-100px; }
+    #requestinfo h3 { margin-bottom:-1em; }
+    .error { background: #ffc; }
+    .specific { color:#cc3300; font-weight:bold; }
+  </style>
+  <script type="text/javascript">
+  //<!--
+    function getElementsByClassName(oElm, strTagName, strClassName){
+        // Written by Jonathan Snook, http://www.snook.ca/jon;
+        // Add-ons by Robert Nyman, http://www.robertnyman.com
+        var arrElements = (strTagName == "*" && document.all)? document.all :
+        oElm.getElementsByTagName(strTagName);
+        var arrReturnElements = new Array();
+        strClassName = strClassName.replace(/\-/g, "\\-");
+        var oRegExp = new RegExp("(^|\\s)" + strClassName + "(\\s|$$)");
+        var oElement;
+        for(var i=0; i<arrElements.length; i++){
+            oElement = arrElements[i];
+            if(oRegExp.test(oElement.className)){
+                arrReturnElements.push(oElement);
+            }
+        }
+        return (arrReturnElements)
+    }
+    function hideAll(elems) {
+      for (var e = 0; e < elems.length; e++) {
+        elems[e].style.display = 'none';
+      }
+    }
+    window.onload = function() {
+      hideAll(getElementsByClassName(document, 'table', 'vars'));
+      hideAll(getElementsByClassName(document, 'ol', 'pre-context'));
+      hideAll(getElementsByClassName(document, 'ol', 'post-context'));
+    }
+    function toggle() {
+      for (var i = 0; i < arguments.length; i++) {
+        var e = document.getElementById(arguments[i]);
+        if (e) {
+          e.style.display = e.style.display == 'none' ? 'block' : 'none';
+        }
+      }
+      return false;
+    }
+    function varToggle(link, id) {
+      toggle('v' + id);
+      var s = link.getElementsByTagName('span')[0];
+      var uarr = String.fromCharCode(0x25b6);
+      var darr = String.fromCharCode(0x25bc);
+      s.innerHTML = s.innerHTML == uarr ? darr : uarr;
+      return false;
+    }
+    //-->
+  </script>
+</head>
+<body>
+
+<div id="summary">
+  <h1>NoMethodError at &#x2F;</h1>
+
+  <h2>undefined method `info&#x27; for nil (NoMethodError)
+
+          logger.info { started_request_message(request) }
+                ^^^^^</h2>
+
+  <table><tr>
+    <th>Ruby</th>
+    <td>
+
+      <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;rack&#x2F;logger.rb</code>: in <code>call_app</code>, line 36
+
+    </td>
+  </tr><tr>
+    <th>Web</th>
+    <td><code>GET localhost&#x2F;</code></td>
+  </tr></table>
+
+  <h3>Jump to:</h3>
+  <ul id="quicklinks">
+    <li><a href="#get-info">GET</a></li>
+    <li><a href="#post-info">POST</a></li>
+    <li><a href="#cookie-info">Cookies</a></li>
+    <li><a href="#env-info">ENV</a></li>
+  </ul>
+</div>
+
+<div id="traceback">
+  <h2>Traceback <span>(innermost first)</span></h2>
+  <ul class="traceback">
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;rack&#x2F;logger.rb</code>: in <code>call_app</code>
+
+          
+          <div class="context" id="c7180">
+              
+              <ol start="29" class="pre-context" id="pre7180">
+                
+                <li onclick="toggle('pre7180', 'post7180')">
+</li>
+                
+                <li onclick="toggle('pre7180', 'post7180')">      private
+</li>
+                
+                <li onclick="toggle('pre7180', 'post7180')">        def call_app(request, env) # :doc:
+</li>
+                
+                <li onclick="toggle('pre7180', 'post7180')">          instrumenter = ActiveSupport::Notifications.instrumenter
+</li>
+                
+                <li onclick="toggle('pre7180', 'post7180')">          handle = instrumenter.build_handle(&quot;request.action_dispatch&quot;, { request: request })
+</li>
+                
+                <li onclick="toggle('pre7180', 'post7180')">          handle.start
+</li>
+                
+                <li onclick="toggle('pre7180', 'post7180')">
+</li>
+                
+              </ol>
+              
+
+            <ol start="36" class="context-line">
+              <li onclick="toggle('pre7180', 'post7180')">          logger.info { started_request_message(request) }<span>...</span></li></ol>
+
+              
+              <ol start='37' class="post-context" id="post7180">
+                
+                <li onclick="toggle('pre7180', 'post7180')">          status, headers, body = response = @app.call(env)
+</li>
+                
+                <li onclick="toggle('pre7180', 'post7180')">          body = ::Rack::BodyProxy.new(body, &amp;handle.method(:finish))
+</li>
+                
+                <li onclick="toggle('pre7180', 'post7180')">
+</li>
+                
+                <li onclick="toggle('pre7180', 'post7180')">          if response.frozen?
+</li>
+                
+                <li onclick="toggle('pre7180', 'post7180')">            [status, headers, body]
+</li>
+                
+                <li onclick="toggle('pre7180', 'post7180')">          else
+</li>
+                
+                <li onclick="toggle('pre7180', 'post7180')">            response[2] = body
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;rack&#x2F;logger.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7200">
+              
+              <ol start="19" class="pre-context" id="pre7200">
+                
+                <li onclick="toggle('pre7200', 'post7200')">
+</li>
+                
+                <li onclick="toggle('pre7200', 'post7200')">      def call(env)
+</li>
+                
+                <li onclick="toggle('pre7200', 'post7200')">        request = ActionDispatch::Request.new(env)
+</li>
+                
+                <li onclick="toggle('pre7200', 'post7200')">
+</li>
+                
+                <li onclick="toggle('pre7200', 'post7200')">        if logger.respond_to?(:tagged)
+</li>
+                
+                <li onclick="toggle('pre7200', 'post7200')">          logger.tagged(*compute_tags(request)) { call_app(request, env) }
+</li>
+                
+                <li onclick="toggle('pre7200', 'post7200')">        else
+</li>
+                
+              </ol>
+              
+
+            <ol start="26" class="context-line">
+              <li onclick="toggle('pre7200', 'post7200')">          call_app(request, env)<span>...</span></li></ol>
+
+              
+              <ol start='27' class="post-context" id="post7200">
+                
+                <li onclick="toggle('pre7200', 'post7200')">        end
+</li>
+                
+                <li onclick="toggle('pre7200', 'post7200')">      end
+</li>
+                
+                <li onclick="toggle('pre7200', 'post7200')">
+</li>
+                
+                <li onclick="toggle('pre7200', 'post7200')">      private
+</li>
+                
+                <li onclick="toggle('pre7200', 'post7200')">        def call_app(request, env) # :doc:
+</li>
+                
+                <li onclick="toggle('pre7200', 'post7200')">          instrumenter = ActiveSupport::Notifications.instrumenter
+</li>
+                
+                <li onclick="toggle('pre7200', 'post7200')">          handle = instrumenter.build_handle(&quot;request.action_dispatch&quot;, { request: request })
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;actionpack-7.1.3&#x2F;lib&#x2F;action_dispatch&#x2F;middleware&#x2F;remote_ip.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7220">
+              
+              <ol start="85" class="pre-context" id="pre7220">
+                
+                <li onclick="toggle('pre7220', 'post7220')">    # Since the IP address may not be needed, we store the object here
+</li>
+                
+                <li onclick="toggle('pre7220', 'post7220')">    # without calculating the IP to keep from slowing down the majority of
+</li>
+                
+                <li onclick="toggle('pre7220', 'post7220')">    # requests. For those requests that do need to know the IP, the
+</li>
+                
+                <li onclick="toggle('pre7220', 'post7220')">    # GetIp#calculate_ip method will calculate the memoized client IP address.
+</li>
+                
+                <li onclick="toggle('pre7220', 'post7220')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre7220', 'post7220')">      req = ActionDispatch::Request.new env
+</li>
+                
+                <li onclick="toggle('pre7220', 'post7220')">      req.remote_ip = GetIp.new(req, check_ip, proxies)
+</li>
+                
+              </ol>
+              
+
+            <ol start="92" class="context-line">
+              <li onclick="toggle('pre7220', 'post7220')">      @app.call(req.env)<span>...</span></li></ol>
+
+              
+              <ol start='93' class="post-context" id="post7220">
+                
+                <li onclick="toggle('pre7220', 'post7220')">    end
+</li>
+                
+                <li onclick="toggle('pre7220', 'post7220')">
+</li>
+                
+                <li onclick="toggle('pre7220', 'post7220')">    # The GetIp class exists as a way to defer processing of the request data
+</li>
+                
+                <li onclick="toggle('pre7220', 'post7220')">    # into an actual IP address. If the ActionDispatch::Request#remote_ip method
+</li>
+                
+                <li onclick="toggle('pre7220', 'post7220')">    # is called, this class will calculate the value and then memoize it.
+</li>
+                
+                <li onclick="toggle('pre7220', 'post7220')">    class GetIp
+</li>
+                
+                <li onclick="toggle('pre7220', 'post7220')">      def initialize(req, check_ip, proxies)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;actionpack-7.1.3&#x2F;lib&#x2F;action_dispatch&#x2F;middleware&#x2F;request_id.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7240">
+              
+              <ol start="21" class="pre-context" id="pre7240">
+                
+                <li onclick="toggle('pre7240', 'post7240')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre7240', 'post7240')">      @header = header
+</li>
+                
+                <li onclick="toggle('pre7240', 'post7240')">    end
+</li>
+                
+                <li onclick="toggle('pre7240', 'post7240')">
+</li>
+                
+                <li onclick="toggle('pre7240', 'post7240')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre7240', 'post7240')">      req = ActionDispatch::Request.new env
+</li>
+                
+                <li onclick="toggle('pre7240', 'post7240')">      req.request_id = make_request_id(req.headers[@header])
+</li>
+                
+              </ol>
+              
+
+            <ol start="28" class="context-line">
+              <li onclick="toggle('pre7240', 'post7240')">      @app.call(env).tap { |_status, headers, _body| headers[@header] = req.request_id }<span>...</span></li></ol>
+
+              
+              <ol start='29' class="post-context" id="post7240">
+                
+                <li onclick="toggle('pre7240', 'post7240')">    end
+</li>
+                
+                <li onclick="toggle('pre7240', 'post7240')">
+</li>
+                
+                <li onclick="toggle('pre7240', 'post7240')">    private
+</li>
+                
+                <li onclick="toggle('pre7240', 'post7240')">      def make_request_id(request_id)
+</li>
+                
+                <li onclick="toggle('pre7240', 'post7240')">        if request_id.presence
+</li>
+                
+                <li onclick="toggle('pre7240', 'post7240')">          request_id.gsub(&#x2F;[^\w\-@]&#x2F;, &quot;&quot;).first(255)
+</li>
+                
+                <li onclick="toggle('pre7240', 'post7240')">        else
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;method_override.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7260">
+              
+              <ol start="21" class="pre-context" id="pre7260">
+                
+                <li onclick="toggle('pre7260', 'post7260')">        method = method_override(env)
+</li>
+                
+                <li onclick="toggle('pre7260', 'post7260')">        if HTTP_METHODS.include?(method)
+</li>
+                
+                <li onclick="toggle('pre7260', 'post7260')">          env[RACK_METHODOVERRIDE_ORIGINAL_METHOD] = env[REQUEST_METHOD]
+</li>
+                
+                <li onclick="toggle('pre7260', 'post7260')">          env[REQUEST_METHOD] = method
+</li>
+                
+                <li onclick="toggle('pre7260', 'post7260')">        end
+</li>
+                
+                <li onclick="toggle('pre7260', 'post7260')">      end
+</li>
+                
+                <li onclick="toggle('pre7260', 'post7260')">
+</li>
+                
+              </ol>
+              
+
+            <ol start="28" class="context-line">
+              <li onclick="toggle('pre7260', 'post7260')">      @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='29' class="post-context" id="post7260">
+                
+                <li onclick="toggle('pre7260', 'post7260')">    end
+</li>
+                
+                <li onclick="toggle('pre7260', 'post7260')">
+</li>
+                
+                <li onclick="toggle('pre7260', 'post7260')">    def method_override(env)
+</li>
+                
+                <li onclick="toggle('pre7260', 'post7260')">      req = Request.new(env)
+</li>
+                
+                <li onclick="toggle('pre7260', 'post7260')">      method = method_override_param(req) ||
+</li>
+                
+                <li onclick="toggle('pre7260', 'post7260')">        env[HTTP_METHOD_OVERRIDE_HEADER]
+</li>
+                
+                <li onclick="toggle('pre7260', 'post7260')">      begin
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;runtime.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7280">
+              
+              <ol start="17" class="pre-context" id="pre7280">
+                
+                <li onclick="toggle('pre7280', 'post7280')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre7280', 'post7280')">      @header_name = HEADER_NAME
+</li>
+                
+                <li onclick="toggle('pre7280', 'post7280')">      @header_name += &quot;-#{name.to_s.downcase}&quot; if name
+</li>
+                
+                <li onclick="toggle('pre7280', 'post7280')">    end
+</li>
+                
+                <li onclick="toggle('pre7280', 'post7280')">
+</li>
+                
+                <li onclick="toggle('pre7280', 'post7280')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre7280', 'post7280')">      start_time = Utils.clock_time
+</li>
+                
+              </ol>
+              
+
+            <ol start="24" class="context-line">
+              <li onclick="toggle('pre7280', 'post7280')">      _, headers, _ = response = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='25' class="post-context" id="post7280">
+                
+                <li onclick="toggle('pre7280', 'post7280')">
+</li>
+                
+                <li onclick="toggle('pre7280', 'post7280')">      request_time = Utils.clock_time - start_time
+</li>
+                
+                <li onclick="toggle('pre7280', 'post7280')">
+</li>
+                
+                <li onclick="toggle('pre7280', 'post7280')">      unless headers.key?(@header_name)
+</li>
+                
+                <li onclick="toggle('pre7280', 'post7280')">        headers[@header_name] = FORMAT_STRING % request_time
+</li>
+                
+                <li onclick="toggle('pre7280', 'post7280')">      end
+</li>
+                
+                <li onclick="toggle('pre7280', 'post7280')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;actionpack-7.1.3&#x2F;lib&#x2F;action_dispatch&#x2F;middleware&#x2F;executor.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7300">
+              
+              <ol start="7" class="pre-context" id="pre7300">
+                
+                <li onclick="toggle('pre7300', 'post7300')">    def initialize(app, executor)
+</li>
+                
+                <li onclick="toggle('pre7300', 'post7300')">      @app, @executor = app, executor
+</li>
+                
+                <li onclick="toggle('pre7300', 'post7300')">    end
+</li>
+                
+                <li onclick="toggle('pre7300', 'post7300')">
+</li>
+                
+                <li onclick="toggle('pre7300', 'post7300')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre7300', 'post7300')">      state = @executor.run!(reset: true)
+</li>
+                
+                <li onclick="toggle('pre7300', 'post7300')">      begin
+</li>
+                
+              </ol>
+              
+
+            <ol start="14" class="context-line">
+              <li onclick="toggle('pre7300', 'post7300')">        response = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='15' class="post-context" id="post7300">
+                
+                <li onclick="toggle('pre7300', 'post7300')">        returned = response &lt;&lt; ::Rack::BodyProxy.new(response.pop) { state.complete! }
+</li>
+                
+                <li onclick="toggle('pre7300', 'post7300')">      rescue =&gt; error
+</li>
+                
+                <li onclick="toggle('pre7300', 'post7300')">        @executor.error_reporter.report(error, handled: false, source: &quot;application.action_dispatch&quot;)
+</li>
+                
+                <li onclick="toggle('pre7300', 'post7300')">        raise
+</li>
+                
+                <li onclick="toggle('pre7300', 'post7300')">      ensure
+</li>
+                
+                <li onclick="toggle('pre7300', 'post7300')">        state.complete! unless returned
+</li>
+                
+                <li onclick="toggle('pre7300', 'post7300')">      end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;actionpack-7.1.3&#x2F;lib&#x2F;action_dispatch&#x2F;middleware&#x2F;static.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7320">
+              
+              <ol start="18" class="pre-context" id="pre7320">
+                
+                <li onclick="toggle('pre7320', 'post7320')">  class Static
+</li>
+                
+                <li onclick="toggle('pre7320', 'post7320')">    def initialize(app, path, index: &quot;index&quot;, headers: {})
+</li>
+                
+                <li onclick="toggle('pre7320', 'post7320')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre7320', 'post7320')">      @file_handler = FileHandler.new(path, index: index, headers: headers)
+</li>
+                
+                <li onclick="toggle('pre7320', 'post7320')">    end
+</li>
+                
+                <li onclick="toggle('pre7320', 'post7320')">
+</li>
+                
+                <li onclick="toggle('pre7320', 'post7320')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="25" class="context-line">
+              <li onclick="toggle('pre7320', 'post7320')">      @file_handler.attempt(env) || @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='26' class="post-context" id="post7320">
+                
+                <li onclick="toggle('pre7320', 'post7320')">    end
+</li>
+                
+                <li onclick="toggle('pre7320', 'post7320')">  end
+</li>
+                
+                <li onclick="toggle('pre7320', 'post7320')">
+</li>
+                
+                <li onclick="toggle('pre7320', 'post7320')">  # = Action Dispatch \FileHandler
+</li>
+                
+                <li onclick="toggle('pre7320', 'post7320')">  #
+</li>
+                
+                <li onclick="toggle('pre7320', 'post7320')">  # This endpoint serves static files from disk using +Rack::Files+.
+</li>
+                
+                <li onclick="toggle('pre7320', 'post7320')">  #
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;sendfile.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7340">
+              
+              <ol start="107" class="pre-context" id="pre7340">
+                
+                <li onclick="toggle('pre7340', 'post7340')">      @variation = variation
+</li>
+                
+                <li onclick="toggle('pre7340', 'post7340')">      @mappings = mappings.map do |internal, external|
+</li>
+                
+                <li onclick="toggle('pre7340', 'post7340')">        [&#x2F;^#{internal}&#x2F;i, external]
+</li>
+                
+                <li onclick="toggle('pre7340', 'post7340')">      end
+</li>
+                
+                <li onclick="toggle('pre7340', 'post7340')">    end
+</li>
+                
+                <li onclick="toggle('pre7340', 'post7340')">
+</li>
+                
+                <li onclick="toggle('pre7340', 'post7340')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="114" class="context-line">
+              <li onclick="toggle('pre7340', 'post7340')">      _, headers, body = response = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='115' class="post-context" id="post7340">
+                
+                <li onclick="toggle('pre7340', 'post7340')">
+</li>
+                
+                <li onclick="toggle('pre7340', 'post7340')">      if body.respond_to?(:to_path)
+</li>
+                
+                <li onclick="toggle('pre7340', 'post7340')">        case type = variation(env)
+</li>
+                
+                <li onclick="toggle('pre7340', 'post7340')">        when &#x2F;x-accel-redirect&#x2F;i
+</li>
+                
+                <li onclick="toggle('pre7340', 'post7340')">          path = ::File.expand_path(body.to_path)
+</li>
+                
+                <li onclick="toggle('pre7340', 'post7340')">          if url = map_accel_path(env, path)
+</li>
+                
+                <li onclick="toggle('pre7340', 'post7340')">            headers[CONTENT_LENGTH] = &#x27;0&#x27;
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;actionpack-7.1.3&#x2F;lib&#x2F;action_dispatch&#x2F;middleware&#x2F;host_authorization.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7360">
+              
+              <ol start="134" class="pre-context" id="pre7360">
+                
+                <li onclick="toggle('pre7360', 'post7360')">      return @app.call(env) if @permissions.empty?
+</li>
+                
+                <li onclick="toggle('pre7360', 'post7360')">
+</li>
+                
+                <li onclick="toggle('pre7360', 'post7360')">      request = Request.new(env)
+</li>
+                
+                <li onclick="toggle('pre7360', 'post7360')">      hosts = blocked_hosts(request)
+</li>
+                
+                <li onclick="toggle('pre7360', 'post7360')">
+</li>
+                
+                <li onclick="toggle('pre7360', 'post7360')">      if hosts.empty? || excluded?(request)
+</li>
+                
+                <li onclick="toggle('pre7360', 'post7360')">        mark_as_authorized(request)
+</li>
+                
+              </ol>
+              
+
+            <ol start="141" class="context-line">
+              <li onclick="toggle('pre7360', 'post7360')">        @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='142' class="post-context" id="post7360">
+                
+                <li onclick="toggle('pre7360', 'post7360')">      else
+</li>
+                
+                <li onclick="toggle('pre7360', 'post7360')">        env[&quot;action_dispatch.blocked_hosts&quot;] = hosts
+</li>
+                
+                <li onclick="toggle('pre7360', 'post7360')">        @response_app.call(env)
+</li>
+                
+                <li onclick="toggle('pre7360', 'post7360')">      end
+</li>
+                
+                <li onclick="toggle('pre7360', 'post7360')">    end
+</li>
+                
+                <li onclick="toggle('pre7360', 'post7360')">
+</li>
+                
+                <li onclick="toggle('pre7360', 'post7360')">    private
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;engine.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7380">
+              
+              <ol start="529" class="pre-context" id="pre7380">
+                
+                <li onclick="toggle('pre7380', 'post7380')">    def endpoint
+</li>
+                
+                <li onclick="toggle('pre7380', 'post7380')">      self.class.endpoint || routes
+</li>
+                
+                <li onclick="toggle('pre7380', 'post7380')">    end
+</li>
+                
+                <li onclick="toggle('pre7380', 'post7380')">
+</li>
+                
+                <li onclick="toggle('pre7380', 'post7380')">    # Define the Rack API for this engine.
+</li>
+                
+                <li onclick="toggle('pre7380', 'post7380')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre7380', 'post7380')">      req = build_request env
+</li>
+                
+              </ol>
+              
+
+            <ol start="536" class="context-line">
+              <li onclick="toggle('pre7380', 'post7380')">      app.call req.env<span>...</span></li></ol>
+
+              
+              <ol start='537' class="post-context" id="post7380">
+                
+                <li onclick="toggle('pre7380', 'post7380')">    end
+</li>
+                
+                <li onclick="toggle('pre7380', 'post7380')">
+</li>
+                
+                <li onclick="toggle('pre7380', 'post7380')">    # Defines additional Rack env configuration that is added on each call.
+</li>
+                
+                <li onclick="toggle('pre7380', 'post7380')">    def env_config
+</li>
+                
+                <li onclick="toggle('pre7380', 'post7380')">      @env_config ||= {}
+</li>
+                
+                <li onclick="toggle('pre7380', 'post7380')">    end
+</li>
+                
+                <li onclick="toggle('pre7380', 'post7380')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;railtie.rb</code>: in <code>public_send</code>
+
+          
+          <div class="context" id="c7400">
+              
+              <ol start="219" class="pre-context" id="pre7400">
+                
+                <li onclick="toggle('pre7400', 'post7400')">          instance.respond_to?(name) || super
+</li>
+                
+                <li onclick="toggle('pre7400', 'post7400')">        end
+</li>
+                
+                <li onclick="toggle('pre7400', 'post7400')">
+</li>
+                
+                <li onclick="toggle('pre7400', 'post7400')">        # If the class method does not have a method, then send the method call
+</li>
+                
+                <li onclick="toggle('pre7400', 'post7400')">        # to the Railtie instance.
+</li>
+                
+                <li onclick="toggle('pre7400', 'post7400')">        def method_missing(name, *args, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre7400', 'post7400')">          if !abstract_railtie? &amp;&amp; instance.respond_to?(name)
+</li>
+                
+              </ol>
+              
+
+            <ol start="226" class="context-line">
+              <li onclick="toggle('pre7400', 'post7400')">            instance.public_send(name, *args, &amp;block)<span>...</span></li></ol>
+
+              
+              <ol start='227' class="post-context" id="post7400">
+                
+                <li onclick="toggle('pre7400', 'post7400')">          else
+</li>
+                
+                <li onclick="toggle('pre7400', 'post7400')">            super
+</li>
+                
+                <li onclick="toggle('pre7400', 'post7400')">          end
+</li>
+                
+                <li onclick="toggle('pre7400', 'post7400')">        end
+</li>
+                
+                <li onclick="toggle('pre7400', 'post7400')">        ruby2_keywords(:method_missing)
+</li>
+                
+                <li onclick="toggle('pre7400', 'post7400')">
+</li>
+                
+                <li onclick="toggle('pre7400', 'post7400')">        # receives an instance variable identifier, set the variable value if is
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;railtie.rb</code>: in <code>method_missing</code>
+
+          
+          <div class="context" id="c7420">
+              
+              <ol start="219" class="pre-context" id="pre7420">
+                
+                <li onclick="toggle('pre7420', 'post7420')">          instance.respond_to?(name) || super
+</li>
+                
+                <li onclick="toggle('pre7420', 'post7420')">        end
+</li>
+                
+                <li onclick="toggle('pre7420', 'post7420')">
+</li>
+                
+                <li onclick="toggle('pre7420', 'post7420')">        # If the class method does not have a method, then send the method call
+</li>
+                
+                <li onclick="toggle('pre7420', 'post7420')">        # to the Railtie instance.
+</li>
+                
+                <li onclick="toggle('pre7420', 'post7420')">        def method_missing(name, *args, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre7420', 'post7420')">          if !abstract_railtie? &amp;&amp; instance.respond_to?(name)
+</li>
+                
+              </ol>
+              
+
+            <ol start="226" class="context-line">
+              <li onclick="toggle('pre7420', 'post7420')">            instance.public_send(name, *args, &amp;block)<span>...</span></li></ol>
+
+              
+              <ol start='227' class="post-context" id="post7420">
+                
+                <li onclick="toggle('pre7420', 'post7420')">          else
+</li>
+                
+                <li onclick="toggle('pre7420', 'post7420')">            super
+</li>
+                
+                <li onclick="toggle('pre7420', 'post7420')">          end
+</li>
+                
+                <li onclick="toggle('pre7420', 'post7420')">        end
+</li>
+                
+                <li onclick="toggle('pre7420', 'post7420')">        ruby2_keywords(:method_missing)
+</li>
+                
+                <li onclick="toggle('pre7420', 'post7420')">
+</li>
+                
+                <li onclick="toggle('pre7420', 'post7420')">        # receives an instance variable identifier, set the variable value if is
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;tempfile_reaper.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7440">
+              
+              <ol start="13" class="pre-context" id="pre7440">
+                
+                <li onclick="toggle('pre7440', 'post7440')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre7440', 'post7440')">    end
+</li>
+                
+                <li onclick="toggle('pre7440', 'post7440')">
+</li>
+                
+                <li onclick="toggle('pre7440', 'post7440')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre7440', 'post7440')">      env[RACK_TEMPFILES] ||= []
+</li>
+                
+                <li onclick="toggle('pre7440', 'post7440')">
+</li>
+                
+                <li onclick="toggle('pre7440', 'post7440')">      begin
+</li>
+                
+              </ol>
+              
+
+            <ol start="20" class="context-line">
+              <li onclick="toggle('pre7440', 'post7440')">        _, _, body = response = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='21' class="post-context" id="post7440">
+                
+                <li onclick="toggle('pre7440', 'post7440')">      rescue Exception
+</li>
+                
+                <li onclick="toggle('pre7440', 'post7440')">        env[RACK_TEMPFILES]&amp;.each(&amp;:close!)
+</li>
+                
+                <li onclick="toggle('pre7440', 'post7440')">        raise
+</li>
+                
+                <li onclick="toggle('pre7440', 'post7440')">      end
+</li>
+                
+                <li onclick="toggle('pre7440', 'post7440')">
+</li>
+                
+                <li onclick="toggle('pre7440', 'post7440')">      response[2] = BodyProxy.new(body) do
+</li>
+                
+                <li onclick="toggle('pre7440', 'post7440')">        env[RACK_TEMPFILES]&amp;.each(&amp;:close!)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;lint.rb</code>: in <code>response</code>
+
+          
+          <div class="context" id="c7460">
+              
+              <ol start="56" class="pre-context" id="pre7460">
+                
+                <li onclick="toggle('pre7460', 'post7460')">        raise LintError, &quot;No env given&quot; unless @env
+</li>
+                
+                <li onclick="toggle('pre7460', 'post7460')">        check_environment(@env)
+</li>
+                
+                <li onclick="toggle('pre7460', 'post7460')">
+</li>
+                
+                <li onclick="toggle('pre7460', 'post7460')">        @env[RACK_INPUT] = InputWrapper.new(@env[RACK_INPUT])
+</li>
+                
+                <li onclick="toggle('pre7460', 'post7460')">        @env[RACK_ERRORS] = ErrorWrapper.new(@env[RACK_ERRORS])
+</li>
+                
+                <li onclick="toggle('pre7460', 'post7460')">
+</li>
+                
+                <li onclick="toggle('pre7460', 'post7460')">        ## and returns a non-frozen Array of exactly three values:
+</li>
+                
+              </ol>
+              
+
+            <ol start="63" class="context-line">
+              <li onclick="toggle('pre7460', 'post7460')">        @response = @app.call(@env)<span>...</span></li></ol>
+
+              
+              <ol start='64' class="post-context" id="post7460">
+                
+                <li onclick="toggle('pre7460', 'post7460')">        raise LintError, &quot;response is not an Array, but #{@response.class}&quot; unless @response.kind_of? Array
+</li>
+                
+                <li onclick="toggle('pre7460', 'post7460')">        raise LintError, &quot;response is frozen&quot; if @response.frozen?
+</li>
+                
+                <li onclick="toggle('pre7460', 'post7460')">        raise LintError, &quot;response array has #{@response.size} elements instead of 3&quot; unless @response.size == 3
+</li>
+                
+                <li onclick="toggle('pre7460', 'post7460')">
+</li>
+                
+                <li onclick="toggle('pre7460', 'post7460')">        @status, @headers, @body = @response
+</li>
+                
+                <li onclick="toggle('pre7460', 'post7460')">        ## The *status*,
+</li>
+                
+                <li onclick="toggle('pre7460', 'post7460')">        check_status(@status)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;lint.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7480">
+              
+              <ol start="28" class="pre-context" id="pre7480">
+                
+                <li onclick="toggle('pre7480', 'post7480')">    ## after to catch all mistakes.
+</li>
+                
+                <li onclick="toggle('pre7480', 'post7480')">    ##
+</li>
+                
+                <li onclick="toggle('pre7480', 'post7480')">    ## = Rack applications
+</li>
+                
+                <li onclick="toggle('pre7480', 'post7480')">    ##
+</li>
+                
+                <li onclick="toggle('pre7480', 'post7480')">    ## A Rack application is a Ruby object (not a class) that
+</li>
+                
+                <li onclick="toggle('pre7480', 'post7480')">    ## responds to +call+.
+</li>
+                
+                <li onclick="toggle('pre7480', 'post7480')">    def call(env = nil)
+</li>
+                
+              </ol>
+              
+
+            <ol start="35" class="context-line">
+              <li onclick="toggle('pre7480', 'post7480')">      Wrapper.new(@app, env).response<span>...</span></li></ol>
+
+              
+              <ol start='36' class="post-context" id="post7480">
+                
+                <li onclick="toggle('pre7480', 'post7480')">    end
+</li>
+                
+                <li onclick="toggle('pre7480', 'post7480')">
+</li>
+                
+                <li onclick="toggle('pre7480', 'post7480')">    class Wrapper
+</li>
+                
+                <li onclick="toggle('pre7480', 'post7480')">      def initialize(app, env)
+</li>
+                
+                <li onclick="toggle('pre7480', 'post7480')">        @app = app
+</li>
+                
+                <li onclick="toggle('pre7480', 'post7480')">        @env = env
+</li>
+                
+                <li onclick="toggle('pre7480', 'post7480')">        @response = nil
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;show_exceptions.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7500">
+              
+              <ol start="20" class="pre-context" id="pre7500">
+                
+                <li onclick="toggle('pre7500', 'post7500')">    CONTEXT = 7
+</li>
+                
+                <li onclick="toggle('pre7500', 'post7500')">
+</li>
+                
+                <li onclick="toggle('pre7500', 'post7500')">    def initialize(app)
+</li>
+                
+                <li onclick="toggle('pre7500', 'post7500')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre7500', 'post7500')">    end
+</li>
+                
+                <li onclick="toggle('pre7500', 'post7500')">
+</li>
+                
+                <li onclick="toggle('pre7500', 'post7500')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="27" class="context-line">
+              <li onclick="toggle('pre7500', 'post7500')">      @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='28' class="post-context" id="post7500">
+                
+                <li onclick="toggle('pre7500', 'post7500')">    rescue StandardError, LoadError, SyntaxError =&gt; e
+</li>
+                
+                <li onclick="toggle('pre7500', 'post7500')">      exception_string = dump_exception(e)
+</li>
+                
+                <li onclick="toggle('pre7500', 'post7500')">
+</li>
+                
+                <li onclick="toggle('pre7500', 'post7500')">      env[RACK_ERRORS].puts(exception_string)
+</li>
+                
+                <li onclick="toggle('pre7500', 'post7500')">      env[RACK_ERRORS].flush
+</li>
+                
+                <li onclick="toggle('pre7500', 'post7500')">
+</li>
+                
+                <li onclick="toggle('pre7500', 'post7500')">      if accepts_html?(env)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;common_logger.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7520">
+              
+              <ol start="36" class="pre-context" id="pre7520">
+                
+                <li onclick="toggle('pre7520', 'post7520')">    # will not be logged, so if exception handling middleware are used,
+</li>
+                
+                <li onclick="toggle('pre7520', 'post7520')">    # they should be loaded after this middleware.  Additionally, because
+</li>
+                
+                <li onclick="toggle('pre7520', 'post7520')">    # the logging happens after the request body has been fully sent, any
+</li>
+                
+                <li onclick="toggle('pre7520', 'post7520')">    # exceptions raised during the sending of the response body will
+</li>
+                
+                <li onclick="toggle('pre7520', 'post7520')">    # cause the request not to be logged.
+</li>
+                
+                <li onclick="toggle('pre7520', 'post7520')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre7520', 'post7520')">      began_at = Utils.clock_time
+</li>
+                
+              </ol>
+              
+
+            <ol start="43" class="context-line">
+              <li onclick="toggle('pre7520', 'post7520')">      status, headers, body = response = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='44' class="post-context" id="post7520">
+                
+                <li onclick="toggle('pre7520', 'post7520')">
+</li>
+                
+                <li onclick="toggle('pre7520', 'post7520')">      response[2] = BodyProxy.new(body) { log(env, status, headers, began_at) }
+</li>
+                
+                <li onclick="toggle('pre7520', 'post7520')">      response
+</li>
+                
+                <li onclick="toggle('pre7520', 'post7520')">    end
+</li>
+                
+                <li onclick="toggle('pre7520', 'post7520')">
+</li>
+                
+                <li onclick="toggle('pre7520', 'post7520')">    private
+</li>
+                
+                <li onclick="toggle('pre7520', 'post7520')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;content_length.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7540">
+              
+              <ol start="13" class="pre-context" id="pre7540">
+                
+                <li onclick="toggle('pre7540', 'post7540')">    include Rack::Utils
+</li>
+                
+                <li onclick="toggle('pre7540', 'post7540')">
+</li>
+                
+                <li onclick="toggle('pre7540', 'post7540')">    def initialize(app)
+</li>
+                
+                <li onclick="toggle('pre7540', 'post7540')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre7540', 'post7540')">    end
+</li>
+                
+                <li onclick="toggle('pre7540', 'post7540')">
+</li>
+                
+                <li onclick="toggle('pre7540', 'post7540')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="20" class="context-line">
+              <li onclick="toggle('pre7540', 'post7540')">      status, headers, body = response = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='21' class="post-context" id="post7540">
+                
+                <li onclick="toggle('pre7540', 'post7540')">
+</li>
+                
+                <li onclick="toggle('pre7540', 'post7540')">      if !STATUS_WITH_NO_ENTITY_BODY.key?(status.to_i) &amp;&amp;
+</li>
+                
+                <li onclick="toggle('pre7540', 'post7540')">         !headers[CONTENT_LENGTH] &amp;&amp;
+</li>
+                
+                <li onclick="toggle('pre7540', 'post7540')">         !headers[TRANSFER_ENCODING] &amp;&amp;
+</li>
+                
+                <li onclick="toggle('pre7540', 'post7540')">         body.respond_to?(:to_ary)
+</li>
+                
+                <li onclick="toggle('pre7540', 'post7540')">
+</li>
+                
+                <li onclick="toggle('pre7540', 'post7540')">        response[2] = body = body.to_ary
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;puma-6.4.2&#x2F;lib&#x2F;puma&#x2F;configuration.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7560">
+              
+              <ol start="265" class="pre-context" id="pre7560">
+                
+                <li onclick="toggle('pre7560', 'post7560')">      def initialize(config, app)
+</li>
+                
+                <li onclick="toggle('pre7560', 'post7560')">        @config = config
+</li>
+                
+                <li onclick="toggle('pre7560', 'post7560')">        @app = app
+</li>
+                
+                <li onclick="toggle('pre7560', 'post7560')">      end
+</li>
+                
+                <li onclick="toggle('pre7560', 'post7560')">
+</li>
+                
+                <li onclick="toggle('pre7560', 'post7560')">      def call(env)
+</li>
+                
+                <li onclick="toggle('pre7560', 'post7560')">        env[Const::PUMA_CONFIG] = @config
+</li>
+                
+              </ol>
+              
+
+            <ol start="272" class="context-line">
+              <li onclick="toggle('pre7560', 'post7560')">        @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='273' class="post-context" id="post7560">
+                
+                <li onclick="toggle('pre7560', 'post7560')">      end
+</li>
+                
+                <li onclick="toggle('pre7560', 'post7560')">    end
+</li>
+                
+                <li onclick="toggle('pre7560', 'post7560')">
+</li>
+                
+                <li onclick="toggle('pre7560', 'post7560')">    # Indicate if there is a properly configured app
+</li>
+                
+                <li onclick="toggle('pre7560', 'post7560')">    #
+</li>
+                
+                <li onclick="toggle('pre7560', 'post7560')">    def app_configured?
+</li>
+                
+                <li onclick="toggle('pre7560', 'post7560')">      @options[:app] || File.exist?(rackup)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;puma-6.4.2&#x2F;lib&#x2F;puma&#x2F;request.rb</code>: in <code>block in handle_request</code>
+
+          
+          <div class="context" id="c7580">
+              
+              <ol start="93" class="pre-context" id="pre7580">
+                
+                <li onclick="toggle('pre7580', 'post7580')">      # array, we will invoke them when the request is done.
+</li>
+                
+                <li onclick="toggle('pre7580', 'post7580')">      #
+</li>
+                
+                <li onclick="toggle('pre7580', 'post7580')">      env[RACK_AFTER_REPLY] ||= []
+</li>
+                
+                <li onclick="toggle('pre7580', 'post7580')">
+</li>
+                
+                <li onclick="toggle('pre7580', 'post7580')">      begin
+</li>
+                
+                <li onclick="toggle('pre7580', 'post7580')">        if @supported_http_methods == :any || @supported_http_methods.key?(env[REQUEST_METHOD])
+</li>
+                
+                <li onclick="toggle('pre7580', 'post7580')">          status, headers, app_body = @thread_pool.with_force_shutdown do
+</li>
+                
+              </ol>
+              
+
+            <ol start="100" class="context-line">
+              <li onclick="toggle('pre7580', 'post7580')">            @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='101' class="post-context" id="post7580">
+                
+                <li onclick="toggle('pre7580', 'post7580')">          end
+</li>
+                
+                <li onclick="toggle('pre7580', 'post7580')">        else
+</li>
+                
+                <li onclick="toggle('pre7580', 'post7580')">          @log_writer.log &quot;Unsupported HTTP method used: #{env[REQUEST_METHOD]}&quot;
+</li>
+                
+                <li onclick="toggle('pre7580', 'post7580')">          status, headers, app_body = [501, {}, [&quot;#{env[REQUEST_METHOD]} method is not supported&quot;]]
+</li>
+                
+                <li onclick="toggle('pre7580', 'post7580')">        end
+</li>
+                
+                <li onclick="toggle('pre7580', 'post7580')">
+</li>
+                
+                <li onclick="toggle('pre7580', 'post7580')">        # app_body needs to always be closed, hold value in case lowlevel_error
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;puma-6.4.2&#x2F;lib&#x2F;puma&#x2F;thread_pool.rb</code>: in <code>with_force_shutdown</code>
+
+          
+          <div class="context" id="c7600">
+              
+              <ol start="371" class="pre-context" id="pre7600">
+                
+                <li onclick="toggle('pre7600', 'post7600')">    # provided block if the thread is forced to shutdown during execution.
+</li>
+                
+                <li onclick="toggle('pre7600', 'post7600')">    def with_force_shutdown
+</li>
+                
+                <li onclick="toggle('pre7600', 'post7600')">      t = Thread.current
+</li>
+                
+                <li onclick="toggle('pre7600', 'post7600')">      @shutdown_mutex.synchronize do
+</li>
+                
+                <li onclick="toggle('pre7600', 'post7600')">        raise ForceShutdown if @force_shutdown
+</li>
+                
+                <li onclick="toggle('pre7600', 'post7600')">        t[:with_force_shutdown] = true
+</li>
+                
+                <li onclick="toggle('pre7600', 'post7600')">      end
+</li>
+                
+              </ol>
+              
+
+            <ol start="378" class="context-line">
+              <li onclick="toggle('pre7600', 'post7600')">      yield<span>...</span></li></ol>
+
+              
+              <ol start='379' class="post-context" id="post7600">
+                
+                <li onclick="toggle('pre7600', 'post7600')">    ensure
+</li>
+                
+                <li onclick="toggle('pre7600', 'post7600')">      t[:with_force_shutdown] = false
+</li>
+                
+                <li onclick="toggle('pre7600', 'post7600')">    end
+</li>
+                
+                <li onclick="toggle('pre7600', 'post7600')">
+</li>
+                
+                <li onclick="toggle('pre7600', 'post7600')">    # Tell all threads in the pool to exit and wait for them to finish.
+</li>
+                
+                <li onclick="toggle('pre7600', 'post7600')">    # Wait +timeout+ seconds then raise +ForceShutdown+ in remaining threads.
+</li>
+                
+                <li onclick="toggle('pre7600', 'post7600')">    # Next, wait an extra +@shutdown_grace_time+ seconds then force-kill remaining
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;puma-6.4.2&#x2F;lib&#x2F;puma&#x2F;request.rb</code>: in <code>handle_request</code>
+
+          
+          <div class="context" id="c7620">
+              
+              <ol start="92" class="pre-context" id="pre7620">
+                
+                <li onclick="toggle('pre7620', 'post7620')">      # A rack extension. If the app writes #call&#x27;ables to this
+</li>
+                
+                <li onclick="toggle('pre7620', 'post7620')">      # array, we will invoke them when the request is done.
+</li>
+                
+                <li onclick="toggle('pre7620', 'post7620')">      #
+</li>
+                
+                <li onclick="toggle('pre7620', 'post7620')">      env[RACK_AFTER_REPLY] ||= []
+</li>
+                
+                <li onclick="toggle('pre7620', 'post7620')">
+</li>
+                
+                <li onclick="toggle('pre7620', 'post7620')">      begin
+</li>
+                
+                <li onclick="toggle('pre7620', 'post7620')">        if @supported_http_methods == :any || @supported_http_methods.key?(env[REQUEST_METHOD])
+</li>
+                
+              </ol>
+              
+
+            <ol start="99" class="context-line">
+              <li onclick="toggle('pre7620', 'post7620')">          status, headers, app_body = @thread_pool.with_force_shutdown do<span>...</span></li></ol>
+
+              
+              <ol start='100' class="post-context" id="post7620">
+                
+                <li onclick="toggle('pre7620', 'post7620')">            @app.call(env)
+</li>
+                
+                <li onclick="toggle('pre7620', 'post7620')">          end
+</li>
+                
+                <li onclick="toggle('pre7620', 'post7620')">        else
+</li>
+                
+                <li onclick="toggle('pre7620', 'post7620')">          @log_writer.log &quot;Unsupported HTTP method used: #{env[REQUEST_METHOD]}&quot;
+</li>
+                
+                <li onclick="toggle('pre7620', 'post7620')">          status, headers, app_body = [501, {}, [&quot;#{env[REQUEST_METHOD]} method is not supported&quot;]]
+</li>
+                
+                <li onclick="toggle('pre7620', 'post7620')">        end
+</li>
+                
+                <li onclick="toggle('pre7620', 'post7620')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;puma-6.4.2&#x2F;lib&#x2F;puma&#x2F;server.rb</code>: in <code>process_client</code>
+
+          
+          <div class="context" id="c7640">
+              
+              <ol start="457" class="pre-context" id="pre7640">
+                
+                <li onclick="toggle('pre7640', 'post7640')">
+</li>
+                
+                <li onclick="toggle('pre7640', 'post7640')">        with_force_shutdown(client) do
+</li>
+                
+                <li onclick="toggle('pre7640', 'post7640')">          client.finish(@first_data_timeout)
+</li>
+                
+                <li onclick="toggle('pre7640', 'post7640')">        end
+</li>
+                
+                <li onclick="toggle('pre7640', 'post7640')">
+</li>
+                
+                <li onclick="toggle('pre7640', 'post7640')">        while true
+</li>
+                
+                <li onclick="toggle('pre7640', 'post7640')">          @requests_count += 1
+</li>
+                
+              </ol>
+              
+
+            <ol start="464" class="context-line">
+              <li onclick="toggle('pre7640', 'post7640')">          case handle_request(client, requests + 1)<span>...</span></li></ol>
+
+              
+              <ol start='465' class="post-context" id="post7640">
+                
+                <li onclick="toggle('pre7640', 'post7640')">          when false
+</li>
+                
+                <li onclick="toggle('pre7640', 'post7640')">            break
+</li>
+                
+                <li onclick="toggle('pre7640', 'post7640')">          when :async
+</li>
+                
+                <li onclick="toggle('pre7640', 'post7640')">            close_socket = false
+</li>
+                
+                <li onclick="toggle('pre7640', 'post7640')">            break
+</li>
+                
+                <li onclick="toggle('pre7640', 'post7640')">          when true
+</li>
+                
+                <li onclick="toggle('pre7640', 'post7640')">            ThreadPool.clean_thread_locals if clean_thread_locals
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;puma-6.4.2&#x2F;lib&#x2F;puma&#x2F;server.rb</code>: in <code>block in run</code>
+
+          
+          <div class="context" id="c7660">
+              
+              <ol start="238" class="pre-context" id="pre7660">
+                
+                <li onclick="toggle('pre7660', 'post7660')">    def run(background=true, thread_name: &#x27;srv&#x27;)
+</li>
+                
+                <li onclick="toggle('pre7660', 'post7660')">      BasicSocket.do_not_reverse_lookup = true
+</li>
+                
+                <li onclick="toggle('pre7660', 'post7660')">
+</li>
+                
+                <li onclick="toggle('pre7660', 'post7660')">      @events.fire :state, :booting
+</li>
+                
+                <li onclick="toggle('pre7660', 'post7660')">
+</li>
+                
+                <li onclick="toggle('pre7660', 'post7660')">      @status = :run
+</li>
+                
+                <li onclick="toggle('pre7660', 'post7660')">
+</li>
+                
+              </ol>
+              
+
+            <ol start="245" class="context-line">
+              <li onclick="toggle('pre7660', 'post7660')">      @thread_pool = ThreadPool.new(thread_name, @options) { |client| process_client client }<span>...</span></li></ol>
+
+              
+              <ol start='246' class="post-context" id="post7660">
+                
+                <li onclick="toggle('pre7660', 'post7660')">
+</li>
+                
+                <li onclick="toggle('pre7660', 'post7660')">      if @queue_requests
+</li>
+                
+                <li onclick="toggle('pre7660', 'post7660')">        @reactor = Reactor.new(@io_selector_backend) { |c| reactor_wakeup c }
+</li>
+                
+                <li onclick="toggle('pre7660', 'post7660')">        @reactor.run
+</li>
+                
+                <li onclick="toggle('pre7660', 'post7660')">      end
+</li>
+                
+                <li onclick="toggle('pre7660', 'post7660')">
+</li>
+                
+                <li onclick="toggle('pre7660', 'post7660')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;puma-6.4.2&#x2F;lib&#x2F;puma&#x2F;thread_pool.rb</code>: in <code>block in spawn_thread</code>
+
+          
+          <div class="context" id="c7680">
+              
+              <ol start="148" class="pre-context" id="pre7680">
+                
+                <li onclick="toggle('pre7680', 'post7680')">          end
+</li>
+                
+                <li onclick="toggle('pre7680', 'post7680')">
+</li>
+                
+                <li onclick="toggle('pre7680', 'post7680')">          if @clean_thread_locals
+</li>
+                
+                <li onclick="toggle('pre7680', 'post7680')">            ThreadPool.clean_thread_locals
+</li>
+                
+                <li onclick="toggle('pre7680', 'post7680')">          end
+</li>
+                
+                <li onclick="toggle('pre7680', 'post7680')">
+</li>
+                
+                <li onclick="toggle('pre7680', 'post7680')">          begin
+</li>
+                
+              </ol>
+              
+
+            <ol start="155" class="context-line">
+              <li onclick="toggle('pre7680', 'post7680')">            @out_of_band_pending = true if block.call(work)<span>...</span></li></ol>
+
+              
+              <ol start='156' class="post-context" id="post7680">
+                
+                <li onclick="toggle('pre7680', 'post7680')">          rescue Exception =&gt; e
+</li>
+                
+                <li onclick="toggle('pre7680', 'post7680')">            STDERR.puts &quot;Error reached top of thread-pool: #{e.message} (#{e.class})&quot;
+</li>
+                
+                <li onclick="toggle('pre7680', 'post7680')">          end
+</li>
+                
+                <li onclick="toggle('pre7680', 'post7680')">        end
+</li>
+                
+                <li onclick="toggle('pre7680', 'post7680')">      end
+</li>
+                
+                <li onclick="toggle('pre7680', 'post7680')">
+</li>
+                
+                <li onclick="toggle('pre7680', 'post7680')">      @workers &lt;&lt; th
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+  </ul>
+</div>
+
+<div id="requestinfo">
+  <h2>Request information</h2>
+
+  <h3 id="get-info">GET</h3>
+  
+    <p>No GET data.</p>
+  
+
+  <h3 id="post-info">POST</h3>
+  
+    <p>No POST data.</p>
+  
+
+
+  <h3 id="cookie-info">COOKIES</h3>
+  
+    <p>No cookie data.</p>
+  
+
+  <h3 id="env-info">Rack ENV</h3>
+    <table class="req">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+          
+          <tr>
+            <td>GATEWAY_INTERFACE</td>
+            <td class="code"><div>&quot;CGI&#x2F;1.2&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_ACCEPT</td>
+            <td class="code"><div>&quot;*&#x2F;*&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_AUTHORIZATION</td>
+            <td class="code"><div>&quot;Basic dXNlcm5hbWU6cGFzc3dvcmQ=&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_HOST</td>
+            <td class="code"><div>&quot;localhost:9292&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_USER_AGENT</td>
+            <td class="code"><div>&quot;curl&#x2F;8.4.0&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_VERSION</td>
+            <td class="code"><div>&quot;HTTP&#x2F;1.1&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>ORIGINAL_FULLPATH</td>
+            <td class="code"><div>&quot;&#x2F;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>ORIGINAL_SCRIPT_NAME</td>
+            <td class="code"><div>&quot;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>PATH_INFO</td>
+            <td class="code"><div>&quot;&#x2F;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>QUERY_STRING</td>
+            <td class="code"><div>&quot;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>REMOTE_ADDR</td>
+            <td class="code"><div>&quot;::1&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>REQUEST_METHOD</td>
+            <td class="code"><div>&quot;GET&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>REQUEST_PATH</td>
+            <td class="code"><div>&quot;&#x2F;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>REQUEST_URI</td>
+            <td class="code"><div>&quot;&#x2F;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>ROUTES_5460_SCRIPT_NAME</td>
+            <td class="code"><div>&quot;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>SCRIPT_NAME</td>
+            <td class="code"><div>&quot;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_NAME</td>
+            <td class="code"><div>&quot;localhost&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_PORT</td>
+            <td class="code"><div>&quot;9292&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_PROTOCOL</td>
+            <td class="code"><div>&quot;HTTP&#x2F;1.1&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_SOFTWARE</td>
+            <td class="code"><div>&quot;puma 6.4.2 The Eagle of Durango&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.authenticated_encrypted_cookie_salt</td>
+            <td class="code"><div>&quot;authenticated encrypted cookie&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.authorized_host</td>
+            <td class="code"><div>&quot;localhost&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.backtrace_cleaner</td>
+            <td class="code"><div>#&lt;Rails::BacktraceCleaner:0x0000000124d90538 @silencers=[#&lt;Proc:0x0000000124d90100 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;activesupport-7.1.3&#x2F;lib&#x2F;active_support&#x2F;backtrace_cleaner.rb:120&gt;, #&lt;Proc:0x0000000124d90060 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;activesupport-7.1.3&#x2F;lib&#x2F;active_support&#x2F;backtrace_cleaner.rb:124&gt;, #&lt;Proc:0x000000028873fde0 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;backtrace_cleaner.rb:24&gt;], @filters=[#&lt;Proc:0x0000000124d901c8 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;activesupport-7.1.3&#x2F;lib&#x2F;active_support&#x2F;backtrace_cleaner.rb:116&gt;, #&lt;Proc:0x000000028873fe30 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;backtrace_cleaner.rb:14&gt;, #&lt;Proc:0x000000028873fe08 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;backtrace_cleaner.rb:17&gt;], @root=&quot;&#x2F;Users&#x2F;daviddoolin&#x2F;src&#x2F;nplus1&#x2F;&quot;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.content_security_policy</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.content_security_policy_nonce_directives</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.content_security_policy_nonce_generator</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.content_security_policy_report_only</td>
+            <td class="code"><div>false</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.cookies_digest</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.cookies_rotations</td>
+            <td class="code"><div>#&lt;ActiveSupport::Messages::RotationConfiguration:0x0000000123a50928 @signed=[], @encrypted=[]&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.cookies_same_site_protection</td>
+            <td class="code"><div>#&lt;Proc:0x000000028873f020 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;application.rb:705&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.cookies_serializer</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.debug_exception_log_level</td>
+            <td class="code"><div>4</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.encrypted_cookie_cipher</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.encrypted_cookie_salt</td>
+            <td class="code"><div>&quot;encrypted cookie&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.encrypted_signed_cookie_salt</td>
+            <td class="code"><div>&quot;signed encrypted cookie&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.http_auth_salt</td>
+            <td class="code"><div>&quot;http authentication&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.key_generator</td>
+            <td class="code"><div>#&lt;ActiveSupport::CachingKeyGenerator:0x000000028873fac0 @key_generator=#&lt;ActiveSupport::KeyGenerator:0x00000000002f58&gt;, @cache_keys=#&lt;Concurrent::Map:0x000000028873fa48 entries=0 default_proc=nil&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.log_rescued_responses</td>
+            <td class="code"><div>true</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.logger</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.parameter_filter</td>
+            <td class="code"><div>[]</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.permissions_policy</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.redirect_filter</td>
+            <td class="code"><div>[]</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.remote_ip</td>
+            <td class="code"><div>#&lt;ActionDispatch::RemoteIp::GetIp:0x00000001247b6810 @req=#&lt;ActionDispatch::Request GET &quot;http:&#x2F;&#x2F;localhost:9292&#x2F;&quot; for ::1&gt;, @check_ip=true, @proxies=[#&lt;IPAddr: IPv4:127.0.0.0&#x2F;255.0.0.0&gt;, #&lt;IPAddr: IPv6:0000:0000:0000:0000:0000:0000:0000:0001&#x2F;ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff&gt;, #&lt;IPAddr: IPv6:fc00:0000:0000:0000:0000:0000:0000:0000&#x2F;fe00:0000:0000:0000:0000:0000:0000:0000&gt;, #&lt;IPAddr: IPv4:10.0.0.0&#x2F;255.0.0.0&gt;, #&lt;IPAddr: IPv4:172.16.0.0&#x2F;255.240.0.0&gt;, #&lt;IPAddr: IPv4:192.168.0.0&#x2F;255.255.0.0&gt;]&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.request_id</td>
+            <td class="code"><div>&quot;acb8bd4c-bbdb-4d85-92c9-d3d1dd2b1e1b&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.routes</td>
+            <td class="code"><div>#&lt;ActionDispatch::Routing::RouteSet:0x0000000113e80828&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.secret_key_base</td>
+            <td class="code"><div>&quot;i_am_a_secret&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.show_detailed_exceptions</td>
+            <td class="code"><div>true</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.show_exceptions</td>
+            <td class="code"><div>:all</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.signed_cookie_digest</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.signed_cookie_salt</td>
+            <td class="code"><div>&quot;signed cookie&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.use_authenticated_cookie_encryption</td>
+            <td class="code"><div>false</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.use_cookies_with_metadata</td>
+            <td class="code"><div>false</div></td>
+          </tr>
+          
+          <tr>
+            <td>puma.config</td>
+            <td class="code"><div>#&lt;Puma::Configuration:0x00000001239d8810 @options=#&lt;Puma::UserFileDefaultOptions:0x0000000124d9fb00 @user_options={:environment=&gt;&quot;development&quot;, :pid=&gt;nil, :Port=&gt;9292, :Host=&gt;&quot;localhost&quot;, :AccessLog=&gt;[], :config=&gt;&quot;&#x2F;Users&#x2F;daviddoolin&#x2F;src&#x2F;nplus1&#x2F;rails_ringle_file.ru&quot;, :binds=&gt;[&quot;tcp:&#x2F;&#x2F;localhost:9292&quot;], :app=&gt;#&lt;Rack::ContentLength:0x00000001248fec40 @app=#&lt;Rack::CommonLogger:0x00000001248fed30 @app=#&lt;Rack::ShowExceptions:0x00000001247d4b30 @app=#&lt;Rack::Lint:0x00000001247d4c70 @app=#&lt;Rack::TempfileReaper:0x00000001247d4d10 @app=App&gt;&gt;&gt;, @logger=#&lt;IO:&lt;STDERR&gt;&gt;&gt;&gt;, :log_writer=&gt;#&lt;Puma::LogWriter:0x00000001239d8630 @formatter=#&lt;Puma::LogWriter::DefaultFormatter:0x0000000124d9e9f8&gt;, @custom_logger=nil, @stdout=#&lt;IO:&lt;STDOUT&gt;&gt;, @stderr=#&lt;IO:&lt;STDERR&gt;&gt;, @debug=false, @error_logger=#&lt;Puma::ErrorLogger:0x0000000124d9e9d0 @ioerr=#&lt;IO:&lt;STDERR&gt;&gt;, @debug=false&gt;&gt;}, @file_options={}, @default_options={:auto_trim_time=&gt;30, :binds=&gt;[&quot;tcp:&#x2F;&#x2F;0.0.0.0:9292&quot;], :clean_thread_locals=&gt;false, :debug=&gt;false, :early_hints=&gt;nil, :environment=&gt;&quot;development&quot;, :first_data_timeout=&gt;30, :idle_timeout=&gt;nil, :io_selector_backend=&gt;:auto, :log_requests=&gt;false, :logger=&gt;#&lt;IO:&lt;STDOUT&gt;&gt;, :max_fast_inline=&gt;10, :max_threads=&gt;5, :min_threads=&gt;0, :mode=&gt;:http, :mutate_stdout_and_stderr_to_sync_on_write=&gt;true, :out_of_band=&gt;[], :persistent_timeout=&gt;20, :queue_requests=&gt;true, :rackup=&gt;&quot;config.ru&quot;, :raise_exception_on_sigterm=&gt;true, :reaping_time=&gt;1, :remote_address=&gt;:socket, :silence_single_worker_warning=&gt;false, :silence_fork_callback_warning=&gt;false, :tag=&gt;&quot;nplus1&quot;, :tcp_host=&gt;&quot;0.0.0.0&quot;, :tcp_port=&gt;9292, :wait_for_less_busy_worker=&gt;0.005, :worker_boot_timeout=&gt;60, :worker_check_interval=&gt;5, :worker_culling_strategy=&gt;:youngest, :worker_shutdown_timeout=&gt;30, :worker_timeout=&gt;60, :workers=&gt;0, :http_content_length_limit=&gt;nil, :Verbose=&gt;false, :Silent=&gt;false, :events=&gt;#&lt;Puma::Events:0x0000000124d9ffb0 @hooks={:state=&gt;[], :on_booted=&gt;[]}&gt;, :preload_app=&gt;false}&gt;, @plugins=#&lt;Puma::PluginLoader:0x0000000124d9fa10 @instances=[]&gt;, @user_dsl=#&lt;Puma::DSL:0x0000000124d9f8d0 @config=#&lt;Puma::Configuration:0x00000001239d8810 ...&gt;, @options={:environment=&gt;&quot;development&quot;, :pid=&gt;nil, :Port=&gt;9292, :Host=&gt;&quot;localhost&quot;, :AccessLog=&gt;[], :config=&gt;&quot;&#x2F;Users&#x2F;daviddoolin&#x2F;src&#x2F;nplus1&#x2F;rails_ringle_file.ru&quot;, :binds=&gt;[&quot;tcp:&#x2F;&#x2F;localhost:9292&quot;], :app=&gt;#&lt;Rack::ContentLength:0x00000001248fec40 @app=#&lt;Rack::CommonLogger:0x00000001248fed30 @app=#&lt;Rack::ShowExceptions:0x00000001247d4b30 @app=#&lt;Rack::Lint:0x00000001247d4c70 @app=#&lt;Rack::TempfileReaper:0x00000001247d4d10 @app=App&gt;&gt;&gt;, @logger=#&lt;IO:&lt;STDERR&gt;&gt;&gt;&gt;, :log_writer=&gt;#&lt;Puma::LogWriter:0x00000001239d8630 @formatter=#&lt;Puma::LogWriter::DefaultFormatter:0x0000000124d9e9f8&gt;, @custom_logger=nil, @stdout=#&lt;IO:&lt;STDOUT&gt;&gt;, @stderr=#&lt;IO:&lt;STDERR&gt;&gt;, @debug=false, @error_logger=#&lt;Puma::ErrorLogger:0x0000000124d9e9d0 @ioerr=#&lt;IO:&lt;STDERR&gt;&gt;, @debug=false&gt;&gt;}, @plugins=[]&gt;, @file_dsl=#&lt;Puma::DSL:0x0000000124d9f808 @config=#&lt;Puma::Configuration:0x00000001239d8810 ...&gt;, @options={}, @plugins=[]&gt;, @default_dsl=#&lt;Puma::DSL:0x0000000124d9f718 @config=#&lt;Puma::Configuration:0x00000001239d8810 ...&gt;, @options={:auto_trim_time=&gt;30, :binds=&gt;[&quot;tcp:&#x2F;&#x2F;0.0.0.0:9292&quot;], :clean_thread_locals=&gt;false, :debug=&gt;false, :early_hints=&gt;nil, :environment=&gt;&quot;development&quot;, :first_data_timeout=&gt;30, :idle_timeout=&gt;nil, :io_selector_backend=&gt;:auto, :log_requests=&gt;false, :logger=&gt;#&lt;IO:&lt;STDOUT&gt;&gt;, :max_fast_inline=&gt;10, :max_threads=&gt;5, :min_threads=&gt;0, :mode=&gt;:http, :mutate_stdout_and_stderr_to_sync_on_write=&gt;true, :out_of_band=&gt;[], :persistent_timeout=&gt;20, :queue_requests=&gt;true, :rackup=&gt;&quot;config.ru&quot;, :raise_exception_on_sigterm=&gt;true, :reaping_time=&gt;1, :remote_address=&gt;:socket, :silence_single_worker_warning=&gt;false, :silence_fork_callback_warning=&gt;false, :tag=&gt;&quot;nplus1&quot;, :tcp_host=&gt;&quot;0.0.0.0&quot;, :tcp_port=&gt;9292, :wait_for_less_busy_worker=&gt;0.005, :worker_boot_timeout=&gt;60, :worker_check_interval=&gt;5, :worker_culling_strategy=&gt;:youngest, :worker_shutdown_timeout=&gt;30, :worker_timeout=&gt;60, :workers=&gt;0, :http_content_length_limit=&gt;nil, :Verbose=&gt;false, :Silent=&gt;false, :events=&gt;#&lt;Puma::Events:0x0000000124d9ffb0 @hooks={:state=&gt;[], :on_booted=&gt;[]}&gt;, :preload_app=&gt;false}, @plugins=[]&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>puma.request_body_wait</td>
+            <td class="code"><div>0.0279998779296875</div></td>
+          </tr>
+          
+          <tr>
+            <td>puma.socket</td>
+            <td class="code"><div>#&lt;TCPSocket:fd 18, AF_INET6, ::1, 9292&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.after_reply</td>
+            <td class="code"><div>[]</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.errors</td>
+            <td class="code"><div>#&lt;Rack::Lint::Wrapper::ErrorWrapper:0x00000001249ba0a8 @error=#&lt;IO:&lt;STDERR&gt;&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.hijack</td>
+            <td class="code"><div>#&lt;Proc:0x00000001249ba198 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;lint.rb:556&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.hijack?</td>
+            <td class="code"><div>true</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.input</td>
+            <td class="code"><div>#&lt;Rack::Lint::Wrapper::InputWrapper:0x00000001249ba120 @input=#&lt;Puma::NullIO:0x0000000124b5be48&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.multiprocess</td>
+            <td class="code"><div>false</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.multithread</td>
+            <td class="code"><div>true</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.cookie_hash</td>
+            <td class="code"><div>{}</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.form_hash</td>
+            <td class="code"><div>{}</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.form_input</td>
+            <td class="code"><div>#&lt;Rack::Lint::Wrapper::InputWrapper:0x00000001249ba120 @input=#&lt;Puma::NullIO:0x0000000124b5be48&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.query_hash</td>
+            <td class="code"><div>{}</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.query_string</td>
+            <td class="code"><div>&quot;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.run_once</td>
+            <td class="code"><div>false</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.tempfiles</td>
+            <td class="code"><div>[]</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.url_scheme</td>
+            <td class="code"><div>&quot;http&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.version</td>
+            <td class="code"><div>[1, 6]</div></td>
+          </tr>
+          
+      </tbody>
+    </table>
+
+</div>
+
+<div id="explanation">
+  <p>
+    You're seeing this error because you use <code>Rack::ShowExceptions</code>.
+  </p>
+</div>
+
+</body>
+</html>
+
+
+------------------------------------------
+Unauthorized
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="NONE,NOARCHIVE" />
+  <title>NoMethodError at &#x2F;</title>
+  <style type="text/css">
+    html * { padding:0; margin:0; }
+    body * { padding:10px 20px; }
+    body * * { padding:0; }
+    body { font:small sans-serif; }
+    body>div { border-bottom:1px solid #ddd; }
+    h1 { font-weight:normal; }
+    h2 { margin-bottom:.8em; }
+    h2 span { font-size:80%; color:#666; font-weight:normal; }
+    h3 { margin:1em 0 .5em 0; }
+    h4 { margin:0 0 .5em 0; font-weight: normal; }
+    table {
+        border:1px solid #ccc; border-collapse: collapse; background:white; }
+    tbody td, tbody th { vertical-align:top; padding:2px 3px; }
+    thead th {
+        padding:1px 6px 1px 3px; background:#fefefe; text-align:left;
+        font-weight:normal; font-size:11px; border:1px solid #ddd; }
+    tbody th { text-align:right; color:#666; padding-right:.5em; }
+    table.vars { margin:5px 0 2px 40px; }
+    table.vars td, table.req td { font-family:monospace; }
+    table td.code { width:100%;}
+    table td.code div { overflow:hidden; }
+    table.source th { color:#666; }
+    table.source td {
+        font-family:monospace; white-space:pre; border-bottom:1px solid #eee; }
+    ul.traceback { list-style-type:none; }
+    ul.traceback li.frame { margin-bottom:1em; }
+    div.context { margin: 10px 0; }
+    div.context ol {
+        padding-left:30px; margin:0 10px; list-style-position: inside; }
+    div.context ol li {
+        font-family:monospace; white-space:pre; color:#666; cursor:pointer; }
+    div.context ol.context-line li { color:black; background-color:#ccc; }
+    div.context ol.context-line li span { float: right; }
+    div.commands { margin-left: 40px; }
+    div.commands a { color:black; text-decoration:none; }
+    #summary { background: #ffc; }
+    #summary h2 { font-family: monospace; font-weight: normal; color: #666; white-space: pre-wrap; }
+    #summary ul#quicklinks { list-style-type: none; margin-bottom: 2em; }
+    #summary ul#quicklinks li { float: left; padding: 0 1em; }
+    #summary ul#quicklinks>li+li { border-left: 1px #666 solid; }
+    #explanation { background:#eee; }
+    #template, #template-not-exist { background:#f6f6f6; }
+    #template-not-exist ul { margin: 0 0 0 20px; }
+    #traceback { background:#eee; }
+    #requestinfo { background:#f6f6f6; padding-left:120px; }
+    #summary table { border:none; background:transparent; }
+    #requestinfo h2, #requestinfo h3 { position:relative; margin-left:-100px; }
+    #requestinfo h3 { margin-bottom:-1em; }
+    .error { background: #ffc; }
+    .specific { color:#cc3300; font-weight:bold; }
+  </style>
+  <script type="text/javascript">
+  //<!--
+    function getElementsByClassName(oElm, strTagName, strClassName){
+        // Written by Jonathan Snook, http://www.snook.ca/jon;
+        // Add-ons by Robert Nyman, http://www.robertnyman.com
+        var arrElements = (strTagName == "*" && document.all)? document.all :
+        oElm.getElementsByTagName(strTagName);
+        var arrReturnElements = new Array();
+        strClassName = strClassName.replace(/\-/g, "\\-");
+        var oRegExp = new RegExp("(^|\\s)" + strClassName + "(\\s|$$)");
+        var oElement;
+        for(var i=0; i<arrElements.length; i++){
+            oElement = arrElements[i];
+            if(oRegExp.test(oElement.className)){
+                arrReturnElements.push(oElement);
+            }
+        }
+        return (arrReturnElements)
+    }
+    function hideAll(elems) {
+      for (var e = 0; e < elems.length; e++) {
+        elems[e].style.display = 'none';
+      }
+    }
+    window.onload = function() {
+      hideAll(getElementsByClassName(document, 'table', 'vars'));
+      hideAll(getElementsByClassName(document, 'ol', 'pre-context'));
+      hideAll(getElementsByClassName(document, 'ol', 'post-context'));
+    }
+    function toggle() {
+      for (var i = 0; i < arguments.length; i++) {
+        var e = document.getElementById(arguments[i]);
+        if (e) {
+          e.style.display = e.style.display == 'none' ? 'block' : 'none';
+        }
+      }
+      return false;
+    }
+    function varToggle(link, id) {
+      toggle('v' + id);
+      var s = link.getElementsByTagName('span')[0];
+      var uarr = String.fromCharCode(0x25b6);
+      var darr = String.fromCharCode(0x25bc);
+      s.innerHTML = s.innerHTML == uarr ? darr : uarr;
+      return false;
+    }
+    //-->
+  </script>
+</head>
+<body>
+
+<div id="summary">
+  <h1>NoMethodError at &#x2F;</h1>
+
+  <h2>undefined method `info&#x27; for nil (NoMethodError)
+
+          logger.info { started_request_message(request) }
+                ^^^^^</h2>
+
+  <table><tr>
+    <th>Ruby</th>
+    <td>
+
+      <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;rack&#x2F;logger.rb</code>: in <code>call_app</code>, line 36
+
+    </td>
+  </tr><tr>
+    <th>Web</th>
+    <td><code>GET localhost&#x2F;</code></td>
+  </tr></table>
+
+  <h3>Jump to:</h3>
+  <ul id="quicklinks">
+    <li><a href="#get-info">GET</a></li>
+    <li><a href="#post-info">POST</a></li>
+    <li><a href="#cookie-info">Cookies</a></li>
+    <li><a href="#env-info">ENV</a></li>
+  </ul>
+</div>
+
+<div id="traceback">
+  <h2>Traceback <span>(innermost first)</span></h2>
+  <ul class="traceback">
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;rack&#x2F;logger.rb</code>: in <code>call_app</code>
+
+          
+          <div class="context" id="c7720">
+              
+              <ol start="29" class="pre-context" id="pre7720">
+                
+                <li onclick="toggle('pre7720', 'post7720')">
+</li>
+                
+                <li onclick="toggle('pre7720', 'post7720')">      private
+</li>
+                
+                <li onclick="toggle('pre7720', 'post7720')">        def call_app(request, env) # :doc:
+</li>
+                
+                <li onclick="toggle('pre7720', 'post7720')">          instrumenter = ActiveSupport::Notifications.instrumenter
+</li>
+                
+                <li onclick="toggle('pre7720', 'post7720')">          handle = instrumenter.build_handle(&quot;request.action_dispatch&quot;, { request: request })
+</li>
+                
+                <li onclick="toggle('pre7720', 'post7720')">          handle.start
+</li>
+                
+                <li onclick="toggle('pre7720', 'post7720')">
+</li>
+                
+              </ol>
+              
+
+            <ol start="36" class="context-line">
+              <li onclick="toggle('pre7720', 'post7720')">          logger.info { started_request_message(request) }<span>...</span></li></ol>
+
+              
+              <ol start='37' class="post-context" id="post7720">
+                
+                <li onclick="toggle('pre7720', 'post7720')">          status, headers, body = response = @app.call(env)
+</li>
+                
+                <li onclick="toggle('pre7720', 'post7720')">          body = ::Rack::BodyProxy.new(body, &amp;handle.method(:finish))
+</li>
+                
+                <li onclick="toggle('pre7720', 'post7720')">
+</li>
+                
+                <li onclick="toggle('pre7720', 'post7720')">          if response.frozen?
+</li>
+                
+                <li onclick="toggle('pre7720', 'post7720')">            [status, headers, body]
+</li>
+                
+                <li onclick="toggle('pre7720', 'post7720')">          else
+</li>
+                
+                <li onclick="toggle('pre7720', 'post7720')">            response[2] = body
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;rack&#x2F;logger.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7740">
+              
+              <ol start="19" class="pre-context" id="pre7740">
+                
+                <li onclick="toggle('pre7740', 'post7740')">
+</li>
+                
+                <li onclick="toggle('pre7740', 'post7740')">      def call(env)
+</li>
+                
+                <li onclick="toggle('pre7740', 'post7740')">        request = ActionDispatch::Request.new(env)
+</li>
+                
+                <li onclick="toggle('pre7740', 'post7740')">
+</li>
+                
+                <li onclick="toggle('pre7740', 'post7740')">        if logger.respond_to?(:tagged)
+</li>
+                
+                <li onclick="toggle('pre7740', 'post7740')">          logger.tagged(*compute_tags(request)) { call_app(request, env) }
+</li>
+                
+                <li onclick="toggle('pre7740', 'post7740')">        else
+</li>
+                
+              </ol>
+              
+
+            <ol start="26" class="context-line">
+              <li onclick="toggle('pre7740', 'post7740')">          call_app(request, env)<span>...</span></li></ol>
+
+              
+              <ol start='27' class="post-context" id="post7740">
+                
+                <li onclick="toggle('pre7740', 'post7740')">        end
+</li>
+                
+                <li onclick="toggle('pre7740', 'post7740')">      end
+</li>
+                
+                <li onclick="toggle('pre7740', 'post7740')">
+</li>
+                
+                <li onclick="toggle('pre7740', 'post7740')">      private
+</li>
+                
+                <li onclick="toggle('pre7740', 'post7740')">        def call_app(request, env) # :doc:
+</li>
+                
+                <li onclick="toggle('pre7740', 'post7740')">          instrumenter = ActiveSupport::Notifications.instrumenter
+</li>
+                
+                <li onclick="toggle('pre7740', 'post7740')">          handle = instrumenter.build_handle(&quot;request.action_dispatch&quot;, { request: request })
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;actionpack-7.1.3&#x2F;lib&#x2F;action_dispatch&#x2F;middleware&#x2F;remote_ip.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7760">
+              
+              <ol start="85" class="pre-context" id="pre7760">
+                
+                <li onclick="toggle('pre7760', 'post7760')">    # Since the IP address may not be needed, we store the object here
+</li>
+                
+                <li onclick="toggle('pre7760', 'post7760')">    # without calculating the IP to keep from slowing down the majority of
+</li>
+                
+                <li onclick="toggle('pre7760', 'post7760')">    # requests. For those requests that do need to know the IP, the
+</li>
+                
+                <li onclick="toggle('pre7760', 'post7760')">    # GetIp#calculate_ip method will calculate the memoized client IP address.
+</li>
+                
+                <li onclick="toggle('pre7760', 'post7760')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre7760', 'post7760')">      req = ActionDispatch::Request.new env
+</li>
+                
+                <li onclick="toggle('pre7760', 'post7760')">      req.remote_ip = GetIp.new(req, check_ip, proxies)
+</li>
+                
+              </ol>
+              
+
+            <ol start="92" class="context-line">
+              <li onclick="toggle('pre7760', 'post7760')">      @app.call(req.env)<span>...</span></li></ol>
+
+              
+              <ol start='93' class="post-context" id="post7760">
+                
+                <li onclick="toggle('pre7760', 'post7760')">    end
+</li>
+                
+                <li onclick="toggle('pre7760', 'post7760')">
+</li>
+                
+                <li onclick="toggle('pre7760', 'post7760')">    # The GetIp class exists as a way to defer processing of the request data
+</li>
+                
+                <li onclick="toggle('pre7760', 'post7760')">    # into an actual IP address. If the ActionDispatch::Request#remote_ip method
+</li>
+                
+                <li onclick="toggle('pre7760', 'post7760')">    # is called, this class will calculate the value and then memoize it.
+</li>
+                
+                <li onclick="toggle('pre7760', 'post7760')">    class GetIp
+</li>
+                
+                <li onclick="toggle('pre7760', 'post7760')">      def initialize(req, check_ip, proxies)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;actionpack-7.1.3&#x2F;lib&#x2F;action_dispatch&#x2F;middleware&#x2F;request_id.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7780">
+              
+              <ol start="21" class="pre-context" id="pre7780">
+                
+                <li onclick="toggle('pre7780', 'post7780')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre7780', 'post7780')">      @header = header
+</li>
+                
+                <li onclick="toggle('pre7780', 'post7780')">    end
+</li>
+                
+                <li onclick="toggle('pre7780', 'post7780')">
+</li>
+                
+                <li onclick="toggle('pre7780', 'post7780')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre7780', 'post7780')">      req = ActionDispatch::Request.new env
+</li>
+                
+                <li onclick="toggle('pre7780', 'post7780')">      req.request_id = make_request_id(req.headers[@header])
+</li>
+                
+              </ol>
+              
+
+            <ol start="28" class="context-line">
+              <li onclick="toggle('pre7780', 'post7780')">      @app.call(env).tap { |_status, headers, _body| headers[@header] = req.request_id }<span>...</span></li></ol>
+
+              
+              <ol start='29' class="post-context" id="post7780">
+                
+                <li onclick="toggle('pre7780', 'post7780')">    end
+</li>
+                
+                <li onclick="toggle('pre7780', 'post7780')">
+</li>
+                
+                <li onclick="toggle('pre7780', 'post7780')">    private
+</li>
+                
+                <li onclick="toggle('pre7780', 'post7780')">      def make_request_id(request_id)
+</li>
+                
+                <li onclick="toggle('pre7780', 'post7780')">        if request_id.presence
+</li>
+                
+                <li onclick="toggle('pre7780', 'post7780')">          request_id.gsub(&#x2F;[^\w\-@]&#x2F;, &quot;&quot;).first(255)
+</li>
+                
+                <li onclick="toggle('pre7780', 'post7780')">        else
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;method_override.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7800">
+              
+              <ol start="21" class="pre-context" id="pre7800">
+                
+                <li onclick="toggle('pre7800', 'post7800')">        method = method_override(env)
+</li>
+                
+                <li onclick="toggle('pre7800', 'post7800')">        if HTTP_METHODS.include?(method)
+</li>
+                
+                <li onclick="toggle('pre7800', 'post7800')">          env[RACK_METHODOVERRIDE_ORIGINAL_METHOD] = env[REQUEST_METHOD]
+</li>
+                
+                <li onclick="toggle('pre7800', 'post7800')">          env[REQUEST_METHOD] = method
+</li>
+                
+                <li onclick="toggle('pre7800', 'post7800')">        end
+</li>
+                
+                <li onclick="toggle('pre7800', 'post7800')">      end
+</li>
+                
+                <li onclick="toggle('pre7800', 'post7800')">
+</li>
+                
+              </ol>
+              
+
+            <ol start="28" class="context-line">
+              <li onclick="toggle('pre7800', 'post7800')">      @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='29' class="post-context" id="post7800">
+                
+                <li onclick="toggle('pre7800', 'post7800')">    end
+</li>
+                
+                <li onclick="toggle('pre7800', 'post7800')">
+</li>
+                
+                <li onclick="toggle('pre7800', 'post7800')">    def method_override(env)
+</li>
+                
+                <li onclick="toggle('pre7800', 'post7800')">      req = Request.new(env)
+</li>
+                
+                <li onclick="toggle('pre7800', 'post7800')">      method = method_override_param(req) ||
+</li>
+                
+                <li onclick="toggle('pre7800', 'post7800')">        env[HTTP_METHOD_OVERRIDE_HEADER]
+</li>
+                
+                <li onclick="toggle('pre7800', 'post7800')">      begin
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;runtime.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7820">
+              
+              <ol start="17" class="pre-context" id="pre7820">
+                
+                <li onclick="toggle('pre7820', 'post7820')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre7820', 'post7820')">      @header_name = HEADER_NAME
+</li>
+                
+                <li onclick="toggle('pre7820', 'post7820')">      @header_name += &quot;-#{name.to_s.downcase}&quot; if name
+</li>
+                
+                <li onclick="toggle('pre7820', 'post7820')">    end
+</li>
+                
+                <li onclick="toggle('pre7820', 'post7820')">
+</li>
+                
+                <li onclick="toggle('pre7820', 'post7820')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre7820', 'post7820')">      start_time = Utils.clock_time
+</li>
+                
+              </ol>
+              
+
+            <ol start="24" class="context-line">
+              <li onclick="toggle('pre7820', 'post7820')">      _, headers, _ = response = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='25' class="post-context" id="post7820">
+                
+                <li onclick="toggle('pre7820', 'post7820')">
+</li>
+                
+                <li onclick="toggle('pre7820', 'post7820')">      request_time = Utils.clock_time - start_time
+</li>
+                
+                <li onclick="toggle('pre7820', 'post7820')">
+</li>
+                
+                <li onclick="toggle('pre7820', 'post7820')">      unless headers.key?(@header_name)
+</li>
+                
+                <li onclick="toggle('pre7820', 'post7820')">        headers[@header_name] = FORMAT_STRING % request_time
+</li>
+                
+                <li onclick="toggle('pre7820', 'post7820')">      end
+</li>
+                
+                <li onclick="toggle('pre7820', 'post7820')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;actionpack-7.1.3&#x2F;lib&#x2F;action_dispatch&#x2F;middleware&#x2F;executor.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7840">
+              
+              <ol start="7" class="pre-context" id="pre7840">
+                
+                <li onclick="toggle('pre7840', 'post7840')">    def initialize(app, executor)
+</li>
+                
+                <li onclick="toggle('pre7840', 'post7840')">      @app, @executor = app, executor
+</li>
+                
+                <li onclick="toggle('pre7840', 'post7840')">    end
+</li>
+                
+                <li onclick="toggle('pre7840', 'post7840')">
+</li>
+                
+                <li onclick="toggle('pre7840', 'post7840')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre7840', 'post7840')">      state = @executor.run!(reset: true)
+</li>
+                
+                <li onclick="toggle('pre7840', 'post7840')">      begin
+</li>
+                
+              </ol>
+              
+
+            <ol start="14" class="context-line">
+              <li onclick="toggle('pre7840', 'post7840')">        response = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='15' class="post-context" id="post7840">
+                
+                <li onclick="toggle('pre7840', 'post7840')">        returned = response &lt;&lt; ::Rack::BodyProxy.new(response.pop) { state.complete! }
+</li>
+                
+                <li onclick="toggle('pre7840', 'post7840')">      rescue =&gt; error
+</li>
+                
+                <li onclick="toggle('pre7840', 'post7840')">        @executor.error_reporter.report(error, handled: false, source: &quot;application.action_dispatch&quot;)
+</li>
+                
+                <li onclick="toggle('pre7840', 'post7840')">        raise
+</li>
+                
+                <li onclick="toggle('pre7840', 'post7840')">      ensure
+</li>
+                
+                <li onclick="toggle('pre7840', 'post7840')">        state.complete! unless returned
+</li>
+                
+                <li onclick="toggle('pre7840', 'post7840')">      end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;actionpack-7.1.3&#x2F;lib&#x2F;action_dispatch&#x2F;middleware&#x2F;static.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7860">
+              
+              <ol start="18" class="pre-context" id="pre7860">
+                
+                <li onclick="toggle('pre7860', 'post7860')">  class Static
+</li>
+                
+                <li onclick="toggle('pre7860', 'post7860')">    def initialize(app, path, index: &quot;index&quot;, headers: {})
+</li>
+                
+                <li onclick="toggle('pre7860', 'post7860')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre7860', 'post7860')">      @file_handler = FileHandler.new(path, index: index, headers: headers)
+</li>
+                
+                <li onclick="toggle('pre7860', 'post7860')">    end
+</li>
+                
+                <li onclick="toggle('pre7860', 'post7860')">
+</li>
+                
+                <li onclick="toggle('pre7860', 'post7860')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="25" class="context-line">
+              <li onclick="toggle('pre7860', 'post7860')">      @file_handler.attempt(env) || @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='26' class="post-context" id="post7860">
+                
+                <li onclick="toggle('pre7860', 'post7860')">    end
+</li>
+                
+                <li onclick="toggle('pre7860', 'post7860')">  end
+</li>
+                
+                <li onclick="toggle('pre7860', 'post7860')">
+</li>
+                
+                <li onclick="toggle('pre7860', 'post7860')">  # = Action Dispatch \FileHandler
+</li>
+                
+                <li onclick="toggle('pre7860', 'post7860')">  #
+</li>
+                
+                <li onclick="toggle('pre7860', 'post7860')">  # This endpoint serves static files from disk using +Rack::Files+.
+</li>
+                
+                <li onclick="toggle('pre7860', 'post7860')">  #
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;sendfile.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7880">
+              
+              <ol start="107" class="pre-context" id="pre7880">
+                
+                <li onclick="toggle('pre7880', 'post7880')">      @variation = variation
+</li>
+                
+                <li onclick="toggle('pre7880', 'post7880')">      @mappings = mappings.map do |internal, external|
+</li>
+                
+                <li onclick="toggle('pre7880', 'post7880')">        [&#x2F;^#{internal}&#x2F;i, external]
+</li>
+                
+                <li onclick="toggle('pre7880', 'post7880')">      end
+</li>
+                
+                <li onclick="toggle('pre7880', 'post7880')">    end
+</li>
+                
+                <li onclick="toggle('pre7880', 'post7880')">
+</li>
+                
+                <li onclick="toggle('pre7880', 'post7880')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="114" class="context-line">
+              <li onclick="toggle('pre7880', 'post7880')">      _, headers, body = response = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='115' class="post-context" id="post7880">
+                
+                <li onclick="toggle('pre7880', 'post7880')">
+</li>
+                
+                <li onclick="toggle('pre7880', 'post7880')">      if body.respond_to?(:to_path)
+</li>
+                
+                <li onclick="toggle('pre7880', 'post7880')">        case type = variation(env)
+</li>
+                
+                <li onclick="toggle('pre7880', 'post7880')">        when &#x2F;x-accel-redirect&#x2F;i
+</li>
+                
+                <li onclick="toggle('pre7880', 'post7880')">          path = ::File.expand_path(body.to_path)
+</li>
+                
+                <li onclick="toggle('pre7880', 'post7880')">          if url = map_accel_path(env, path)
+</li>
+                
+                <li onclick="toggle('pre7880', 'post7880')">            headers[CONTENT_LENGTH] = &#x27;0&#x27;
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;actionpack-7.1.3&#x2F;lib&#x2F;action_dispatch&#x2F;middleware&#x2F;host_authorization.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7900">
+              
+              <ol start="134" class="pre-context" id="pre7900">
+                
+                <li onclick="toggle('pre7900', 'post7900')">      return @app.call(env) if @permissions.empty?
+</li>
+                
+                <li onclick="toggle('pre7900', 'post7900')">
+</li>
+                
+                <li onclick="toggle('pre7900', 'post7900')">      request = Request.new(env)
+</li>
+                
+                <li onclick="toggle('pre7900', 'post7900')">      hosts = blocked_hosts(request)
+</li>
+                
+                <li onclick="toggle('pre7900', 'post7900')">
+</li>
+                
+                <li onclick="toggle('pre7900', 'post7900')">      if hosts.empty? || excluded?(request)
+</li>
+                
+                <li onclick="toggle('pre7900', 'post7900')">        mark_as_authorized(request)
+</li>
+                
+              </ol>
+              
+
+            <ol start="141" class="context-line">
+              <li onclick="toggle('pre7900', 'post7900')">        @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='142' class="post-context" id="post7900">
+                
+                <li onclick="toggle('pre7900', 'post7900')">      else
+</li>
+                
+                <li onclick="toggle('pre7900', 'post7900')">        env[&quot;action_dispatch.blocked_hosts&quot;] = hosts
+</li>
+                
+                <li onclick="toggle('pre7900', 'post7900')">        @response_app.call(env)
+</li>
+                
+                <li onclick="toggle('pre7900', 'post7900')">      end
+</li>
+                
+                <li onclick="toggle('pre7900', 'post7900')">    end
+</li>
+                
+                <li onclick="toggle('pre7900', 'post7900')">
+</li>
+                
+                <li onclick="toggle('pre7900', 'post7900')">    private
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;engine.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7920">
+              
+              <ol start="529" class="pre-context" id="pre7920">
+                
+                <li onclick="toggle('pre7920', 'post7920')">    def endpoint
+</li>
+                
+                <li onclick="toggle('pre7920', 'post7920')">      self.class.endpoint || routes
+</li>
+                
+                <li onclick="toggle('pre7920', 'post7920')">    end
+</li>
+                
+                <li onclick="toggle('pre7920', 'post7920')">
+</li>
+                
+                <li onclick="toggle('pre7920', 'post7920')">    # Define the Rack API for this engine.
+</li>
+                
+                <li onclick="toggle('pre7920', 'post7920')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre7920', 'post7920')">      req = build_request env
+</li>
+                
+              </ol>
+              
+
+            <ol start="536" class="context-line">
+              <li onclick="toggle('pre7920', 'post7920')">      app.call req.env<span>...</span></li></ol>
+
+              
+              <ol start='537' class="post-context" id="post7920">
+                
+                <li onclick="toggle('pre7920', 'post7920')">    end
+</li>
+                
+                <li onclick="toggle('pre7920', 'post7920')">
+</li>
+                
+                <li onclick="toggle('pre7920', 'post7920')">    # Defines additional Rack env configuration that is added on each call.
+</li>
+                
+                <li onclick="toggle('pre7920', 'post7920')">    def env_config
+</li>
+                
+                <li onclick="toggle('pre7920', 'post7920')">      @env_config ||= {}
+</li>
+                
+                <li onclick="toggle('pre7920', 'post7920')">    end
+</li>
+                
+                <li onclick="toggle('pre7920', 'post7920')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;railtie.rb</code>: in <code>public_send</code>
+
+          
+          <div class="context" id="c7940">
+              
+              <ol start="219" class="pre-context" id="pre7940">
+                
+                <li onclick="toggle('pre7940', 'post7940')">          instance.respond_to?(name) || super
+</li>
+                
+                <li onclick="toggle('pre7940', 'post7940')">        end
+</li>
+                
+                <li onclick="toggle('pre7940', 'post7940')">
+</li>
+                
+                <li onclick="toggle('pre7940', 'post7940')">        # If the class method does not have a method, then send the method call
+</li>
+                
+                <li onclick="toggle('pre7940', 'post7940')">        # to the Railtie instance.
+</li>
+                
+                <li onclick="toggle('pre7940', 'post7940')">        def method_missing(name, *args, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre7940', 'post7940')">          if !abstract_railtie? &amp;&amp; instance.respond_to?(name)
+</li>
+                
+              </ol>
+              
+
+            <ol start="226" class="context-line">
+              <li onclick="toggle('pre7940', 'post7940')">            instance.public_send(name, *args, &amp;block)<span>...</span></li></ol>
+
+              
+              <ol start='227' class="post-context" id="post7940">
+                
+                <li onclick="toggle('pre7940', 'post7940')">          else
+</li>
+                
+                <li onclick="toggle('pre7940', 'post7940')">            super
+</li>
+                
+                <li onclick="toggle('pre7940', 'post7940')">          end
+</li>
+                
+                <li onclick="toggle('pre7940', 'post7940')">        end
+</li>
+                
+                <li onclick="toggle('pre7940', 'post7940')">        ruby2_keywords(:method_missing)
+</li>
+                
+                <li onclick="toggle('pre7940', 'post7940')">
+</li>
+                
+                <li onclick="toggle('pre7940', 'post7940')">        # receives an instance variable identifier, set the variable value if is
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;railtie.rb</code>: in <code>method_missing</code>
+
+          
+          <div class="context" id="c7960">
+              
+              <ol start="219" class="pre-context" id="pre7960">
+                
+                <li onclick="toggle('pre7960', 'post7960')">          instance.respond_to?(name) || super
+</li>
+                
+                <li onclick="toggle('pre7960', 'post7960')">        end
+</li>
+                
+                <li onclick="toggle('pre7960', 'post7960')">
+</li>
+                
+                <li onclick="toggle('pre7960', 'post7960')">        # If the class method does not have a method, then send the method call
+</li>
+                
+                <li onclick="toggle('pre7960', 'post7960')">        # to the Railtie instance.
+</li>
+                
+                <li onclick="toggle('pre7960', 'post7960')">        def method_missing(name, *args, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre7960', 'post7960')">          if !abstract_railtie? &amp;&amp; instance.respond_to?(name)
+</li>
+                
+              </ol>
+              
+
+            <ol start="226" class="context-line">
+              <li onclick="toggle('pre7960', 'post7960')">            instance.public_send(name, *args, &amp;block)<span>...</span></li></ol>
+
+              
+              <ol start='227' class="post-context" id="post7960">
+                
+                <li onclick="toggle('pre7960', 'post7960')">          else
+</li>
+                
+                <li onclick="toggle('pre7960', 'post7960')">            super
+</li>
+                
+                <li onclick="toggle('pre7960', 'post7960')">          end
+</li>
+                
+                <li onclick="toggle('pre7960', 'post7960')">        end
+</li>
+                
+                <li onclick="toggle('pre7960', 'post7960')">        ruby2_keywords(:method_missing)
+</li>
+                
+                <li onclick="toggle('pre7960', 'post7960')">
+</li>
+                
+                <li onclick="toggle('pre7960', 'post7960')">        # receives an instance variable identifier, set the variable value if is
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;tempfile_reaper.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c7980">
+              
+              <ol start="13" class="pre-context" id="pre7980">
+                
+                <li onclick="toggle('pre7980', 'post7980')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre7980', 'post7980')">    end
+</li>
+                
+                <li onclick="toggle('pre7980', 'post7980')">
+</li>
+                
+                <li onclick="toggle('pre7980', 'post7980')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre7980', 'post7980')">      env[RACK_TEMPFILES] ||= []
+</li>
+                
+                <li onclick="toggle('pre7980', 'post7980')">
+</li>
+                
+                <li onclick="toggle('pre7980', 'post7980')">      begin
+</li>
+                
+              </ol>
+              
+
+            <ol start="20" class="context-line">
+              <li onclick="toggle('pre7980', 'post7980')">        _, _, body = response = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='21' class="post-context" id="post7980">
+                
+                <li onclick="toggle('pre7980', 'post7980')">      rescue Exception
+</li>
+                
+                <li onclick="toggle('pre7980', 'post7980')">        env[RACK_TEMPFILES]&amp;.each(&amp;:close!)
+</li>
+                
+                <li onclick="toggle('pre7980', 'post7980')">        raise
+</li>
+                
+                <li onclick="toggle('pre7980', 'post7980')">      end
+</li>
+                
+                <li onclick="toggle('pre7980', 'post7980')">
+</li>
+                
+                <li onclick="toggle('pre7980', 'post7980')">      response[2] = BodyProxy.new(body) do
+</li>
+                
+                <li onclick="toggle('pre7980', 'post7980')">        env[RACK_TEMPFILES]&amp;.each(&amp;:close!)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;lint.rb</code>: in <code>response</code>
+
+          
+          <div class="context" id="c8000">
+              
+              <ol start="56" class="pre-context" id="pre8000">
+                
+                <li onclick="toggle('pre8000', 'post8000')">        raise LintError, &quot;No env given&quot; unless @env
+</li>
+                
+                <li onclick="toggle('pre8000', 'post8000')">        check_environment(@env)
+</li>
+                
+                <li onclick="toggle('pre8000', 'post8000')">
+</li>
+                
+                <li onclick="toggle('pre8000', 'post8000')">        @env[RACK_INPUT] = InputWrapper.new(@env[RACK_INPUT])
+</li>
+                
+                <li onclick="toggle('pre8000', 'post8000')">        @env[RACK_ERRORS] = ErrorWrapper.new(@env[RACK_ERRORS])
+</li>
+                
+                <li onclick="toggle('pre8000', 'post8000')">
+</li>
+                
+                <li onclick="toggle('pre8000', 'post8000')">        ## and returns a non-frozen Array of exactly three values:
+</li>
+                
+              </ol>
+              
+
+            <ol start="63" class="context-line">
+              <li onclick="toggle('pre8000', 'post8000')">        @response = @app.call(@env)<span>...</span></li></ol>
+
+              
+              <ol start='64' class="post-context" id="post8000">
+                
+                <li onclick="toggle('pre8000', 'post8000')">        raise LintError, &quot;response is not an Array, but #{@response.class}&quot; unless @response.kind_of? Array
+</li>
+                
+                <li onclick="toggle('pre8000', 'post8000')">        raise LintError, &quot;response is frozen&quot; if @response.frozen?
+</li>
+                
+                <li onclick="toggle('pre8000', 'post8000')">        raise LintError, &quot;response array has #{@response.size} elements instead of 3&quot; unless @response.size == 3
+</li>
+                
+                <li onclick="toggle('pre8000', 'post8000')">
+</li>
+                
+                <li onclick="toggle('pre8000', 'post8000')">        @status, @headers, @body = @response
+</li>
+                
+                <li onclick="toggle('pre8000', 'post8000')">        ## The *status*,
+</li>
+                
+                <li onclick="toggle('pre8000', 'post8000')">        check_status(@status)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;lint.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c8020">
+              
+              <ol start="28" class="pre-context" id="pre8020">
+                
+                <li onclick="toggle('pre8020', 'post8020')">    ## after to catch all mistakes.
+</li>
+                
+                <li onclick="toggle('pre8020', 'post8020')">    ##
+</li>
+                
+                <li onclick="toggle('pre8020', 'post8020')">    ## = Rack applications
+</li>
+                
+                <li onclick="toggle('pre8020', 'post8020')">    ##
+</li>
+                
+                <li onclick="toggle('pre8020', 'post8020')">    ## A Rack application is a Ruby object (not a class) that
+</li>
+                
+                <li onclick="toggle('pre8020', 'post8020')">    ## responds to +call+.
+</li>
+                
+                <li onclick="toggle('pre8020', 'post8020')">    def call(env = nil)
+</li>
+                
+              </ol>
+              
+
+            <ol start="35" class="context-line">
+              <li onclick="toggle('pre8020', 'post8020')">      Wrapper.new(@app, env).response<span>...</span></li></ol>
+
+              
+              <ol start='36' class="post-context" id="post8020">
+                
+                <li onclick="toggle('pre8020', 'post8020')">    end
+</li>
+                
+                <li onclick="toggle('pre8020', 'post8020')">
+</li>
+                
+                <li onclick="toggle('pre8020', 'post8020')">    class Wrapper
+</li>
+                
+                <li onclick="toggle('pre8020', 'post8020')">      def initialize(app, env)
+</li>
+                
+                <li onclick="toggle('pre8020', 'post8020')">        @app = app
+</li>
+                
+                <li onclick="toggle('pre8020', 'post8020')">        @env = env
+</li>
+                
+                <li onclick="toggle('pre8020', 'post8020')">        @response = nil
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;show_exceptions.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c8040">
+              
+              <ol start="20" class="pre-context" id="pre8040">
+                
+                <li onclick="toggle('pre8040', 'post8040')">    CONTEXT = 7
+</li>
+                
+                <li onclick="toggle('pre8040', 'post8040')">
+</li>
+                
+                <li onclick="toggle('pre8040', 'post8040')">    def initialize(app)
+</li>
+                
+                <li onclick="toggle('pre8040', 'post8040')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre8040', 'post8040')">    end
+</li>
+                
+                <li onclick="toggle('pre8040', 'post8040')">
+</li>
+                
+                <li onclick="toggle('pre8040', 'post8040')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="27" class="context-line">
+              <li onclick="toggle('pre8040', 'post8040')">      @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='28' class="post-context" id="post8040">
+                
+                <li onclick="toggle('pre8040', 'post8040')">    rescue StandardError, LoadError, SyntaxError =&gt; e
+</li>
+                
+                <li onclick="toggle('pre8040', 'post8040')">      exception_string = dump_exception(e)
+</li>
+                
+                <li onclick="toggle('pre8040', 'post8040')">
+</li>
+                
+                <li onclick="toggle('pre8040', 'post8040')">      env[RACK_ERRORS].puts(exception_string)
+</li>
+                
+                <li onclick="toggle('pre8040', 'post8040')">      env[RACK_ERRORS].flush
+</li>
+                
+                <li onclick="toggle('pre8040', 'post8040')">
+</li>
+                
+                <li onclick="toggle('pre8040', 'post8040')">      if accepts_html?(env)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;common_logger.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c8060">
+              
+              <ol start="36" class="pre-context" id="pre8060">
+                
+                <li onclick="toggle('pre8060', 'post8060')">    # will not be logged, so if exception handling middleware are used,
+</li>
+                
+                <li onclick="toggle('pre8060', 'post8060')">    # they should be loaded after this middleware.  Additionally, because
+</li>
+                
+                <li onclick="toggle('pre8060', 'post8060')">    # the logging happens after the request body has been fully sent, any
+</li>
+                
+                <li onclick="toggle('pre8060', 'post8060')">    # exceptions raised during the sending of the response body will
+</li>
+                
+                <li onclick="toggle('pre8060', 'post8060')">    # cause the request not to be logged.
+</li>
+                
+                <li onclick="toggle('pre8060', 'post8060')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre8060', 'post8060')">      began_at = Utils.clock_time
+</li>
+                
+              </ol>
+              
+
+            <ol start="43" class="context-line">
+              <li onclick="toggle('pre8060', 'post8060')">      status, headers, body = response = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='44' class="post-context" id="post8060">
+                
+                <li onclick="toggle('pre8060', 'post8060')">
+</li>
+                
+                <li onclick="toggle('pre8060', 'post8060')">      response[2] = BodyProxy.new(body) { log(env, status, headers, began_at) }
+</li>
+                
+                <li onclick="toggle('pre8060', 'post8060')">      response
+</li>
+                
+                <li onclick="toggle('pre8060', 'post8060')">    end
+</li>
+                
+                <li onclick="toggle('pre8060', 'post8060')">
+</li>
+                
+                <li onclick="toggle('pre8060', 'post8060')">    private
+</li>
+                
+                <li onclick="toggle('pre8060', 'post8060')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;content_length.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c8080">
+              
+              <ol start="13" class="pre-context" id="pre8080">
+                
+                <li onclick="toggle('pre8080', 'post8080')">    include Rack::Utils
+</li>
+                
+                <li onclick="toggle('pre8080', 'post8080')">
+</li>
+                
+                <li onclick="toggle('pre8080', 'post8080')">    def initialize(app)
+</li>
+                
+                <li onclick="toggle('pre8080', 'post8080')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre8080', 'post8080')">    end
+</li>
+                
+                <li onclick="toggle('pre8080', 'post8080')">
+</li>
+                
+                <li onclick="toggle('pre8080', 'post8080')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="20" class="context-line">
+              <li onclick="toggle('pre8080', 'post8080')">      status, headers, body = response = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='21' class="post-context" id="post8080">
+                
+                <li onclick="toggle('pre8080', 'post8080')">
+</li>
+                
+                <li onclick="toggle('pre8080', 'post8080')">      if !STATUS_WITH_NO_ENTITY_BODY.key?(status.to_i) &amp;&amp;
+</li>
+                
+                <li onclick="toggle('pre8080', 'post8080')">         !headers[CONTENT_LENGTH] &amp;&amp;
+</li>
+                
+                <li onclick="toggle('pre8080', 'post8080')">         !headers[TRANSFER_ENCODING] &amp;&amp;
+</li>
+                
+                <li onclick="toggle('pre8080', 'post8080')">         body.respond_to?(:to_ary)
+</li>
+                
+                <li onclick="toggle('pre8080', 'post8080')">
+</li>
+                
+                <li onclick="toggle('pre8080', 'post8080')">        response[2] = body = body.to_ary
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;puma-6.4.2&#x2F;lib&#x2F;puma&#x2F;configuration.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c8100">
+              
+              <ol start="265" class="pre-context" id="pre8100">
+                
+                <li onclick="toggle('pre8100', 'post8100')">      def initialize(config, app)
+</li>
+                
+                <li onclick="toggle('pre8100', 'post8100')">        @config = config
+</li>
+                
+                <li onclick="toggle('pre8100', 'post8100')">        @app = app
+</li>
+                
+                <li onclick="toggle('pre8100', 'post8100')">      end
+</li>
+                
+                <li onclick="toggle('pre8100', 'post8100')">
+</li>
+                
+                <li onclick="toggle('pre8100', 'post8100')">      def call(env)
+</li>
+                
+                <li onclick="toggle('pre8100', 'post8100')">        env[Const::PUMA_CONFIG] = @config
+</li>
+                
+              </ol>
+              
+
+            <ol start="272" class="context-line">
+              <li onclick="toggle('pre8100', 'post8100')">        @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='273' class="post-context" id="post8100">
+                
+                <li onclick="toggle('pre8100', 'post8100')">      end
+</li>
+                
+                <li onclick="toggle('pre8100', 'post8100')">    end
+</li>
+                
+                <li onclick="toggle('pre8100', 'post8100')">
+</li>
+                
+                <li onclick="toggle('pre8100', 'post8100')">    # Indicate if there is a properly configured app
+</li>
+                
+                <li onclick="toggle('pre8100', 'post8100')">    #
+</li>
+                
+                <li onclick="toggle('pre8100', 'post8100')">    def app_configured?
+</li>
+                
+                <li onclick="toggle('pre8100', 'post8100')">      @options[:app] || File.exist?(rackup)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;puma-6.4.2&#x2F;lib&#x2F;puma&#x2F;request.rb</code>: in <code>block in handle_request</code>
+
+          
+          <div class="context" id="c8120">
+              
+              <ol start="93" class="pre-context" id="pre8120">
+                
+                <li onclick="toggle('pre8120', 'post8120')">      # array, we will invoke them when the request is done.
+</li>
+                
+                <li onclick="toggle('pre8120', 'post8120')">      #
+</li>
+                
+                <li onclick="toggle('pre8120', 'post8120')">      env[RACK_AFTER_REPLY] ||= []
+</li>
+                
+                <li onclick="toggle('pre8120', 'post8120')">
+</li>
+                
+                <li onclick="toggle('pre8120', 'post8120')">      begin
+</li>
+                
+                <li onclick="toggle('pre8120', 'post8120')">        if @supported_http_methods == :any || @supported_http_methods.key?(env[REQUEST_METHOD])
+</li>
+                
+                <li onclick="toggle('pre8120', 'post8120')">          status, headers, app_body = @thread_pool.with_force_shutdown do
+</li>
+                
+              </ol>
+              
+
+            <ol start="100" class="context-line">
+              <li onclick="toggle('pre8120', 'post8120')">            @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='101' class="post-context" id="post8120">
+                
+                <li onclick="toggle('pre8120', 'post8120')">          end
+</li>
+                
+                <li onclick="toggle('pre8120', 'post8120')">        else
+</li>
+                
+                <li onclick="toggle('pre8120', 'post8120')">          @log_writer.log &quot;Unsupported HTTP method used: #{env[REQUEST_METHOD]}&quot;
+</li>
+                
+                <li onclick="toggle('pre8120', 'post8120')">          status, headers, app_body = [501, {}, [&quot;#{env[REQUEST_METHOD]} method is not supported&quot;]]
+</li>
+                
+                <li onclick="toggle('pre8120', 'post8120')">        end
+</li>
+                
+                <li onclick="toggle('pre8120', 'post8120')">
+</li>
+                
+                <li onclick="toggle('pre8120', 'post8120')">        # app_body needs to always be closed, hold value in case lowlevel_error
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;puma-6.4.2&#x2F;lib&#x2F;puma&#x2F;thread_pool.rb</code>: in <code>with_force_shutdown</code>
+
+          
+          <div class="context" id="c8140">
+              
+              <ol start="371" class="pre-context" id="pre8140">
+                
+                <li onclick="toggle('pre8140', 'post8140')">    # provided block if the thread is forced to shutdown during execution.
+</li>
+                
+                <li onclick="toggle('pre8140', 'post8140')">    def with_force_shutdown
+</li>
+                
+                <li onclick="toggle('pre8140', 'post8140')">      t = Thread.current
+</li>
+                
+                <li onclick="toggle('pre8140', 'post8140')">      @shutdown_mutex.synchronize do
+</li>
+                
+                <li onclick="toggle('pre8140', 'post8140')">        raise ForceShutdown if @force_shutdown
+</li>
+                
+                <li onclick="toggle('pre8140', 'post8140')">        t[:with_force_shutdown] = true
+</li>
+                
+                <li onclick="toggle('pre8140', 'post8140')">      end
+</li>
+                
+              </ol>
+              
+
+            <ol start="378" class="context-line">
+              <li onclick="toggle('pre8140', 'post8140')">      yield<span>...</span></li></ol>
+
+              
+              <ol start='379' class="post-context" id="post8140">
+                
+                <li onclick="toggle('pre8140', 'post8140')">    ensure
+</li>
+                
+                <li onclick="toggle('pre8140', 'post8140')">      t[:with_force_shutdown] = false
+</li>
+                
+                <li onclick="toggle('pre8140', 'post8140')">    end
+</li>
+                
+                <li onclick="toggle('pre8140', 'post8140')">
+</li>
+                
+                <li onclick="toggle('pre8140', 'post8140')">    # Tell all threads in the pool to exit and wait for them to finish.
+</li>
+                
+                <li onclick="toggle('pre8140', 'post8140')">    # Wait +timeout+ seconds then raise +ForceShutdown+ in remaining threads.
+</li>
+                
+                <li onclick="toggle('pre8140', 'post8140')">    # Next, wait an extra +@shutdown_grace_time+ seconds then force-kill remaining
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;puma-6.4.2&#x2F;lib&#x2F;puma&#x2F;request.rb</code>: in <code>handle_request</code>
+
+          
+          <div class="context" id="c8160">
+              
+              <ol start="92" class="pre-context" id="pre8160">
+                
+                <li onclick="toggle('pre8160', 'post8160')">      # A rack extension. If the app writes #call&#x27;ables to this
+</li>
+                
+                <li onclick="toggle('pre8160', 'post8160')">      # array, we will invoke them when the request is done.
+</li>
+                
+                <li onclick="toggle('pre8160', 'post8160')">      #
+</li>
+                
+                <li onclick="toggle('pre8160', 'post8160')">      env[RACK_AFTER_REPLY] ||= []
+</li>
+                
+                <li onclick="toggle('pre8160', 'post8160')">
+</li>
+                
+                <li onclick="toggle('pre8160', 'post8160')">      begin
+</li>
+                
+                <li onclick="toggle('pre8160', 'post8160')">        if @supported_http_methods == :any || @supported_http_methods.key?(env[REQUEST_METHOD])
+</li>
+                
+              </ol>
+              
+
+            <ol start="99" class="context-line">
+              <li onclick="toggle('pre8160', 'post8160')">          status, headers, app_body = @thread_pool.with_force_shutdown do<span>...</span></li></ol>
+
+              
+              <ol start='100' class="post-context" id="post8160">
+                
+                <li onclick="toggle('pre8160', 'post8160')">            @app.call(env)
+</li>
+                
+                <li onclick="toggle('pre8160', 'post8160')">          end
+</li>
+                
+                <li onclick="toggle('pre8160', 'post8160')">        else
+</li>
+                
+                <li onclick="toggle('pre8160', 'post8160')">          @log_writer.log &quot;Unsupported HTTP method used: #{env[REQUEST_METHOD]}&quot;
+</li>
+                
+                <li onclick="toggle('pre8160', 'post8160')">          status, headers, app_body = [501, {}, [&quot;#{env[REQUEST_METHOD]} method is not supported&quot;]]
+</li>
+                
+                <li onclick="toggle('pre8160', 'post8160')">        end
+</li>
+                
+                <li onclick="toggle('pre8160', 'post8160')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;puma-6.4.2&#x2F;lib&#x2F;puma&#x2F;server.rb</code>: in <code>process_client</code>
+
+          
+          <div class="context" id="c8180">
+              
+              <ol start="457" class="pre-context" id="pre8180">
+                
+                <li onclick="toggle('pre8180', 'post8180')">
+</li>
+                
+                <li onclick="toggle('pre8180', 'post8180')">        with_force_shutdown(client) do
+</li>
+                
+                <li onclick="toggle('pre8180', 'post8180')">          client.finish(@first_data_timeout)
+</li>
+                
+                <li onclick="toggle('pre8180', 'post8180')">        end
+</li>
+                
+                <li onclick="toggle('pre8180', 'post8180')">
+</li>
+                
+                <li onclick="toggle('pre8180', 'post8180')">        while true
+</li>
+                
+                <li onclick="toggle('pre8180', 'post8180')">          @requests_count += 1
+</li>
+                
+              </ol>
+              
+
+            <ol start="464" class="context-line">
+              <li onclick="toggle('pre8180', 'post8180')">          case handle_request(client, requests + 1)<span>...</span></li></ol>
+
+              
+              <ol start='465' class="post-context" id="post8180">
+                
+                <li onclick="toggle('pre8180', 'post8180')">          when false
+</li>
+                
+                <li onclick="toggle('pre8180', 'post8180')">            break
+</li>
+                
+                <li onclick="toggle('pre8180', 'post8180')">          when :async
+</li>
+                
+                <li onclick="toggle('pre8180', 'post8180')">            close_socket = false
+</li>
+                
+                <li onclick="toggle('pre8180', 'post8180')">            break
+</li>
+                
+                <li onclick="toggle('pre8180', 'post8180')">          when true
+</li>
+                
+                <li onclick="toggle('pre8180', 'post8180')">            ThreadPool.clean_thread_locals if clean_thread_locals
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;puma-6.4.2&#x2F;lib&#x2F;puma&#x2F;server.rb</code>: in <code>block in run</code>
+
+          
+          <div class="context" id="c8200">
+              
+              <ol start="238" class="pre-context" id="pre8200">
+                
+                <li onclick="toggle('pre8200', 'post8200')">    def run(background=true, thread_name: &#x27;srv&#x27;)
+</li>
+                
+                <li onclick="toggle('pre8200', 'post8200')">      BasicSocket.do_not_reverse_lookup = true
+</li>
+                
+                <li onclick="toggle('pre8200', 'post8200')">
+</li>
+                
+                <li onclick="toggle('pre8200', 'post8200')">      @events.fire :state, :booting
+</li>
+                
+                <li onclick="toggle('pre8200', 'post8200')">
+</li>
+                
+                <li onclick="toggle('pre8200', 'post8200')">      @status = :run
+</li>
+                
+                <li onclick="toggle('pre8200', 'post8200')">
+</li>
+                
+              </ol>
+              
+
+            <ol start="245" class="context-line">
+              <li onclick="toggle('pre8200', 'post8200')">      @thread_pool = ThreadPool.new(thread_name, @options) { |client| process_client client }<span>...</span></li></ol>
+
+              
+              <ol start='246' class="post-context" id="post8200">
+                
+                <li onclick="toggle('pre8200', 'post8200')">
+</li>
+                
+                <li onclick="toggle('pre8200', 'post8200')">      if @queue_requests
+</li>
+                
+                <li onclick="toggle('pre8200', 'post8200')">        @reactor = Reactor.new(@io_selector_backend) { |c| reactor_wakeup c }
+</li>
+                
+                <li onclick="toggle('pre8200', 'post8200')">        @reactor.run
+</li>
+                
+                <li onclick="toggle('pre8200', 'post8200')">      end
+</li>
+                
+                <li onclick="toggle('pre8200', 'post8200')">
+</li>
+                
+                <li onclick="toggle('pre8200', 'post8200')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;puma-6.4.2&#x2F;lib&#x2F;puma&#x2F;thread_pool.rb</code>: in <code>block in spawn_thread</code>
+
+          
+          <div class="context" id="c8220">
+              
+              <ol start="148" class="pre-context" id="pre8220">
+                
+                <li onclick="toggle('pre8220', 'post8220')">          end
+</li>
+                
+                <li onclick="toggle('pre8220', 'post8220')">
+</li>
+                
+                <li onclick="toggle('pre8220', 'post8220')">          if @clean_thread_locals
+</li>
+                
+                <li onclick="toggle('pre8220', 'post8220')">            ThreadPool.clean_thread_locals
+</li>
+                
+                <li onclick="toggle('pre8220', 'post8220')">          end
+</li>
+                
+                <li onclick="toggle('pre8220', 'post8220')">
+</li>
+                
+                <li onclick="toggle('pre8220', 'post8220')">          begin
+</li>
+                
+              </ol>
+              
+
+            <ol start="155" class="context-line">
+              <li onclick="toggle('pre8220', 'post8220')">            @out_of_band_pending = true if block.call(work)<span>...</span></li></ol>
+
+              
+              <ol start='156' class="post-context" id="post8220">
+                
+                <li onclick="toggle('pre8220', 'post8220')">          rescue Exception =&gt; e
+</li>
+                
+                <li onclick="toggle('pre8220', 'post8220')">            STDERR.puts &quot;Error reached top of thread-pool: #{e.message} (#{e.class})&quot;
+</li>
+                
+                <li onclick="toggle('pre8220', 'post8220')">          end
+</li>
+                
+                <li onclick="toggle('pre8220', 'post8220')">        end
+</li>
+                
+                <li onclick="toggle('pre8220', 'post8220')">      end
+</li>
+                
+                <li onclick="toggle('pre8220', 'post8220')">
+</li>
+                
+                <li onclick="toggle('pre8220', 'post8220')">      @workers &lt;&lt; th
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+  </ul>
+</div>
+
+<div id="requestinfo">
+  <h2>Request information</h2>
+
+  <h3 id="get-info">GET</h3>
+  
+    <p>No GET data.</p>
+  
+
+  <h3 id="post-info">POST</h3>
+  
+    <p>No POST data.</p>
+  
+
+
+  <h3 id="cookie-info">COOKIES</h3>
+  
+    <p>No cookie data.</p>
+  
+
+  <h3 id="env-info">Rack ENV</h3>
+    <table class="req">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+          
+          <tr>
+            <td>GATEWAY_INTERFACE</td>
+            <td class="code"><div>&quot;CGI&#x2F;1.2&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_ACCEPT</td>
+            <td class="code"><div>&quot;*&#x2F;*&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_AUTHORIZATION</td>
+            <td class="code"><div>&quot;Basic dXNlcm5hbWUxOnBhc3N3b3JkMQ==&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_HOST</td>
+            <td class="code"><div>&quot;localhost:9292&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_USER_AGENT</td>
+            <td class="code"><div>&quot;curl&#x2F;8.4.0&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_VERSION</td>
+            <td class="code"><div>&quot;HTTP&#x2F;1.1&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>ORIGINAL_FULLPATH</td>
+            <td class="code"><div>&quot;&#x2F;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>ORIGINAL_SCRIPT_NAME</td>
+            <td class="code"><div>&quot;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>PATH_INFO</td>
+            <td class="code"><div>&quot;&#x2F;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>QUERY_STRING</td>
+            <td class="code"><div>&quot;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>REMOTE_ADDR</td>
+            <td class="code"><div>&quot;::1&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>REQUEST_METHOD</td>
+            <td class="code"><div>&quot;GET&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>REQUEST_PATH</td>
+            <td class="code"><div>&quot;&#x2F;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>REQUEST_URI</td>
+            <td class="code"><div>&quot;&#x2F;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>ROUTES_5460_SCRIPT_NAME</td>
+            <td class="code"><div>&quot;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>SCRIPT_NAME</td>
+            <td class="code"><div>&quot;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_NAME</td>
+            <td class="code"><div>&quot;localhost&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_PORT</td>
+            <td class="code"><div>&quot;9292&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_PROTOCOL</td>
+            <td class="code"><div>&quot;HTTP&#x2F;1.1&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_SOFTWARE</td>
+            <td class="code"><div>&quot;puma 6.4.2 The Eagle of Durango&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.authenticated_encrypted_cookie_salt</td>
+            <td class="code"><div>&quot;authenticated encrypted cookie&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.authorized_host</td>
+            <td class="code"><div>&quot;localhost&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.backtrace_cleaner</td>
+            <td class="code"><div>#&lt;Rails::BacktraceCleaner:0x0000000124d90538 @silencers=[#&lt;Proc:0x0000000124d90100 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;activesupport-7.1.3&#x2F;lib&#x2F;active_support&#x2F;backtrace_cleaner.rb:120&gt;, #&lt;Proc:0x0000000124d90060 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;activesupport-7.1.3&#x2F;lib&#x2F;active_support&#x2F;backtrace_cleaner.rb:124&gt;, #&lt;Proc:0x000000028873fde0 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;backtrace_cleaner.rb:24&gt;], @filters=[#&lt;Proc:0x0000000124d901c8 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;activesupport-7.1.3&#x2F;lib&#x2F;active_support&#x2F;backtrace_cleaner.rb:116&gt;, #&lt;Proc:0x000000028873fe30 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;backtrace_cleaner.rb:14&gt;, #&lt;Proc:0x000000028873fe08 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;backtrace_cleaner.rb:17&gt;], @root=&quot;&#x2F;Users&#x2F;daviddoolin&#x2F;src&#x2F;nplus1&#x2F;&quot;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.content_security_policy</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.content_security_policy_nonce_directives</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.content_security_policy_nonce_generator</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.content_security_policy_report_only</td>
+            <td class="code"><div>false</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.cookies_digest</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.cookies_rotations</td>
+            <td class="code"><div>#&lt;ActiveSupport::Messages::RotationConfiguration:0x0000000123a50928 @signed=[], @encrypted=[]&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.cookies_same_site_protection</td>
+            <td class="code"><div>#&lt;Proc:0x000000028873f020 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;railties-7.1.3&#x2F;lib&#x2F;rails&#x2F;application.rb:705&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.cookies_serializer</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.debug_exception_log_level</td>
+            <td class="code"><div>4</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.encrypted_cookie_cipher</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.encrypted_cookie_salt</td>
+            <td class="code"><div>&quot;encrypted cookie&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.encrypted_signed_cookie_salt</td>
+            <td class="code"><div>&quot;signed encrypted cookie&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.http_auth_salt</td>
+            <td class="code"><div>&quot;http authentication&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.key_generator</td>
+            <td class="code"><div>#&lt;ActiveSupport::CachingKeyGenerator:0x000000028873fac0 @key_generator=#&lt;ActiveSupport::KeyGenerator:0x00000000002f58&gt;, @cache_keys=#&lt;Concurrent::Map:0x000000028873fa48 entries=0 default_proc=nil&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.log_rescued_responses</td>
+            <td class="code"><div>true</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.logger</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.parameter_filter</td>
+            <td class="code"><div>[]</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.permissions_policy</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.redirect_filter</td>
+            <td class="code"><div>[]</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.remote_ip</td>
+            <td class="code"><div>#&lt;ActionDispatch::RemoteIp::GetIp:0x00000001128455b8 @req=#&lt;ActionDispatch::Request GET &quot;http:&#x2F;&#x2F;localhost:9292&#x2F;&quot; for ::1&gt;, @check_ip=true, @proxies=[#&lt;IPAddr: IPv4:127.0.0.0&#x2F;255.0.0.0&gt;, #&lt;IPAddr: IPv6:0000:0000:0000:0000:0000:0000:0000:0001&#x2F;ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff&gt;, #&lt;IPAddr: IPv6:fc00:0000:0000:0000:0000:0000:0000:0000&#x2F;fe00:0000:0000:0000:0000:0000:0000:0000&gt;, #&lt;IPAddr: IPv4:10.0.0.0&#x2F;255.0.0.0&gt;, #&lt;IPAddr: IPv4:172.16.0.0&#x2F;255.240.0.0&gt;, #&lt;IPAddr: IPv4:192.168.0.0&#x2F;255.255.0.0&gt;]&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.request_id</td>
+            <td class="code"><div>&quot;2b3dc66f-6dbb-4c59-a24f-b7958a618da7&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.routes</td>
+            <td class="code"><div>#&lt;ActionDispatch::Routing::RouteSet:0x0000000113e80828&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.secret_key_base</td>
+            <td class="code"><div>&quot;i_am_a_secret&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.show_detailed_exceptions</td>
+            <td class="code"><div>true</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.show_exceptions</td>
+            <td class="code"><div>:all</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.signed_cookie_digest</td>
+            <td class="code"><div>nil</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.signed_cookie_salt</td>
+            <td class="code"><div>&quot;signed cookie&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.use_authenticated_cookie_encryption</td>
+            <td class="code"><div>false</div></td>
+          </tr>
+          
+          <tr>
+            <td>action_dispatch.use_cookies_with_metadata</td>
+            <td class="code"><div>false</div></td>
+          </tr>
+          
+          <tr>
+            <td>puma.config</td>
+            <td class="code"><div>#&lt;Puma::Configuration:0x00000001239d8810 @options=#&lt;Puma::UserFileDefaultOptions:0x0000000124d9fb00 @user_options={:environment=&gt;&quot;development&quot;, :pid=&gt;nil, :Port=&gt;9292, :Host=&gt;&quot;localhost&quot;, :AccessLog=&gt;[], :config=&gt;&quot;&#x2F;Users&#x2F;daviddoolin&#x2F;src&#x2F;nplus1&#x2F;rails_ringle_file.ru&quot;, :binds=&gt;[&quot;tcp:&#x2F;&#x2F;localhost:9292&quot;], :app=&gt;#&lt;Rack::ContentLength:0x00000001248fec40 @app=#&lt;Rack::CommonLogger:0x00000001248fed30 @app=#&lt;Rack::ShowExceptions:0x00000001247d4b30 @app=#&lt;Rack::Lint:0x00000001247d4c70 @app=#&lt;Rack::TempfileReaper:0x00000001247d4d10 @app=App&gt;&gt;&gt;, @logger=#&lt;IO:&lt;STDERR&gt;&gt;&gt;&gt;, :log_writer=&gt;#&lt;Puma::LogWriter:0x00000001239d8630 @formatter=#&lt;Puma::LogWriter::DefaultFormatter:0x0000000124d9e9f8&gt;, @custom_logger=nil, @stdout=#&lt;IO:&lt;STDOUT&gt;&gt;, @stderr=#&lt;IO:&lt;STDERR&gt;&gt;, @debug=false, @error_logger=#&lt;Puma::ErrorLogger:0x0000000124d9e9d0 @ioerr=#&lt;IO:&lt;STDERR&gt;&gt;, @debug=false&gt;&gt;}, @file_options={}, @default_options={:auto_trim_time=&gt;30, :binds=&gt;[&quot;tcp:&#x2F;&#x2F;0.0.0.0:9292&quot;], :clean_thread_locals=&gt;false, :debug=&gt;false, :early_hints=&gt;nil, :environment=&gt;&quot;development&quot;, :first_data_timeout=&gt;30, :idle_timeout=&gt;nil, :io_selector_backend=&gt;:auto, :log_requests=&gt;false, :logger=&gt;#&lt;IO:&lt;STDOUT&gt;&gt;, :max_fast_inline=&gt;10, :max_threads=&gt;5, :min_threads=&gt;0, :mode=&gt;:http, :mutate_stdout_and_stderr_to_sync_on_write=&gt;true, :out_of_band=&gt;[], :persistent_timeout=&gt;20, :queue_requests=&gt;true, :rackup=&gt;&quot;config.ru&quot;, :raise_exception_on_sigterm=&gt;true, :reaping_time=&gt;1, :remote_address=&gt;:socket, :silence_single_worker_warning=&gt;false, :silence_fork_callback_warning=&gt;false, :tag=&gt;&quot;nplus1&quot;, :tcp_host=&gt;&quot;0.0.0.0&quot;, :tcp_port=&gt;9292, :wait_for_less_busy_worker=&gt;0.005, :worker_boot_timeout=&gt;60, :worker_check_interval=&gt;5, :worker_culling_strategy=&gt;:youngest, :worker_shutdown_timeout=&gt;30, :worker_timeout=&gt;60, :workers=&gt;0, :http_content_length_limit=&gt;nil, :Verbose=&gt;false, :Silent=&gt;false, :events=&gt;#&lt;Puma::Events:0x0000000124d9ffb0 @hooks={:state=&gt;[], :on_booted=&gt;[]}&gt;, :preload_app=&gt;false}&gt;, @plugins=#&lt;Puma::PluginLoader:0x0000000124d9fa10 @instances=[]&gt;, @user_dsl=#&lt;Puma::DSL:0x0000000124d9f8d0 @config=#&lt;Puma::Configuration:0x00000001239d8810 ...&gt;, @options={:environment=&gt;&quot;development&quot;, :pid=&gt;nil, :Port=&gt;9292, :Host=&gt;&quot;localhost&quot;, :AccessLog=&gt;[], :config=&gt;&quot;&#x2F;Users&#x2F;daviddoolin&#x2F;src&#x2F;nplus1&#x2F;rails_ringle_file.ru&quot;, :binds=&gt;[&quot;tcp:&#x2F;&#x2F;localhost:9292&quot;], :app=&gt;#&lt;Rack::ContentLength:0x00000001248fec40 @app=#&lt;Rack::CommonLogger:0x00000001248fed30 @app=#&lt;Rack::ShowExceptions:0x00000001247d4b30 @app=#&lt;Rack::Lint:0x00000001247d4c70 @app=#&lt;Rack::TempfileReaper:0x00000001247d4d10 @app=App&gt;&gt;&gt;, @logger=#&lt;IO:&lt;STDERR&gt;&gt;&gt;&gt;, :log_writer=&gt;#&lt;Puma::LogWriter:0x00000001239d8630 @formatter=#&lt;Puma::LogWriter::DefaultFormatter:0x0000000124d9e9f8&gt;, @custom_logger=nil, @stdout=#&lt;IO:&lt;STDOUT&gt;&gt;, @stderr=#&lt;IO:&lt;STDERR&gt;&gt;, @debug=false, @error_logger=#&lt;Puma::ErrorLogger:0x0000000124d9e9d0 @ioerr=#&lt;IO:&lt;STDERR&gt;&gt;, @debug=false&gt;&gt;}, @plugins=[]&gt;, @file_dsl=#&lt;Puma::DSL:0x0000000124d9f808 @config=#&lt;Puma::Configuration:0x00000001239d8810 ...&gt;, @options={}, @plugins=[]&gt;, @default_dsl=#&lt;Puma::DSL:0x0000000124d9f718 @config=#&lt;Puma::Configuration:0x00000001239d8810 ...&gt;, @options={:auto_trim_time=&gt;30, :binds=&gt;[&quot;tcp:&#x2F;&#x2F;0.0.0.0:9292&quot;], :clean_thread_locals=&gt;false, :debug=&gt;false, :early_hints=&gt;nil, :environment=&gt;&quot;development&quot;, :first_data_timeout=&gt;30, :idle_timeout=&gt;nil, :io_selector_backend=&gt;:auto, :log_requests=&gt;false, :logger=&gt;#&lt;IO:&lt;STDOUT&gt;&gt;, :max_fast_inline=&gt;10, :max_threads=&gt;5, :min_threads=&gt;0, :mode=&gt;:http, :mutate_stdout_and_stderr_to_sync_on_write=&gt;true, :out_of_band=&gt;[], :persistent_timeout=&gt;20, :queue_requests=&gt;true, :rackup=&gt;&quot;config.ru&quot;, :raise_exception_on_sigterm=&gt;true, :reaping_time=&gt;1, :remote_address=&gt;:socket, :silence_single_worker_warning=&gt;false, :silence_fork_callback_warning=&gt;false, :tag=&gt;&quot;nplus1&quot;, :tcp_host=&gt;&quot;0.0.0.0&quot;, :tcp_port=&gt;9292, :wait_for_less_busy_worker=&gt;0.005, :worker_boot_timeout=&gt;60, :worker_check_interval=&gt;5, :worker_culling_strategy=&gt;:youngest, :worker_shutdown_timeout=&gt;30, :worker_timeout=&gt;60, :workers=&gt;0, :http_content_length_limit=&gt;nil, :Verbose=&gt;false, :Silent=&gt;false, :events=&gt;#&lt;Puma::Events:0x0000000124d9ffb0 @hooks={:state=&gt;[], :on_booted=&gt;[]}&gt;, :preload_app=&gt;false}, @plugins=[]&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>puma.request_body_wait</td>
+            <td class="code"><div>0.0019998550415039062</div></td>
+          </tr>
+          
+          <tr>
+            <td>puma.socket</td>
+            <td class="code"><div>#&lt;TCPSocket:fd 18, AF_INET6, ::1, 9292&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.after_reply</td>
+            <td class="code"><div>[]</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.errors</td>
+            <td class="code"><div>#&lt;Rack::Lint::Wrapper::ErrorWrapper:0x0000000126635b10 @error=#&lt;IO:&lt;STDERR&gt;&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.hijack</td>
+            <td class="code"><div>#&lt;Proc:0x0000000126635bd8 &#x2F;Users&#x2F;daviddoolin&#x2F;.rvm&#x2F;gems&#x2F;ruby-3.3.0@nplus1&#x2F;gems&#x2F;rack-3.0.9&#x2F;lib&#x2F;rack&#x2F;lint.rb:556&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.hijack?</td>
+            <td class="code"><div>true</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.input</td>
+            <td class="code"><div>#&lt;Rack::Lint::Wrapper::InputWrapper:0x0000000126635b38 @input=#&lt;Puma::NullIO:0x0000000124b5be48&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.multiprocess</td>
+            <td class="code"><div>false</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.multithread</td>
+            <td class="code"><div>true</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.cookie_hash</td>
+            <td class="code"><div>{}</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.form_hash</td>
+            <td class="code"><div>{}</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.form_input</td>
+            <td class="code"><div>#&lt;Rack::Lint::Wrapper::InputWrapper:0x0000000126635b38 @input=#&lt;Puma::NullIO:0x0000000124b5be48&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.query_hash</td>
+            <td class="code"><div>{}</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.query_string</td>
+            <td class="code"><div>&quot;&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.run_once</td>
+            <td class="code"><div>false</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.tempfiles</td>
+            <td class="code"><div>[]</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.url_scheme</td>
+            <td class="code"><div>&quot;http&quot;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.version</td>
+            <td class="code"><div>[1, 6]</div></td>
+          </tr>
+          
+      </tbody>
+    </table>
+
+</div>
+
+<div id="explanation">
+  <p>
+    You're seeing this error because you use <code>Rack::ShowExceptions</code>.
+  </p>
+</div>
+
+</body>
+</html>
