@@ -8,7 +8,7 @@
 echo "Authorized"
 encoded=$(echo -n "username:password" | base64)
 # curl -X GET -H "Authorization: Basic $encoded" http://localhost:9292/
-curl -X GET -H "Authorization: Basic $encoded" http://localhost:9292/
+curl -X GET -H "Authorization: Basic $encoded" http://localhost:9000/
 
 echo ""
 echo ""

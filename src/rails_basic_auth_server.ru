@@ -30,6 +30,8 @@ require 'action_controller/railtie'
 # TODO: Implement simple logging.
 # TODO: try invalid login
 
+# Rails.logger = Logger.new(STDOUT)
+
 # Our main Rails application
 class SingleFile < Rails::Application
   config.session_store :cookie_store, key: '_session'
