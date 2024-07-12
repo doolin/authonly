@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Run this file with
-# $ rackup rails_basic_auth.ru
+# $ rackup rails_basic_auth_server.ru -p 9999
 
 # This is all for later, needs to be updated from the article at
 # https://christoph.luppri.ch/articles/rails/single-file-rails-applications-for-fun-and-bug-reporting/
