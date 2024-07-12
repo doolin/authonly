@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  rails_basic_auth:
+    build:
+      context: .
+      dockerfile: Dockerfile.rails_basic_auth
+    ports:
+      - "9999:9999"
+    container_name: rails_basic_auth
+

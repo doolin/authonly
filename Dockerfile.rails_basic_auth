@@ -8,13 +8,13 @@ RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 WORKDIR /app
 
 # Copy the Gemfile and Gemfile.lock into the working directory
-COPY Gemfile* ./
+COPY ./src/Gemfile* ./
 
 # Install gems
 RUN gem install bundler && bundle install
 
 # Copy the server file
-COPY ./rails_basic_auth_server.ru .
+COPY ./src/rails_basic_auth_server.ru .
 
 # Expose port 9999 for the Rack server
 EXPOSE 9999
