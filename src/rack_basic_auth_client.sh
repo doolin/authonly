@@ -11,4 +11,4 @@ echo $encoded
 #      -H "Authorization: Basic $encoded" http://localhost:9292/
 
 curl -v -i GET -w "%{stderr}{\"status\": \"%{http_code}\", \"body\":\"%{stdout}\"}" \
-     -H "Authorization: Basic $encoded" http://localhost:9000/
+     -H "Authorization: Basic $encoded" http://localhost:9998/

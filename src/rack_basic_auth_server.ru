@@ -22,6 +22,12 @@ class BasicAuth
     userpass.split(':')
   end
 
+  def authenticated?(username, password)
+    return true if username == 'username1' && password == 'password'
+
+    false
+  end
+
   # TODO: clean this whole thing up, take out the `puts`
   # add in logging.
   def call(env)
@@ -29,9 +35,9 @@ class BasicAuth
     auth_header = env['HTTP_AUTHORIZATION']
 
     # Implement actual checking per TODO below
-    username, _password = userpass(auth_header)
-    binding.irb
-    puts "From userpass method, username: #{u}, password: #{p}"
+    username, password = userpass(auth_header)
+    # binding.irb
+    # puts "From userpass method, username: #{u}, password: #{p}"
 
     # TODO: Since the userpass method is working this needs rewritten.
     # userpass_encoded = auth_header.sub(/^Basic\ /, '')
@@ -48,7 +54,9 @@ class BasicAuth
     # [200, {"Content-Type" => "text/plain; charset=utf-8"}, ["Hello #{username}"]]
     #
     # TODO: for some reason the body is not being returned.
-    [200, { 'Content-Type' => 'text/plain' }, ["Hello #{username} "]]
+    if authenticated?(username, password)
+      [200, { 'Content-Type' => 'text/plain' }, ["Hello #{username} "]]
+    end
   end
 end
 
