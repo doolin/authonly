@@ -15,5 +15,12 @@ services:
     ports:
       - "9998:9998"
     container_name: rack_basic_auth
+  jwt_id_server:
+    build:
+      context: .
+      dockerfile: Dockerfile.jwt_id_server
+    ports:
+      - "9997:9997"
+    container_name: jwt_id_server
 
 

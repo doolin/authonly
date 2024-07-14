@@ -4,8 +4,8 @@
 # encoded=$(echo -n "username:password" | base64)
 # echo $encoded
 # echo $encoded | base64 -d
-# curl -X GET -H "Authorization: Basic $encoded" http://localhost:9292/
-# curl -I -X GET http://localhost:9292/
+# curl -X GET -H "Authorization: Basic $encoded" http://localhost:9997/
+# curl -I -X GET http://localhost:9997/
 
 # You can add -H "Content-Type: application/json" header value to Post the JSON data to curl command line.
 
@@ -18,7 +18,7 @@ explicit_json()
   echo "From explicit_json function..."
   curl -X POST -H "Content-Type: application/json" \
     -d '{"username":"abc","password":"abc"}' \
-    http://localhost:9292/
+    http://localhost:9997/
 }
 # explicit_json
 
@@ -36,10 +36,10 @@ fi
 json=`jo username=$username password=$password creation_date="$(date +%m-%d-%y)"`
 curl -X POST -H "Content-Type: application/json" \
   -d "$json" \
-  http://localhost:9292/
+  http://localhost:9997/
 
 # You can also write the username and password in a user.json file.
 # Now use this file to pass the JSON data to curl command line.
 # curl -X POST -H "Content-Type: application/json" \
 #  -d @user.json \
-#  http://localhost:9292/
+#  http://localhost:9997/

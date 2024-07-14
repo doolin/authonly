@@ -5,6 +5,9 @@ require 'thin'
 require 'jwt'
 require 'dbm'
 
+# Server: rackup jwt_id_server.ru -p 9997
+# Client: ./rack_jwt_test.sh
+
 # DBM is a simple key value story, probably built on
 # Berkeley db. It's useful here for creating simple
 # simulations of authentication management and flow.
