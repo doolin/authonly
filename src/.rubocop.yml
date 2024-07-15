@@ -20,3 +20,7 @@ RSpec/ContextWording:
     - for
     - succeeds
     - fails
+  
+Performance/MethodObjectAsBlock:
+  Exclude:
+    - client_runner.rb

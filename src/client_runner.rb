@@ -10,11 +10,12 @@ def rack_basic_auth(_args)
 end
 
 def jwt(_args)
-  puts 'JWT'
+  puts 'Rack JWT'
+  `./rack_jwt_test.sh`
 end
 
 CLI::UI::Prompt.instructions_color = CLI::UI::Color::GRAY
 CLI::UI::Prompt.ask('Which server?') do |handler|
   handler.option('Rack basic auth', &method(:rack_basic_auth))
-  handler.option('JWT', &method(:jwt))
+  handler.option('Rack JWT', &method(:jwt))
 end
