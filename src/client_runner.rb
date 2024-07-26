@@ -2,16 +2,19 @@
 # frozen_string_literal: true
 
 require 'colorize'
+require 'open3'
 require 'cli/ui'
 
 def rack_basic_auth(_args)
   puts 'Rack basic auth'
-  `./rack_basic_auth_client.sh`
+  `./clients/rack_basic_auth_client.sh`
 end
 
 def jwt(_args)
   puts 'Rack JWT'
-  `./rack_jwt_test.sh`
+  script = './clients/rack_jwt_test.sh'
+
+  stdout, stderr, status = Open3.capture3 script
 end
 
 CLI::UI::Prompt.instructions_color = CLI::UI::Color::GRAY

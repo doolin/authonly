@@ -1,8 +1,40 @@
 # frozen_string_literal: true
 
 require 'rack'
+require 'json'
 require 'base64'
+require 'redis'
 require 'rspec/autorun' if ENV['RACK_TEST']
+
+# Define middleware for implementing token bucket rate limiting
+# This class will be added to the Rack middleware stack
+class RateLimit
+  attr_accessor :app, :bucket
+
+  def initialize(app)
+    @app = app
+    @bucket = 4
+  end
+
+  def decrement_bucket
+    @bucket -= 1
+  end
+
+  def token_available?
+    bucket.positive?
+  end
+
+  def call(env)
+    # Implement rate limiting here
+    puts "Rate limiting middleware called. Bucket size: #{@bucket}"
+
+    return [429, { 'Content-Type' => 'text/plain' }, ['Too Many Requests']] unless token_available?
+
+    decrement_bucket
+
+    @app.call(env)
+  end
+end
 
 # Show a dumb way to implement basic auth in a rack application
 class BasicAuth
@@ -54,9 +86,14 @@ class BasicAuth
     # [200, {"Content-Type" => "text/plain; charset=utf-8"}, ["Hello #{username}"]]
     #
     # TODO: for some reason the body is not being returned.
-    if authenticated?(username, password)
-      [200, { 'Content-Type' => 'text/plain' }, ["Hello #{username} "]]
-    end
+    return unless authenticated?(username, password)
+
+    response_body = {
+      'salutations' => "Hello #{username}",
+      'foo' => 'bar'
+      # bucket_size: bucket
+    }.to_json
+    [200, { 'Content-Type' => 'application/json' }, [response_body]]
   end
 end
 
@@ -69,4 +106,9 @@ end
 # into the class file, and being able to run the class from elsehwere
 # without the specs being invoked.
 
-run BasicAuth.new
+app = Rack::Builder.new do
+  use RateLimit
+  run BasicAuth.new
+end
+
+run app
