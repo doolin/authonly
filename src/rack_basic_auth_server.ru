@@ -9,32 +9,142 @@ require 'rspec/autorun' if ENV['RACK_TEST']
 # Define middleware for implementing token bucket rate limiting
 # This class will be added to the Rack middleware stack
 class RateLimit
-  attr_accessor :app, :bucket
+end
 
-  def initialize(app)
+
+# class TokenBucket < RateLimit
+# What this class needs to do:
+# - Initialize with a bucket size
+# - draw one token when a request is made, which is a decrememnt for the bucket value.
+# - the bucket value needs to be persisted between requests.
+# - the bucket value is incremented by one token per second.
+# - the bucket value is capped at the bucket size, and no more tokens are added.
+# - the bucket refreshed does not block the request, it is done in the background.
+
+require 'redis'
+require 'rack'
+
+class TokenBucket
+  attr_reader :bucket_size, :redis_key
+
+  def initialize(app, bucket_size:, redis_key:)
     @app = app
-    @bucket = 4
-  end
+    @bucket_size = bucket_size
+    @redis_key = redis_key
+    @redis = Redis.new(host: 'redis', port: 6379)
 
-  def decrement_bucket
-    @bucket -= 1
-  end
-
-  def token_available?
-    bucket.positive?
+    # Set the initial bucket value in Redis if not already set
+    @redis.setnx(@redis_key, bucket_size)
+    start_background_refill
   end
 
   def call(env)
-    # Implement rate limiting here
-    puts "Rate limiting middleware called. Bucket size: #{@bucket}"
+    if draw_token
+      @app.call(env)
+    else
+      [429, { 'Content-Type' => 'text/plain' }, ["Rate limit exceeded"]]
+    end
+  end
 
-    return [429, { 'Content-Type' => 'text/plain' }, ['Too Many Requests']] unless token_available?
+  private
 
-    decrement_bucket
+  def draw_token
+    current_tokens = @redis.get(@redis_key).to_i
+    if current_tokens > 0
+      @redis.decr(@redis_key)
+      true
+    else
+      false
+    end
+  end
 
-    @app.call(env)
+  def start_background_refill
+    Thread.new do
+      loop do
+        sleep(1)
+        refill_bucket
+      end
+    end
+  end
+
+  def refill_bucket
+    @redis.watch(@redis_key) do
+      current_tokens = @redis.get(@redis_key).to_i
+      if current_tokens < @bucket_size
+        @redis.multi do |multi|
+          multi.incr(@redis_key)
+        end
+      end
+    end
   end
 end
+
+# class TokenBucket
+#   attr_accessor :bucket, :last_refreshed
+
+#   def initialize(bucket_size)
+#     @bucket = bucket_size
+#     @last_refreshed = Time.now
+#   end
+
+#   def decrement_bucket
+#     @bucket -= 1
+#   end
+
+#   def token_available?
+#     bucket.positive?
+#   end
+
+#   def refresh_bucket
+#     # If the bucket is full, don't add any more tokens.
+#     return if @bucket == 4
+
+#     # If the bucket is not full, add a token.
+#     @bucket += 1
+#   end
+
+#   def call(env)
+#     # Implement rate limiting here
+#     puts "Rate limiting middleware called. Bucket size: #{@bucket}"
+
+#     refresh_bucket
+
+#     return [429, { 'Content-Type' => 'text/plain' }, ['Too Many Requests']] unless token_available?
+
+#     decrement_bucket
+
+#     @app.call(env)
+#   end
+
+# Old stuff
+#   attr_accessor :app, :bucket
+
+#   def initialize(app)
+#     @app = app
+#     @bucket = 4
+#   end
+
+#   def decrement_bucket
+#     @bucket -= 1
+#   end
+
+#   def token_available?
+#     bucket.positive?
+#   end
+
+#   def call(env)
+#     # Implement rate limiting here
+#     puts "Rate limiting middleware called. Bucket size: #{@bucket}"
+
+#     return [429, { 'Content-Type' => 'text/plain' }, ['Too Many Requests']] unless token_available?
+
+#     decrement_bucket
+
+#     @app.call(env)
+#   end
+# end
+
+
 
 # Show a dumb way to implement basic auth in a rack application
 class BasicAuth
@@ -107,7 +217,7 @@ end
 # without the specs being invoked.
 
 app = Rack::Builder.new do
-  use RateLimit
+  use TokenBucket, bucket_size: 10, redis_key: 'my_rate_limit'
   run BasicAuth.new
 end
 
