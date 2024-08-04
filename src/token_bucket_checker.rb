@@ -2,6 +2,8 @@
 
 require 'redis'
 
+# This class implements a token bucket for rate limiting.
+# The "checket" part is for sanity checking.
 class TokenBucketChecker
   attr_reader :bucket_size, :refill_rate, :redis_key
 
@@ -9,7 +11,7 @@ class TokenBucketChecker
     @bucket_size = bucket_size
     @refill_rate = refill_rate # Tokens added per second
     @redis_key = redis_key
-    @redis = Redis.new(port: 6380)  # Connect to Dockerized Redis on localhost:6380
+    @redis = Redis.new(port: 6380) # Connect to Dockerized Redis on localhost:6380
 
     initialize_bucket
   end
@@ -53,13 +55,20 @@ end
 
 # Step 2: Make it self-executable and provide example usage
 if __FILE__ == $PROGRAM_NAME
-  checker = TokenBucketChecker.new(bucket_size: 10, refill_rate: 1, redis_key: 'my_rate_limit')
+  # checker = TokenBucketChecker.new(bucket_size: 10, refill_rate: 1, redis_key: 'my_rate_limit')
 
-  # Example invocations
+  # # Example invocations
+  # puts "Request allowed? #{checker.allow_request?}"
+  # sleep(2)
+  # puts "Request allowed? #{checker.allow_request?}"
+  # sleep(2)
+  # puts "Request allowed? #{checker.allow_request?}"
+
+  checker = TokenBucketChecker.new(bucket_size: 1, refill_rate: 1, redis_key: 'new_rate_limit')
   puts "Request allowed? #{checker.allow_request?}"
-  sleep(2)
+  sleep(0.5)
   puts "Request allowed? #{checker.allow_request?}"
-  sleep(2)
+  puts "Request allowed? #{checker.allow_request?}"
+  sleep(1)
   puts "Request allowed? #{checker.allow_request?}"
 end
-
