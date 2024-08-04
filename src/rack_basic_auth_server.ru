@@ -154,6 +154,7 @@ class BasicAuth
     # gsub(/^Digest\s+/, "")
     #
     # Doing it my way here.
+    # TODO: catch an exception if the header doesn't exist.
     userpass_encoded = auth_header.sub(/^Basic\s+/, '')
     userpass = Base64.decode64 userpass_encoded
     userpass.split(':')

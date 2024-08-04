@@ -9,6 +9,9 @@ services:
       - "9999:9999"
     container_name: rails_basic_auth
   rack_basic_auth:
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
     build:
       context: .
       dockerfile: Dockerfile.rack_basic_auth
