@@ -12,6 +12,16 @@ RSpec.describe TokenBucket do
     end.to_app
   end
 
+  before(:all) do
+    ENV['REDIS_HOST'] = 'localhost'
+    ENV['REDIS_PORT'] = '6380'
+  end
+
+  after(:all) do
+    ENV['REDIS_HOST'] = nil
+    ENV['REDIS_PORT'] = nil
+  end
+
   let(:redis) { Redis.new(port: 6380) }
 
   before do
