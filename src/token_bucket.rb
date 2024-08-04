@@ -5,15 +5,25 @@ require 'redis'
 # This class implements a token bucket for rate limiting.
 # The "checket" part is for sanity checking.
 class TokenBucket
-  attr_reader :bucket_size, :refill_rate, :redis_key
+  attr_reader :app, :bucket_size, :refill_rate, :redis_key
 
-  def initialize(bucket_size:, refill_rate:, redis_key:)
+  def initialize(app, bucket_size:, refill_rate:, redis_key:)
+    @app = app
     @bucket_size = bucket_size
     @refill_rate = refill_rate # Tokens added per second
     @redis_key = redis_key
     @redis = Redis.new(port: 6380) # Connect to Dockerized Redis on localhost:6380
+    # @redis = Redis.new(host: 'redis')
 
     initialize_bucket
+  end
+
+  def call(env)
+    if allow_request?
+      @app.call(env)
+    else
+      [429, { 'Content-Type' => 'text/plain' }, ['Rate limit exceeded']]
+    end
   end
 
   def allow_request?

@@ -15,6 +15,7 @@ RUN gem install bundler && bundle install
 
 # Copy the server file
 COPY ./src/rack_basic_auth_server.ru .
+COPY ./src/token_bucket.rb .
 
 EXPOSE 9998
 
