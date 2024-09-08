@@ -3,6 +3,9 @@
 # This file is notes from Aaron Patterson's talk
 # Don't @ me about Ruby instance variables:
 # https://www.youtube.com/watch?v=HEFBDqly4ms
+# It's located here because I was working in
+# this repo at the time, and didn't know else
+# to put it. TODO: move this someplace smart.
 require 'objspace'
 
 class Foo
