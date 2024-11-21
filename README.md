@@ -17,7 +17,7 @@ time, very convenient.
 - https://gist.github.com/nov/862393
 - https://github.com/nov/rack-oauth2?tab=readme-ov-file
 - https://gitlab.com/os85/rodauth-oauth
-- https://oauth.net/code/ruby/
+- [OAuth libraries for Ruby](https://oauth.net/code/ruby/)
 - https://www.rfc-editor.org/rfc/rfc6749.html
 - https://www.rfc-editor.org/rfc/rfc6750.html
 - https://www.rfc-editor.org/rfc/rfc2616
