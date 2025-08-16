@@ -269,6 +269,7 @@ DEPENDENCIES
   debug
   jwt
   nokogiri
+  rackup
   rails
   redis
   roda
