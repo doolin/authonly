@@ -29,5 +29,5 @@ services:
       image: redis
       ports:
         - "6380:6379" # Using port 6380 externally and the default Redis port 6379 internally
-      container_name: redis_service
+      container_name: redis_authonly
 
